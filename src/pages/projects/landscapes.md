@@ -9,5 +9,8 @@ pieces:
   - description: A sunset
     media: /img/sunset.jpg
     title: Sunset
+  - description: A bucolic scene
+    media: /img/field.jpeg
+    title: Field
 ---
 
