@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: project-page
 title: Landscapes
 cover: /img/mountain.jpg
 pieces:

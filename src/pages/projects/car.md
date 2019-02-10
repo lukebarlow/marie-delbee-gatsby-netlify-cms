@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: project-page
 title: Car
 cover: /img/chemex.jpg
 pieces:
