@@ -1,5 +1,5 @@
 ---
-templateKey: project
+templateKey: project-page
 title: Streets
 cover: /img/th.jpeg
 pieces:
