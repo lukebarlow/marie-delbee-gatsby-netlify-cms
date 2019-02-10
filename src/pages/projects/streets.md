@@ -14,5 +14,8 @@ pieces:
   - description: This street is very steep
     media: /img/steepstreet.jpg
     title: Steep Street
+  - description: Why are the images missing now?
+    media: /img/th.jpeg
+    title: Street With Trees
 ---
 
