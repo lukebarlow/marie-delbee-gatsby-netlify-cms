@@ -1,7 +1,7 @@
 ---
 templateKey: project-page
 title: Streets
-cover: /img/th.jpeg
+cover: /img/cityscapes-streets_00425430.jpg
 pieces:
   - description: >-
       This is a street in Edinburgh. It is a very large image, so it will be
