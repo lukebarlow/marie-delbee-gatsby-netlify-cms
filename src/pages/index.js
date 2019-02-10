@@ -79,21 +79,11 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fields {
-            slug
-          }
           frontmatter {
             title
             templateKey,
             pieces {
               title,
-              media {
-                childImageSharp {
-                  fluid(maxWidth: 1075, quality: 72) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
               description
             }
           }
@@ -102,3 +92,11 @@ export const pageQuery = graphql`
     }
   }
 `
+
+// media {
+//   childImageSharp {
+//     fluid(maxWidth: 1075, quality: 72) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
