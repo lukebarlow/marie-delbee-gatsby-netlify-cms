@@ -3,16 +3,22 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 // import Layout from '../components/Layout'
 
+import Project from '../components/Project'
+
 export default class IndexPage extends React.Component {
 
   render () {
 
     const { data } = this.props
-    // const { edges: projects } = data.allMarkdownRemark
+    let { edges: projects } = data.allMarkdownRemark
     
-    console.log(JSON.stringify(data, null, 2))
+    projects = projects.map(p => p.node)
 
-    return <div>Not much happening in this page yet</div>
+    console.log(projects)
+
+    return <div>
+      { projects.map(p => <Project key={p.id} project={p} />)}
+    </div>
   }
 
   // render() {
