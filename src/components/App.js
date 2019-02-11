@@ -12,6 +12,7 @@ const ProjectContainer = styled.div`
   overflow: hidden;
 `
 const scrollTriggerThreshold = 51
+const swipeTriggerThreshold = 51
 
 export default class App extends React.Component {
   constructor () {
@@ -19,14 +20,19 @@ export default class App extends React.Component {
     this.handleRef = this.handleRef.bind(this)
     this.projectIndex = 0
     this.pieceIndex = 0 // where 0 is the cover, and 1 is the first piece
-    this.isScrolling = false
   }
 
   componentDidMount () {
     const { projects } = this.props
 
+    let touchStartX = null
+    let touchStartY = null
+    let isScrolling = false
+
     const finishedScrolling = () => {
-      this.isScrolling = false
+      setTimeout(() => {
+        isScrolling = false
+      }, 200)
     }
 
     const verticalScroll = () => {
@@ -35,18 +41,19 @@ export default class App extends React.Component {
       const projectElement = this.projectsContainer.children[this.projectIndex]
       projectElement.scrollLeft = 0
       this.pieceIndex = 0
-      this.isScrolling = true
+      isScrolling = true
       scroll.top(this.projectsContainer, window.innerHeight * this.projectIndex, { duration: 500 }, finishedScrolling)
     }
 
     const horizontalScroll = () => {
       const projectElement = this.projectsContainer.children[this.projectIndex]
       const offset = projectElement.children[this.pieceIndex].offsetLeft
-      this.isScrolling = true
+      isScrolling = true
       scroll.left(projectElement, offset, { duration: 500 }, finishedScrolling)
     }
 
     const up = () => {
+      
       if (this.projectIndex > 0) {
         this.projectIndex -= 1
         verticalScroll()
@@ -95,26 +102,52 @@ export default class App extends React.Component {
     window.addEventListener('wheel', (e) => {
       e.preventDefault()
 
-      if (this.isScrolling) {
+      if (isScrolling) {
         return
       }
 
-      if (Math.abs(e.deltaY) > scrollTriggerThreshold) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && Math.abs(e.deltaY) > scrollTriggerThreshold) {
         e.deltaY > 0 ? down() : up()
       }
 
-      if (Math.abs(e.deltaX) > scrollTriggerThreshold) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > scrollTriggerThreshold) {
         e.deltaX > 0 ? right() : left()
       }
 
     }, { passive: false })
 
+    window.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
+    })
+
+    window.addEventListener('touchmove', (e) => {
+      if (isScrolling) {
+        return
+      }
+
+      const dx = e.touches[0].clientX - touchStartX
+      const dy = e.touches[0].clientY - touchStartY
+
+      const adx = Math.abs(dx)
+      const ady = Math.abs(dy)
+
+      if (ady > adx && ady > swipeTriggerThreshold) {
+        dy > 0 ? up() : down()
+      }
+
+      if (adx > ady && adx > swipeTriggerThreshold) {
+        dx > 0 ? left() : right()
+      }
+    })
+
   }
+
+
 
   handleRef (el) {
     this.projectsContainer = el
     window.projectsContainer = el
-    console.log('got project container', el)
   }
 
   render () {
