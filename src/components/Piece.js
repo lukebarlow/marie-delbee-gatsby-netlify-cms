@@ -1,12 +1,40 @@
 import React from 'react'
-
 import styled from 'styled-components'
+
+import fileType from '../fileType.js'
 
 const StyledDiv = styled.div`
   height: 100vh;
-  border: 1pt solid red;
+  padding-left: 150px;
+  padding-top: 80px;
 `
-export default  ({ piece }) => (
-  <StyledDiv>&nbsp;&nbsp;Piece {piece.title}</StyledDiv>
-)
+
+const StyledImg = styled.img`
+  display: block;
+  width: auto;
+  max-width: calc(100vw - 300px);
+  max-height: calc(100vh - 160px);
+`
+
+export default  ({ piece }) => {
+
+  const type = fileType(piece.media)
+
+  return <StyledDiv>
+    { type === 'IMAGE' &&
+      <StyledImg src={piece.media} />
+    }
+    { type === 'VIDEO' && 
+      <video
+        src={piece.media}
+        muted
+        autoPlay
+        loop
+        playsInline
+      />
+    }
+  
+    &nbsp;&nbsp;Piece {piece.title}
+  </StyledDiv>
+}
 
