@@ -11,6 +11,21 @@ import {
 import fileType from '../fileType.js'
 import Piece from './Piece.js'
 
+const StyledProjectPaginator = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+`
+
+const EndPadding = styled.div`
+ width: 100vw;
+ height: 100vh;
+`
+
 const ProjectArrow = styled.div`
   position: absolute;
   top: 50%;
@@ -26,7 +41,7 @@ const ProjectArrow = styled.div`
 `
 
 export default ({ project }) => (
-  <div>
+  <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image}>
       <ProjectVideoWrapper
           videoWidth={project.videoWidth}
@@ -46,12 +61,15 @@ export default ({ project }) => (
         }
       </ProjectVideoWrapper>
       <ProjectTitle>
-            {project.frontmatter.title}
-            <ProjectArrow>
-              <img alt="" src="/img/arrow.svg" />
-            </ProjectArrow>
-          </ProjectTitle>
+        {project.frontmatter.title}
+        <ProjectArrow>
+          <img alt="" src="/img/arrow.svg" />
+        </ProjectArrow>
+      </ProjectTitle>
+      
     </ProjectLandingScreen>
-    {/* { project.frontmatter.pieces.map(piece => <Piece key={piece.title} piece={piece} />)} */}
-  </div>
+    
+      { project.frontmatter.pieces.map(piece => <Piece key={piece.title} piece={piece} />)}
+      <EndPadding />
+    </StyledProjectPaginator>
 )
