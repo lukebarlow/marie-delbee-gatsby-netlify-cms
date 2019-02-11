@@ -1,7 +1,7 @@
 ---
 templateKey: project-page
 title: Car
-cover: /img/green-car.jpeg
+cover: /img/wheat-field.mp4
 pieces:
   - description: This is a green car
     media: /img/green-car.jpeg
