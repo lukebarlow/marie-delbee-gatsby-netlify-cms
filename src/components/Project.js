@@ -40,6 +40,22 @@ const ProjectArrow = styled.div`
   }
 `
 
+const StyledImg = styled.img`
+  display: block;
+  width: auto;
+  min-width: calc(100vw);
+  min-height: calc(100vh);
+  max-width: calc(100vmax);
+  max-height: calc(100vmax);
+`
+
+const StyledVideo = styled.video`
+  display: block;
+  width: auto;
+  min-width: calc(100vw);
+  min-height: calc(100vh);
+`
+
 export default ({ project }) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image}>
@@ -48,9 +64,9 @@ export default ({ project }) => (
           videoHeight={project.videoHeight}
         >
         { fileType(project.frontmatter.cover) === 'IMAGE' ?
-          <img src={project.frontmatter.cover} />
+          <StyledImg src={project.frontmatter.cover} />
           :
-          <video
+          <StyledVideo
             src={project.frontmatter.cover}
             poster={project.image}
             muted

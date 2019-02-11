@@ -20,7 +20,7 @@ collections:
         widget: "list"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Media", name: "media", widget: "image"}
+          - {label: "Media", name: "media", widget: "file"}
           - {label: "Description", name: "description", widget: "markdown"}
           
   - name: "pages"
