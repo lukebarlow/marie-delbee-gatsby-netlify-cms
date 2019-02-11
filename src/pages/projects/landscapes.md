@@ -1,7 +1,7 @@
 ---
 templateKey: project-page
 title: Landscapes
-cover: /img/laundromat.mp4
+cover: /img/cactus.mp4
 pieces:
   - description: A bucolic scene
     media: /img/field.jpeg
