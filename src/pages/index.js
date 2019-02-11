@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import scroll from 'scroll'
 // import Layout from '../components/Layout'
 
+import '../components/all.sass'
 import Project from '../components/Project'
 
 const ProjectContainer = styled.div`
