@@ -93,6 +93,8 @@ export default class App extends React.Component {
     })
 
     window.addEventListener('wheel', (e) => {
+      e.preventDefault()
+
       if (this.isScrolling) {
         return
       }
@@ -104,8 +106,8 @@ export default class App extends React.Component {
       if (Math.abs(e.deltaX) > scrollTriggerThreshold) {
         e.deltaX > 0 ? right() : left()
       }
-      
-    }, { passive: true })
+
+    }, { passive: false })
 
   }
 
