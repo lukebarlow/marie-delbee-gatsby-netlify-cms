@@ -33,8 +33,6 @@ export default  ({ piece }) => {
         playsInline
       />
     }
-  
-    &nbsp;&nbsp;Piece {piece.title}
   </StyledDiv>
 }
 
