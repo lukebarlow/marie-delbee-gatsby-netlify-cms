@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import scroll from 'scroll'
 
+import Caption from './Caption'
 import '../styles/App.css'
 
 import Project from './Project'
@@ -11,6 +12,8 @@ const ProjectContainer = styled.div`
   height: 100vh;
   overflow: hidden;
 `
+
+
 const scrollTriggerThreshold = 51
 const swipeTriggerThreshold = 51
 
@@ -18,18 +21,25 @@ export default class App extends React.Component {
   constructor () {
     super()
     this.handleRef = this.handleRef.bind(this)
-    this.projectIndex = 0
-    this.pieceIndex = 0 // where 0 is the cover, and 1 is the first piece
+    this.state = {
+      projectIndex: 0,
+      pieceIndex: 0, // where 0 is the cover, and 1 is the first piece
+      captionPieceIndex: 0 // replicates pieceIndex, but sometimes changes at
+                           // a slightly different moment to get the transitions
+                           // correct
+    }
   }
 
   componentDidMount () {
     const { projects } = this.props
-
+    let projectIndex = this.state.projectIndex
+    let pieceIndex = this.state.pieceIndex
     let touchStartX = null
     let touchStartY = null
     let isScrolling = false
 
     const finishedScrolling = () => {
+      this.setState({ captionPieceIndex: pieceIndex })
       setTimeout(() => {
         isScrolling = false
       }, 200)
@@ -38,47 +48,57 @@ export default class App extends React.Component {
     const verticalScroll = () => {
       // the project we're scrolling to will always start with the cover,
       // so we first reset the scroll position of that project
-      const projectElement = this.projectsContainer.children[this.projectIndex]
+      const projectElement = this.projectsContainer.children[projectIndex]
       projectElement.scrollLeft = 0
-      this.pieceIndex = 0
       isScrolling = true
-      scroll.top(this.projectsContainer, window.innerHeight * this.projectIndex, { duration: 500 }, finishedScrolling)
+      scroll.top(this.projectsContainer, window.innerHeight * projectIndex, { duration: 500 }, finishedScrolling)
+      if (pieceIndex === 0) {
+        this.setState({ captionPieceIndex: pieceIndex })
+      }
     }
 
-    const horizontalScroll = () => {
-      const projectElement = this.projectsContainer.children[this.projectIndex]
-      const offset = projectElement.children[this.pieceIndex].offsetLeft
+    const horizontalScroll = (delayCaption) => {
+      const projectElement = this.projectsContainer.children[projectIndex]
+      const offset = projectElement.children[pieceIndex].offsetLeft
       isScrolling = true
       scroll.left(projectElement, offset, { duration: 500 }, finishedScrolling)
+      if (!delayCaption) {
+        this.setState({ captionPieceIndex: pieceIndex })
+      }
     }
 
     const up = () => {
-      
-      if (this.projectIndex > 0) {
-        this.projectIndex -= 1
+      if (projectIndex > 0) {
+        pieceIndex = 0
+        projectIndex -= 1
         verticalScroll()
+        this.setState({ projectIndex, pieceIndex })
       }
     }
 
     const down = () => {
-      if (this.projectIndex < projects.length - 1) {
-        this.projectIndex += 1
+      if (projectIndex < projects.length - 1) {
+        pieceIndex = 0
+        projectIndex += 1
         verticalScroll()
+        this.setState({ projectIndex, pieceIndex })
       }
     }
 
     const left = () => {
-      if (this.pieceIndex > 0) {
-        this.pieceIndex -= 1
+      if (pieceIndex > 0) {
+        pieceIndex -= 1
         horizontalScroll()
+        this.setState({ projectIndex, pieceIndex })
       }
     }
 
     const right = () => {
-      const pieces = projects[this.projectIndex].frontmatter.pieces
-        if (this.pieceIndex < pieces.length) {
-          this.pieceIndex += 1
-          horizontalScroll()
+      const pieces = projects[projectIndex].frontmatter.pieces
+        if (pieceIndex < pieces.length) {
+          pieceIndex += 1
+          horizontalScroll(pieceIndex === 1)
+          this.setState({ projectIndex, pieceIndex })
         }
     }
 
@@ -141,9 +161,16 @@ export default class App extends React.Component {
       }
     })
 
+    // window.addEventListener('click', (e) => {
+    //   // check if there are more pieces to move to
+    //   const pieces = projects[projectIndex].frontmatter.pieces
+    //   if (pieces.length > pieceIndex) {
+    //     right()
+    //   } else if (projects.length > projectIndex - 1) {
+    //     down()
+    //   }
+    // })
   }
-
-
 
   handleRef (el) {
     this.projectsContainer = el
@@ -151,16 +178,14 @@ export default class App extends React.Component {
   }
 
   render () {
-    // const { data } = this.props
-    // let { edges: projects } = data.allMarkdownRemark
-    
     const { projects } = this.props
-
-    // projects = projects.map(p => p.node)
-    console.log(projects)
+    const { projectIndex, captionPieceIndex } = this.state
+    const pieces = projects[projectIndex].frontmatter.pieces
+    const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
 
     return <ProjectContainer ref={this.handleRef}>
       { projects.map((p, i) => <Project key={i} project={p} />)}
+      <Caption piece={piece} />
     </ProjectContainer>
   }
 }
