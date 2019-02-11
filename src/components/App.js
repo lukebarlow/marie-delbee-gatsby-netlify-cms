@@ -102,6 +102,9 @@ export default class App extends React.Component {
         }
     }
 
+    this.left = left
+    this.right = right
+
     window.addEventListener('keydown', (e) => {
       switch(e.key) {
         case 'ArrowUp':
@@ -183,9 +186,19 @@ export default class App extends React.Component {
     const pieces = projects[projectIndex].frontmatter.pieces
     const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
 
+    const onMove = (by) => {
+      console.log('move by', by)
+      by === -1 ? this.left() : this.right()
+    }
+
     return <ProjectContainer ref={this.handleRef}>
       { projects.map((p, i) => <Project key={i} project={p} />)}
-      <Caption piece={piece} />
+      <Caption 
+        onMove={onMove} 
+        index={captionPieceIndex} 
+        count={pieces.length} 
+        piece={piece} 
+      />
     </ProjectContainer>
   }
 }

@@ -19,6 +19,16 @@ const Toggle = styled.div`
   cursor: pointer;
 `
 
+const Nav = styled.div`
+  position: absolute;
+  left: calc(100vw - 150px);
+  top: 0px;
+`
+
+const NavLink = styled.span`
+  cursor: pointer;
+`
+
 const Title = styled.div`
   margin-bottom: 30px;
 `
@@ -51,7 +61,7 @@ export default class Caption extends React.Component {
   }
 
   render () {
-    const { piece } = this.props
+    const { piece, index, count, onMove } = this.props
     const { expanded } = this.state
     
     const style = {
@@ -60,6 +70,13 @@ export default class Caption extends React.Component {
 
     return <CaptionContainer style={style} ref={this.handleRef}>
       <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
+      { index > 0 && 
+        <Nav>
+          <NavLink onClick={() => onMove(-1)}>&lt;</NavLink>
+          <span>&nbsp;&nbsp;{index}/{count}&nbsp;&nbsp;</span>
+          <NavLink onClick={() => onMove(+1)}>&gt;</NavLink>
+        </Nav>
+      }
       <Title>{piece && piece.title}</Title>
       <div>{piece && piece.description}</div>
     </CaptionContainer>
