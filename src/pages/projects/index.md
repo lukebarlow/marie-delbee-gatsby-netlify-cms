@@ -18,5 +18,14 @@ projects:
         media: /img/nob-hill.jpg
         title: Nob Hill
     title: Streets
+  - cover: /img/mountain.jpg
+    pieces:
+      - media: /img/field.jpeg
+        title: A field
+      - media: /img/mountain.jpg
+        title: Mountain
+      - media: /img/sunset.jpg
+        title: Sunset
+    title: Landscapes
 ---
 
