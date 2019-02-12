@@ -32,4 +32,21 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "info-page"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/projects/index.md"
+        label: "Projects"
+        name: "projects"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Cover", name: "cover", widget: "file"}
+              - label: "Pieces"
+                name: "pieces"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Media", name: "media", widget: "file"}
+                  - {label: "Description", name: "description", widget: "markdown"}
       
