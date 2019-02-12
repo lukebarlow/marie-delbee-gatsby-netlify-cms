@@ -1,4 +1,5 @@
 ---
+templateKey: projects-page
 projects:
   - cover: /img/cityscapes-streets_00425430.jpg
     pieces:
@@ -25,7 +26,6 @@ projects:
       - description: First piece of first project
         media: /img/field.jpeg
         title: Piece 1
-      - {}
     title: Entre Chien Et Loup
   - cover: /img/volcano.mp4
     pieces:
