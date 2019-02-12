@@ -38,5 +38,9 @@ projects:
       - media: /img/1280-509661971-adventurers-volcanic-eruption.jpg
         title: People Watching Volcano
     title: Volcanoes
+  - cover: /img/deep_space_2_faststart.mp4
+    pieces:
+      - media: /img/deep_space_44_faststart.mp4
+    title: Deep Space
 ---
 
