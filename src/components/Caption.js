@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import Markdown from 'react-markdown'
 
 const CaptionContainer = styled.div`
   position: absolute;
@@ -78,7 +78,7 @@ export default class Caption extends React.Component {
         </Nav>
       }
       <Title>{piece && piece.title}</Title>
-      <div>{piece && piece.description}</div>
+      <Markdown source={piece ? piece.description : ''} />
     </CaptionContainer>
   }
 }
