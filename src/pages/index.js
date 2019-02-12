@@ -7,8 +7,13 @@ export default class IndexPage extends React.Component {
   render () {
     const { data } = this.props
 
-    const projects = data.projects.edges.map(p => p.node)
+    // console.log('data', data)
+    // debugger
+
+    const projects = data.projects.edges[0].node.frontmatter.projects
     const info = data.infoPage.edges[0].node.body
+
+    console.log('projects', projects)
 
     return <App projects={projects} info={info} />
   }
@@ -25,19 +30,21 @@ IndexPage.propTypes = {
 export const pageQuery = graphql`
   query IndexQuery {
     projects: allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "project-page" } }}
+      filter: { frontmatter: { templateKey: { eq: "projects-page" } }}
     ) {
       edges {
         node {
           id
           frontmatter {
-            title
-            templateKey,
-            cover,
-            pieces {
-              title,
-              description,
-              media
+            projects {
+              title
+              templateKey,
+              cover,
+              pieces {
+                title,
+                description,
+                media
+              }
             }
           }
         }
@@ -47,7 +54,6 @@ export const pageQuery = graphql`
       filter: { frontmatter: { templateKey: { eq: "info-page" } }}
     ) {
       edges {
-        
         node {
           id
           body: rawMarkdownBody

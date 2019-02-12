@@ -1,4 +1,5 @@
 ---
+templateKey: projects-page
 projects:
   - cover: /img/space.mp4
     pieces:
