@@ -6,15 +6,8 @@ import App from '../components/App.js'
 export default class IndexPage extends React.Component {
   render () {
     const { data } = this.props
-
-    // console.log('data', data)
-    // debugger
-
     const projects = data.projects.edges[0].node.frontmatter.projects
     const info = data.infoPage.edges[0].node.body
-
-    console.log('projects', projects)
-
     return <App projects={projects} info={info} />
   }
 }
@@ -38,7 +31,6 @@ export const pageQuery = graphql`
           frontmatter {
             projects {
               title
-              templateKey,
               cover,
               pieces {
                 title,
