@@ -1,13 +1,5 @@
 ---
-templateKey: projects-page
 projects:
-  - cover: /img/space.mp4
-    pieces:
-      - description: First piece of first project
-        media: /img/field.jpeg
-        title: Piece 1
-      - {}
-    title: Entre Chien Et Loup
   - cover: /img/cityscapes-streets_00425430.jpg
     pieces:
       - description: Part of the new town in Edinburgh
@@ -28,5 +20,12 @@ projects:
       - media: /img/sunset.jpg
         title: Sunset
     title: Landscapes
+  - cover: /img/space.mp4
+    pieces:
+      - description: First piece of first project
+        media: /img/field.jpeg
+        title: Piece 1
+      - {}
+    title: Entre Chien Et Loup
 ---
 
