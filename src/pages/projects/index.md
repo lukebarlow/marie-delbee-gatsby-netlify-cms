@@ -27,5 +27,16 @@ projects:
         title: Piece 1
       - {}
     title: Entre Chien Et Loup
+  - cover: /img/italy-sicily-stromboli-volcano-eruption.jpg
+    pieces:
+      - media: /img/mahameru-volcano.jpeg
+        title: Mahameru
+      - media: /img/volcanoes-2.jpg
+        title: Plume
+      - media: /img/shutterstock_569669356.jpg
+        title: Lava Flow
+      - media: /img/1280-509661971-adventurers-volcanic-eruption.jpg
+        title: People Watching Volcano
+    title: Volcanoes
 ---
 
