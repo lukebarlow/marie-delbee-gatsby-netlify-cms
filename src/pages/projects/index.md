@@ -11,7 +11,7 @@ projects:
         media: /img/nob-hill.jpg
         title: Nob Hill
     title: Streets
-  - cover: /img/mountain.jpg
+  - cover: /img/wheat-field.mp4
     pieces:
       - media: /img/field.jpeg
         title: A field
