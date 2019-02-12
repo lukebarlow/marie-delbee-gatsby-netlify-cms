@@ -1,6 +1,5 @@
 ---
 templateKey: info-page
-title: About our values
 ---
 Allen Yan (86)1338-1111-420 yhnasa@123.com
 

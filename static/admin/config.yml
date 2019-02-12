@@ -31,6 +31,5 @@ collections:
         name: "info"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "info-page"}
-          - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       

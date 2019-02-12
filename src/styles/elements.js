@@ -16,7 +16,7 @@ export const ProjectLandingScreen = styled.div`
 export const ProjectTitle = styled.h1`
   position: relative;
   top: -0.1em;
-  z-index: 1;
+  // z-index: 1;
   width: 100%;
   margin: 0;
   color: white;

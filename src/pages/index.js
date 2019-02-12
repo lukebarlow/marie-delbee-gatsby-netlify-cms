@@ -6,9 +6,11 @@ import App from '../components/App.js'
 export default class IndexPage extends React.Component {
   render () {
     const { data } = this.props
-    let { edges: projects } = data.allMarkdownRemark
-    projects = projects.map(p => p.node)
-    return <App projects={projects} />
+
+    const projects = data.projects.edges.map(p => p.node)
+    const info = data.infoPage.edges[0].node.body
+
+    return <App projects={projects} info={info} />
   }
 }
 
@@ -22,7 +24,7 @@ IndexPage.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
+    projects: allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "project-page" } }}
     ) {
       edges {
@@ -38,6 +40,17 @@ export const pageQuery = graphql`
               media
             }
           }
+        }
+      }
+    }
+    infoPage: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "info-page" } }}
+    ) {
+      edges {
+        
+        node {
+          id
+          body: rawMarkdownBody
         }
       }
     }

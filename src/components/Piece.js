@@ -16,11 +16,11 @@ const StyledImg = styled.img`
   max-height: calc(100vh - 160px);
 `
 
-export default  ({ piece }) => {
+export default  ({ piece, onClick }) => {
 
   const type = fileType(piece.media)
 
-  return <StyledDiv>
+  return <StyledDiv onClick={onClick}>
     { type === 'IMAGE' &&
       <StyledImg src={piece.media} />
     }
