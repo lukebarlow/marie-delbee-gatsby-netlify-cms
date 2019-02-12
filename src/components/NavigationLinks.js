@@ -17,7 +17,7 @@ const Bar = styled.div`
 
 export default ({projects, onLink, isWhite}) => {
   return <Bar isWhite={isWhite}>
-    { projects.map((p, i) => <span onClick={() => onLink(i)} key={i} project={p}>{p.frontmatter.title}</span>)}
+    { projects.map((p, i) => <span onClick={() => onLink(i)} key={i} project={p}>{p.title}</span>)}
     <span onClick={() => onLink('info')}>Info</span>
   </Bar>
 }

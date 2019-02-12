@@ -17,7 +17,6 @@ const StyledImg = styled.img`
 `
 
 export default  ({ piece, onClick }) => {
-
   const type = fileType(piece.media)
 
   return <StyledDiv onClick={onClick}>

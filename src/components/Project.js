@@ -60,11 +60,11 @@ export default ({ project, onPieceClick }) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image} onClick={onPieceClick}>
       <ProjectVideoWrapper>
-        { fileType(project.frontmatter.cover) === 'IMAGE' ?
-          <StyledImg src={project.frontmatter.cover} />
+        { fileType(project.cover) === 'IMAGE' ?
+          <StyledImg src={project.cover} />
           :
           <StyledVideo
-            src={project.frontmatter.cover}
+            src={project.cover}
             poster={project.image}
             muted
             autoPlay
@@ -74,14 +74,14 @@ export default ({ project, onPieceClick }) => (
         }
       </ProjectVideoWrapper>
       <ProjectTitle>
-        {project.frontmatter.title}
+        {project.title}
         <ProjectArrow>
           <img alt="" src="/img/arrow.svg" />
         </ProjectArrow>
       </ProjectTitle>
       
     </ProjectLandingScreen>
-      { project.frontmatter.pieces.map(piece => <Piece key={piece.title} piece={piece} onClick={onPieceClick} />)}
+      { project.pieces.map(piece => <Piece key={piece.title} piece={piece} onClick={onPieceClick} />)}
       <EndPadding />
     </StyledProjectPaginator>
 )

@@ -118,7 +118,7 @@ export default class App extends React.Component {
   right () {
     const { projects } = this.props
     let { projectIndex, pieceIndex } = this.state
-    const pieces = projects[projectIndex].frontmatter.pieces
+    const pieces = projects[projectIndex].pieces
       if (pieceIndex < pieces.length) {
         pieceIndex += 1
         this.horizontalScroll(pieceIndex)
@@ -213,7 +213,7 @@ export default class App extends React.Component {
   handlePieceClick () {
     const { projects } = this.props
     const { projectIndex, pieceIndex } = this.state
-    const pieces = projects[projectIndex].frontmatter.pieces
+    const pieces = projects[projectIndex].pieces
     if (pieces.length > pieceIndex) {
       this.right()
     } else if (projects.length > projectIndex - 1) {
@@ -224,7 +224,8 @@ export default class App extends React.Component {
   render () {
     const { projects, info } = this.props
     const { projectIndex, captionPieceIndex, showInfo } = this.state
-    const pieces = projects[projectIndex].frontmatter.pieces
+    const pieces = projects[projectIndex].pieces
+
     const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
 
     const onMove = (by) => {
