@@ -6,32 +6,18 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "project"
-    label: "Project"
-    folder: "src/pages/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "file"}
-      - label: "Pieces"
-        name: "pieces"
-        widget: "list"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Media", name: "media", widget: "file"}
-          - {label: "Description", name: "description", widget: "markdown"}
-          
+            
   - name: "pages"
     label: "Pages"
     files:
+
       - file: "src/pages/info/index.md"
         label: "Info"
         name: "info"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "info-page"}
           - {label: "Body", name: "body", widget: "markdown"}
+
       - file: "src/pages/projects/index.md"
         label: "Projects"
         name: "projects"
