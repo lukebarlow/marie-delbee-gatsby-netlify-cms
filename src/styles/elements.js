@@ -38,10 +38,8 @@ export const ProjectVideoWrapper = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: ${props => `${100 * (props.videoWidth / props.videoHeight)}vh`};
-    height: 100%;
     min-width: 100%;
-    min-height: ${props => `${100 * (props.videoHeight / props.videoWidth)}vw`};
+    min-height: 100%;
   }
 `
 

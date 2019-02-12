@@ -59,10 +59,7 @@ const StyledVideo = styled.video`
 export default ({ project }) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image}>
-      <ProjectVideoWrapper
-          videoWidth={project.videoWidth}
-          videoHeight={project.videoHeight}
-        >
+      <ProjectVideoWrapper>
         { fileType(project.frontmatter.cover) === 'IMAGE' ?
           <StyledImg src={project.frontmatter.cover} />
           :
