@@ -27,7 +27,22 @@ projects:
         title: Edinburgh Street
       - media: /img/cityscapes-streets_00425430.jpg
         title: Regent's Street
-      - description: Nob Hill is the steepest street in San Francisco
+      - description: >-
+          The actual peak of Nob Hill lies approximately at the intersection of
+          Jones and Sacramento Streets.
+
+
+          North of Nob Hill is Russian Hill. West of the district is Pacific
+          Heights. To the south of Nob Hill is the Union Square shopping
+          district, Civic Center district, and the Tendernob neighborhood. East
+          of Nob Hill is San Francisco's Chinatown and the Financial District.
+          Northeast of Nob Hill is North Beach and Telegraph Hill.
+
+
+          The Polk Gulch area comprises the westernmost portions of Nob Hill and
+          Russian Hill. The southern portion of Nob Hill is known Lower Nob
+          Hill. On its southwest slope, the area in between Nob Hill and the
+          Tenderloin neighborhood is an area known as the "Tendernob".
         media: /img/nob-hill.jpg
         title: Nob Hill
     title: Streets
