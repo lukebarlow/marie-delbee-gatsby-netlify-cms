@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import scroll from 'scroll'
 import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive'
+import Helmet from 'react-helmet'
 
 import NavigationLinks from './NavigationLinks'
 import Caption from './Caption'
@@ -57,7 +58,9 @@ export default class App extends React.Component {
     const projectElement = this.projectsContainer.children[projectIndex]
     projectElement.scrollLeft = 0
     this.isScrolling = true
-    scroll.top(this.projectsContainer, window.innerHeight * projectIndex, 
+
+
+    scroll.top(this.projectsContainer, projectElement.offsetTop, 
       { duration: 500 }, this.finishedScrolling)
     if (pieceIndex === 0) {
       this.setState({ captionPieceIndex: pieceIndex })
@@ -166,12 +169,15 @@ export default class App extends React.Component {
 
     }, { passive: false })
 
-    window.addEventListener('touchstart', e => {
+    window.addEventListener('touchstart', (e) => {
+      e.preventDefault()
       touchStartX = e.touches[0].clientX
       touchStartY = e.touches[0].clientY
     })
 
     window.addEventListener('touchmove', (e) => {
+      e.preventDefault()
+
       if (this.isScrolling) {
         return
       }
