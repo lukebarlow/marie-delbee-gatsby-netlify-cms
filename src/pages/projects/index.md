@@ -20,7 +20,7 @@ projects:
     pieces:
       - media: /img/deep_space_44_faststart.mp4
     title: Deep Space
-  - cover: /img/cityscapes-streets_00425430.jpg
+  - cover: /img/the-streets-of-edinburgh-1003295.jpg
     pieces:
       - description: Part of the new town in Edinburgh
         media: /img/the-streets-of-edinburgh-1003295.jpg
