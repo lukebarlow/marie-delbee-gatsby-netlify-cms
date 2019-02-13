@@ -33,7 +33,17 @@ projects:
     title: Streets
   - cover: /img/volcano.mp4
     pieces:
-      - media: /img/mahameru-volcano.jpeg
+      - description: >-
+          Semeru, or Mount Semeru (Indonesian: Gunung Semeru), is an active
+          volcano in East Java, Indonesia. It is located in the subduction zone,
+          where the Indo-Australia plate gets under the Eurasia plate. It is the
+          highest mountain on the island of Java. This stratovolcano is also
+          known as Mahameru, meaning 'The Great Mountain.
+
+
+          The name derived from the Hindu-Buddhist mythical mountain of Meru or
+          Sumeru, the abode of gods.
+        media: /img/mahameru-volcano.jpeg
         title: Mahameru
       - media: /img/volcanoes-2.jpg
         title: Plume
