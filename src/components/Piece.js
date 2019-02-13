@@ -7,6 +7,11 @@ const StyledDiv = styled.div`
   height: 100vh;
   padding-left: 150px;
   padding-top: 80px;
+
+  @media only screen and (max-width: 758px) {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
 `
 
 const StyledImg = styled.img`
@@ -14,6 +19,23 @@ const StyledImg = styled.img`
   width: auto;
   max-width: calc(100vw - 300px);
   max-height: calc(100vh - 160px);
+
+  @media only screen and (max-width: 758px) {
+    max-width: calc(100vw - 10px);
+    max-height: calc(100vh - 20px);
+  }
+`
+
+const StyledVideo = styled.video`
+  display: block;
+  width: auto;
+  max-width: calc(100vw - 300px);
+  max-height: calc(100vh - 160px);
+
+  @media only screen and (max-width: 758px) {
+    max-width: calc(100vw - 10px);
+    max-height: calc(100vh - 20px);
+  }
 `
 
 export default  ({ piece, onClick }) => {
@@ -24,7 +46,7 @@ export default  ({ piece, onClick }) => {
       <StyledImg src={piece.media} />
     }
     { type === 'VIDEO' && 
-      <video
+      <StyledVideo
         src={piece.media}
         muted
         autoPlay

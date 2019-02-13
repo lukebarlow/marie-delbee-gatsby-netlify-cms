@@ -23,6 +23,11 @@ export const ProjectTitle = styled.h1`
   font-size: 64px;
   font-weight: normal;
   text-align: center;
+
+  @media only screen and (max-width: 758px) {
+    font-size: 32px;
+  }
+
 `
 
 export const ProjectVideoWrapper = styled.div`
