@@ -4,7 +4,7 @@ projects:
   - cover: /img/space.mp4
     pieces:
       - description: First piece of first project
-        media: /img/field.jpeg
+        media: /img/wolf-cub.jpg
         title: Piece 1
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
