@@ -7,10 +7,6 @@ projects:
         media: /img/field.jpeg
         title: Piece 1
     title: Entre Chien Et Loup
-  - cover: /img/deep_space_2_faststart.mp4
-    pieces:
-      - media: /img/deep_space_44_faststart.mp4
-    title: Deep Space
   - cover: /img/wheat-field.mp4
     pieces:
       - media: /img/field.jpeg
@@ -20,6 +16,10 @@ projects:
       - media: /img/sunset.jpg
         title: Sunset
     title: Landscapes
+  - cover: /img/deep_space_2_faststart.mp4
+    pieces:
+      - media: /img/deep_space_44_faststart.mp4
+    title: Deep Space
   - cover: /img/cityscapes-streets_00425430.jpg
     pieces:
       - description: Part of the new town in Edinburgh
