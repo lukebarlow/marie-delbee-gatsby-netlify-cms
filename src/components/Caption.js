@@ -7,8 +7,15 @@ const CaptionContainer = styled.div`
   width: calc(100vw);
   min-height: 150px;
   padding-left: 150px;
+  padding-right: 150px;
   transition: top 0.5s;
   background-color: white;
+
+  @media only screen and (max-width: 758px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+  }
 `
 
 const Toggle = styled.div`
@@ -17,12 +24,21 @@ const Toggle = styled.div`
   top: -8px;
   font-size: 150%;
   cursor: pointer;
+
+  @media only screen and (max-width: 758px) {
+    left: 10px;
+    top: -8px;
+  }
 `
 
 const Nav = styled.div`
   position: absolute;
-  left: calc(100vw - 150px);
+  right: 150px;
   top: 0px;
+
+  @media only screen and (max-width: 758px) {
+    right: 10px;
+  }
 `
 
 const NavLink = styled.span`
@@ -31,6 +47,10 @@ const NavLink = styled.span`
 
 const Title = styled.div`
   margin-bottom: 30px;
+
+  @media only screen and (max-width: 758px) {
+    padding-left: 20px;
+  }
 `
 
 export default class Caption extends React.Component {

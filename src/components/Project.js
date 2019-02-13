@@ -1,5 +1,5 @@
 import React from 'react'
-
+import MediaQuery from 'react-responsive'
 import styled from 'styled-components'
 
 import {
@@ -75,9 +75,11 @@ export default ({ project, onPieceClick }) => (
       </ProjectVideoWrapper>
       <ProjectTitle>
         {project.title}
-        <ProjectArrow>
-          <img alt="" src="/img/arrow.svg" />
-        </ProjectArrow>
+        <MediaQuery minWidth={768}>
+          <ProjectArrow>
+            <img alt="" src="/img/arrow.svg" />
+          </ProjectArrow>
+        </MediaQuery>
       </ProjectTitle>
       
     </ProjectLandingScreen>
