@@ -85,15 +85,15 @@ export default class Caption extends React.Component {
     this.el.style.top = this.calculateStyleTop()
   }
 
+  componentDidMount () {
+    this.el.style.top = this.calculateStyleTop()
+  }
+
   render () {
     const { piece, index, count, onMove } = this.props
     const { expanded } = this.state
     
-    const style = {
-      top: this.calculateStyleTop()
-    }
-
-    return <CaptionContainer style={style} ref={this.handleRef}>
+    return <CaptionContainer ref={this.handleRef}>
       <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
       { index > 0 && 
         <Nav>
