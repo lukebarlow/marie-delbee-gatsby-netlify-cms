@@ -73,7 +73,12 @@ export default class Caption extends React.Component {
     const { piece } = this.props
     const { expanded } = this.state
     const elementHeight = this.el ? this.el.offsetHeight : 200
-    return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight}px)` : 'calc(100vh - 40px)')
+
+    if (document.body.offsetWidth < 759) {
+      return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 110px)')
+    } else {
+      return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight}px)` : 'calc(100vh - 40px)')
+    }
   }
 
   componentDidUpdate () {
