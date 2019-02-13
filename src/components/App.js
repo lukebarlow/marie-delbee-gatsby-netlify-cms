@@ -170,14 +170,11 @@ export default class App extends React.Component {
     }, { passive: false })
 
     window.addEventListener('touchstart', (e) => {
-      e.preventDefault()
       touchStartX = e.touches[0].clientX
       touchStartY = e.touches[0].clientY
     })
 
     window.addEventListener('touchmove', (e) => {
-      e.preventDefault()
-
       if (this.isScrolling) {
         return
       }
