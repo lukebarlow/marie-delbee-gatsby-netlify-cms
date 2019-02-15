@@ -48,6 +48,7 @@ export default  ({ piece, onClick }) => {
     { type === 'VIDEO' && 
       <StyledVideo
         src={piece.media}
+        poster={piece.poster}
         muted
         autoPlay
         loop

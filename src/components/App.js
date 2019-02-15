@@ -257,7 +257,6 @@ export default class App extends React.Component {
           onLink={this.handleLink} 
         />
       </MediaQuery>
-    
     </>
   }
 }
