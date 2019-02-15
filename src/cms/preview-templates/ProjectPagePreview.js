@@ -1,10 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-// import { ProjectPageTemplate } from '../../templates/project-page'
 
-const ProjectPagePreview = ({ entry, getAsset }) => {
+import ProjectPreview from './ProjectPreview.js'
 
-  return <div>this will be a preview of the project page</div>
+class ProjectPagePreview extends React.Component {
+  render () {
+    const projects = this.props.entry.getIn(['data', 'projects']).toJS()
+    return <div style={{zoom: '20%' }}>
+      { projects.map((p, i) => <ProjectPreview key={i} project={p} onPieceClick={() => {}} />)}
+    </div>
+  }
+}
+
+// const ProjectPagePreview = ({ entry, getAsset }) => {
+
+  // { entry, getAsset }
+  // console.log('showing the project page preview')
+  // console.log('props are', props)
+  // window.props = props
+
+  
 
   // const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
   // const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
@@ -47,7 +61,7 @@ const ProjectPagePreview = ({ entry, getAsset }) => {
   //     }}
   //   />
   // )
-}
+// }
 
 // ProjectPagePreview.propTypes = {
 //   entry: PropTypes.shape({

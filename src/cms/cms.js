@@ -5,5 +5,5 @@ import CMS from 'netlify-cms'
 import ProjectPagePreview from './preview-templates/ProjectPagePreview'
 
 // CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProjectPagePreview)
+CMS.registerPreviewTemplate('projects', ProjectPagePreview)
 // CMS.registerPreviewTemplate('blog', BlogPostPreview)

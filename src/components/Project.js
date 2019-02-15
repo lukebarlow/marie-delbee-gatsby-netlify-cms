@@ -83,7 +83,7 @@ export default ({ project, onPieceClick }) => (
       </ProjectTitle>
       
     </ProjectLandingScreen>
-      { project.pieces.map(piece => <Piece key={piece.title} piece={piece} onClick={onPieceClick} />)}
+      { project.pieces.map((piece, i) => <Piece key={i} piece={piece} onClick={onPieceClick} />)}
       <EndPadding />
     </StyledProjectPaginator>
 )
