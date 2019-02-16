@@ -18,19 +18,22 @@ const StyledImg = styled.img`
   display: block;
   width: auto;
   max-width: calc(100vw - 300px);
-  max-height: calc(100vh - 160px);
+  height: calc(100vh - 160px);
+  cursor: pointer;
 
   @media only screen and (max-width: 758px) {
     max-width: calc(100vw - 10px);
     max-height: calc(100vh - 20px);
   }
+  
 `
 
 const StyledVideo = styled.video`
   display: block;
   width: auto;
   max-width: calc(100vw - 300px);
-  max-height: calc(100vh - 160px);
+  height: calc(100vh - 160px);
+  cursor: pointer;
 
   @media only screen and (max-width: 758px) {
     max-width: calc(100vw - 10px);

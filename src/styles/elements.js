@@ -11,6 +11,7 @@ export const ProjectLandingScreen = styled.div`
   background-image: url(${props => props.backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 `
 
 export const ProjectTitle = styled.h1`

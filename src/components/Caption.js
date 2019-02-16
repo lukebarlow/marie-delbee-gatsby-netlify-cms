@@ -21,7 +21,7 @@ const CaptionContainer = styled.div`
 const Toggle = styled.div`
   position: absolute;
   left: 20px;
-  top: -8px;
+  top: -3px;
   font-size: 150%;
   cursor: pointer;
 
@@ -34,7 +34,7 @@ const Toggle = styled.div`
 const Nav = styled.div`
   position: absolute;
   right: 150px;
-  top: 0px;
+  top: 5px;
 
   @media only screen and (max-width: 758px) {
     right: 10px;
@@ -46,7 +46,9 @@ const NavLink = styled.span`
 `
 
 const Title = styled.div`
+  margin-top: 5px;
   margin-bottom: 30px;
+  cursor: pointer;
 
   @media only screen and (max-width: 758px) {
     padding-left: 20px;
@@ -102,7 +104,7 @@ export default class Caption extends React.Component {
           <NavLink onClick={() => onMove(+1)}>&gt;</NavLink>
         </Nav>
       }
-      <Title>{piece && piece.title}</Title>
+      <Title onClick={this.toggleExpanded}>{piece && piece.title}</Title>
       <Markdown source={piece ? piece.description : ''} />
     </CaptionContainer>
   }
