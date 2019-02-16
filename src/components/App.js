@@ -53,15 +53,17 @@ export default class App extends React.Component {
 
   verticalScroll (projectIndex) {
     let { pieceIndex } = this.state
+
+    const duration = Math.abs(this.state.projectIndex - projectIndex) * 600
+
     // the project we're scrolling to will always start with the cover,
     // so we first reset the scroll position of that project
     const projectElement = this.projectsContainer.children[projectIndex]
     projectElement.scrollLeft = 0
     this.isScrolling = true
 
-
     scroll.top(this.projectsContainer, projectElement.offsetTop, 
-      { duration: 500 }, this.finishedScrolling)
+      { duration: duration }, this.finishedScrolling)
     if (pieceIndex === 0) {
       this.setState({ captionPieceIndex: pieceIndex })
     }
@@ -73,7 +75,7 @@ export default class App extends React.Component {
     const projectElement = this.projectsContainer.children[projectIndex]
     const offset = projectElement.children[pieceIndex].offsetLeft
     this.isScrolling = true
-    scroll.left(projectElement, offset, { duration: 500 }, 
+    scroll.left(projectElement, offset, { duration: 600 }, 
       this.finishedScrolling)
     if (!delayCaption) {
       this.setState({ captionPieceIndex: pieceIndex })
@@ -251,7 +253,8 @@ export default class App extends React.Component {
       </Info>
       
       <MediaQuery minWidth={768}>
-        <NavigationLinks 
+        <NavigationLinks
+          selected={ showInfo ? 'info' : projectIndex }
           isWhite={captionPieceIndex===0 && !showInfo} 
           projects={projects} 
           onLink={this.handleLink} 
