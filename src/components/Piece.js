@@ -17,15 +17,16 @@ const StyledDiv = styled.div`
 const StyledImg = styled.img`
   display: block;
   width: auto;
-  max-width: calc(100vw - 300px);
   height: calc(100vh - 160px);
   cursor: pointer;
-
+  
   @media only screen and (max-width: 758px) {
     max-width: calc(100vw - 10px);
     max-height: calc(100vh - 20px);
+    height: calc(100vh - 160px);
+    width: 100%;
+    object-fit: contain;
   }
-  
 `
 
 const StyledVideo = styled.video`

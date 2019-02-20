@@ -47,6 +47,7 @@ const StyledImg = styled.img`
   min-height: calc(100vh);
   max-width: calc(100vmax);
   max-height: calc(100vmax);
+  object-fit: cover;
 `
 
 const StyledVideo = styled.video`
