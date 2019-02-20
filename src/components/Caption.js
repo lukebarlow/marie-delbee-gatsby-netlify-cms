@@ -27,7 +27,7 @@ const Toggle = styled.div`
 
   @media only screen and (max-width: 758px) {
     left: 10px;
-    top: -8px;
+    top: -4px;
   }
 `
 
