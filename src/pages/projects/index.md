@@ -6,6 +6,7 @@ projects:
       - description: First piece of first project
         media: /img/cactus.mp4
         title: Piece 1
+      - media: /img/mahameru-volcano.jpeg
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
