@@ -26,8 +26,6 @@ projects:
       - description: Part of the new town in Edinburgh
         media: /img/the-streets-of-edinburgh-1003295.jpg
         title: Edinburgh Street
-      - media: /img/cityscapes-streets_00425430.jpg
-        title: Regent's Street
       - description: >-
           The actual peak of Nob Hill lies approximately at the intersection of
           Jones and Sacramento Streets.
@@ -46,6 +44,8 @@ projects:
           Tenderloin neighborhood is an area known as the "Tendernob".
         media: /img/nob-hill.jpg
         title: Nob Hill
+      - media: /img/cityscapes-streets_00425430.jpg
+        title: Regent's Street
     title: Streets
   - cover: /img/volcano.mp4
     pieces:
