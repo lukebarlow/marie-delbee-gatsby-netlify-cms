@@ -13,9 +13,9 @@ const NavSpan = styled.span`
   display: inline-block;
   margin-left: 40px;
   cursor: pointer;
-  font-weight: ${({ selected }) => selected ? 'bold' : 'inherit'}
+  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'}
   :hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 `
 
@@ -26,10 +26,10 @@ const InfoSpan = styled.span`
   right: 30px;
   display: block;
   color: ${({ isWhite }) => isWhite ? 'white': 'black'}
-  font-weight: ${({ selected }) => selected ? 'bold' : 'inherit'}
+  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'}
 
   :hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 
 `
