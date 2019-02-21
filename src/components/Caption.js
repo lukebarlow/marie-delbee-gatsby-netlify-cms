@@ -5,9 +5,6 @@ import Bowser from 'bowser'
 
 const browser = Bowser.getParser(window.navigator.userAgent)
 
-console.log('browser', browser)
-window.browser = browser
-
 const CaptionContainer = styled.div`
   position: absolute;
   width: calc(100vw);
