@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import Markdown from 'react-markdown'
 import Bowser from 'bowser'
 
-const browser = Bowser.getParser(window.navigator.userAgent)
-
 const CaptionContainer = styled.div`
   position: absolute;
   width: calc(100vw);
@@ -93,6 +91,7 @@ export default class Caption extends React.Component {
     const elementHeight = this.el ? this.el.offsetHeight : 200
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
+    const browser = Bowser.getParser(window.navigator.userAgent)
 
     if (isMobile) {
       if (isLandscape) {
