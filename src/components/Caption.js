@@ -10,10 +10,7 @@ const CaptionContainer = styled.div`
   padding-right: 150px;
   transition: top 0.5s;
   background-color: white;
-  font-size: 16px;
   
-  // opacity: 0.5;
-
   @media only screen and (max-width: 758px) {
     padding-left: 10px;
     padding-right: 10px;
@@ -24,13 +21,13 @@ const CaptionContainer = styled.div`
 const Toggle = styled.div`
   position: absolute;
   left: 20px;
-  top: -3px;
-  font-size: 150%;
+  top: -5px;
+  font-size: 20pt;
   cursor: pointer;
 
   @media only screen and (max-width: 758px) {
     left: 10px;
-    top: -4px;
+    top: 2px;
   }
 `
 
@@ -41,6 +38,7 @@ const Nav = styled.div`
 
   @media only screen and (max-width: 758px) {
     right: 10px;
+    font-size: 20pt;
   }
 `
 
@@ -52,10 +50,10 @@ const Title = styled.div`
   margin-top: 5px;
   margin-bottom: 30px;
   cursor: pointer;
-  font-size: 16px;
-
+  
   @media only screen and (max-width: 758px) {
     padding-left: 20px;
+    font-size: 20pt;
   }
 `
 
