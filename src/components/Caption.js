@@ -16,6 +16,10 @@ const CaptionContainer = styled.div`
     padding-right: 10px;
     padding-top: 0px;
   }
+
+  @media only screen and (max-width: 758px) and (orientation: landscape) {
+    font-size: 6pt;
+  }
 `
 
 const Toggle = styled.div`
@@ -54,6 +58,10 @@ const Title = styled.div`
   @media only screen and (max-width: 758px) {
     padding-left: 20px;
     font-size: 20pt;
+  }
+
+  @media only screen and (max-width: 758px) and (orientation: landscape) {
+    margin-bottom: 0px;
   }
 `
 
