@@ -8,10 +8,16 @@ const StyledDiv = styled.div`
   padding-left: 150px;
   padding-top: 80px;
 
-  @media only screen and (max-width: 758px) {
+  @media only screen and (max-width: 758px) and (orientation: portrait) {
     padding-left: 5px;
     padding-top: 5px;
   }
+
+  @media only screen and (max-width: 758px) and (orientation: landscape) {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
 `
 
 const StyledImg = styled.img`
@@ -20,26 +26,40 @@ const StyledImg = styled.img`
   height: calc(100vh - 160px);
   cursor: pointer;
   
-  @media only screen and (max-width: 758px) {
+  @media only screen and (max-width: 758px) and (orientation: portrait) {
     max-width: calc(100vw - 10px);
     max-height: calc(100vh - 20px);
     height: calc(100vh - 160px);
     width: 100%;
     object-fit: contain;
   }
+
+  @media only screen and (max-width: 758px) and (orientation: landscape) {
+    width: auto;
+    height: calc(100vh - 120px);
+  }
+
 `
 
 const StyledVideo = styled.video`
-  display: block;
-  width: auto;
-  max-width: calc(100vw - 300px);
-  height: calc(100vh - 160px);
-  cursor: pointer;
+display: block;
+width: auto;
+height: calc(100vh - 160px);
+cursor: pointer;
 
-  @media only screen and (max-width: 758px) {
-    max-width: calc(100vw - 10px);
-    max-height: calc(100vh - 20px);
-  }
+@media only screen and (max-width: 758px) and (orientation: portrait) {
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vh - 20px);
+  height: calc(100vh - 160px);
+  width: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 758px) and (orientation: landscape) {
+  width: auto;
+  height: calc(100vh - 120px);
+}
+
 `
 
 export default  ({ piece, onClick }) => {

@@ -10,6 +10,9 @@ const CaptionContainer = styled.div`
   padding-right: 150px;
   transition: top 0.5s;
   background-color: white;
+  font-size: 16px;
+  
+  // opacity: 0.5;
 
   @media only screen and (max-width: 758px) {
     padding-left: 10px;
@@ -49,6 +52,7 @@ const Title = styled.div`
   margin-top: 5px;
   margin-bottom: 30px;
   cursor: pointer;
+  font-size: 16px;
 
   @media only screen and (max-width: 758px) {
     padding-left: 20px;
@@ -75,9 +79,15 @@ export default class Caption extends React.Component {
     const { piece } = this.props
     const { expanded } = this.state
     const elementHeight = this.el ? this.el.offsetHeight : 200
+    const isMobile = document.body.offsetWidth < 759
+    const isLandscape = document.body.offsetWidth > document.body.offsetHeight
 
-    if (document.body.offsetWidth < 759) {
-      return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 110px)')
+    if (isMobile) {
+      if (isLandscape) {
+        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 30}px)` : 'calc(100vh - 100px)')
+      } else {
+        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 110px)')
+      }
     } else {
       return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight}px)` : 'calc(100vh - 40px)')
     }
