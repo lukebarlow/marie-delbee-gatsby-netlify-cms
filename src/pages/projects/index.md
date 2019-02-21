@@ -66,7 +66,7 @@ projects:
       - media: /img/shutterstock_569669356.jpg
         title: Lava Flow
       - media: /img/1280-509661971-adventurers-volcanic-eruption.jpg
-        title: People Watching Volcano
+        title: People Watching
     title: Volcanoes
 ---
 
