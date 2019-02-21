@@ -18,7 +18,8 @@ const CaptionContainer = styled.div`
   }
 
   @media only screen and (max-width: 758px) and (orientation: landscape) {
-    font-size: 6pt;
+    font-size: 10pt;
+    -webkit-text-size-adjust: 100%;
   }
 `
 
@@ -90,7 +91,7 @@ export default class Caption extends React.Component {
 
     if (isMobile) {
       if (isLandscape) {
-        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 30}px)` : 'calc(100vh - 100px)')
+        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
       } else {
         return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 110px)')
       }
