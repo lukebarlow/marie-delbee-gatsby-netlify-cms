@@ -1,6 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Markdown from 'react-markdown'
+import Bowser from 'bowser'
+
+const browser = Bowser.getParser(window.navigator.userAgent)
+
+console.log('browser', browser)
+window.browser = browser
 
 const CaptionContainer = styled.div`
   position: absolute;
@@ -56,12 +62,14 @@ const Title = styled.div`
   margin-bottom: 30px;
   cursor: pointer;
   
-  @media only screen and (max-width: 758px) {
+  @media only screen and (max-width: 758px) and (orientation: portrait) {
     padding-left: 20px;
     font-size: 20pt;
   }
 
   @media only screen and (max-width: 758px) and (orientation: landscape) {
+    padding-left: 20px;
+    font-size: 20pt;
     margin-bottom: 0px;
   }
 `
@@ -93,7 +101,11 @@ export default class Caption extends React.Component {
       if (isLandscape) {
         return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
       } else {
-        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 125px)')
+        if (browser.getBrowserName() === 'Safari') {
+          return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 125px)')
+        } else {
+          return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 20}px)` : 'calc(100vh - 60px)')
+        }
       }
     } else {
       return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight}px)` : 'calc(100vh - 40px)')
