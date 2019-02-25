@@ -36,7 +36,7 @@ const StyledImg = styled.img`
 
   @media only screen and (max-width: 758px) and (orientation: landscape) {
     width: auto;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 60px);
   }
 
 `
@@ -57,7 +57,7 @@ cursor: pointer;
 
 @media only screen and (max-width: 758px) and (orientation: landscape) {
   width: auto;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 60px);
 }
 
 `
