@@ -31,7 +31,12 @@ const Toggle = styled.div`
   font-size: 20pt;
   cursor: pointer;
 
-  @media only screen and (max-width: 758px) {
+  @media only screen and (max-width: 758px) and (orientation: portrait)  {
+    left: 10px;
+    top: 2px;
+  }
+
+  @media only screen and (max-width: 758px) and (orientation: landscape)  {
     left: 10px;
     top: 2px;
   }
@@ -92,10 +97,15 @@ export default class Caption extends React.Component {
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
     const browser = Bowser.getParser(window.navigator.userAgent)
+    const h = window.innerHeight
 
     if (isMobile) {
       if (isLandscape) {
-        return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
+        const t = !piece ? h : ( expanded ? h - elementHeight + 50 : h - 50)
+        return t + 'px' 
+
+
+        // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
       } else {
         if (browser.getBrowserName() === 'Safari') {
           return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 125px)')

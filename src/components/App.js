@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import scroll from 'scroll'
 import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive'
-import Helmet from 'react-helmet'
 
 import NavigationLinks from './NavigationLinks'
 import Caption from './Caption'
@@ -51,10 +50,10 @@ export default class App extends React.Component {
     }
   }
 
-  verticalScroll (projectIndex) {
+  verticalScroll (projectIndex, instant) {
     let { pieceIndex } = this.state
 
-    const duration = Math.abs(this.state.projectIndex - projectIndex) * 600
+    const duration = instant ? 0 : Math.abs(this.state.projectIndex - projectIndex) * 600
 
     // the project we're scrolling to will always start with the cover,
     // so we first reset the scroll position of that project
@@ -69,13 +68,14 @@ export default class App extends React.Component {
     }
   }
 
-  horizontalScroll (pieceIndex) {
+  horizontalScroll (pieceIndex, instant) {
+    const duration = instant ? 0 : 600
     const delayCaption = pieceIndex === 1
     let { projectIndex } = this.state
     const projectElement = this.projectsContainer.children[projectIndex]
     const offset = projectElement.children[pieceIndex].offsetLeft
     this.isScrolling = true
-    scroll.left(projectElement, offset, { duration: 600 }, 
+    scroll.left(projectElement, offset, { duration }, 
       this.finishedScrolling)
     if (!delayCaption) {
       this.setState({ captionPieceIndex: pieceIndex })
@@ -151,6 +151,9 @@ export default class App extends React.Component {
         case 'ArrowRight':
           this.right()
         break
+        default :
+          // do nothing
+        break
       }
     })
 
@@ -194,6 +197,11 @@ export default class App extends React.Component {
       if (adx > ady && adx > swipeTriggerThreshold) {
         dx > 0 ? this.left() : this.right()
       }
+    })
+
+    window.addEventListener('resize', () => {
+      this.verticalScroll(this.state.projectIndex, true)
+      this.horizontalScroll(this.state.pieceIndex, true)
     })
 
   }
