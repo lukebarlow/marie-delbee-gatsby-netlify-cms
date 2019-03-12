@@ -63,37 +63,43 @@ cursor: pointer;
 
 `
 
-export default  ({ piece, onClick }) => {
-  const type = fileType(piece.media)
-  let height = 300
-  
-  try {
-    height = document.body.clientHeight - 160
-  } catch (e) {
-    console.log('Audio height not set, because document not defined')
+export default class Piece extends React.Component {
+  constructor () {
+    super()
+    this.state = { height: 300 }
   }
 
-  return <StyledDiv onClick={onClick}>
-    { type === 'IMAGE' &&
-      <StyledImg src={piece.media} />
-    }
-    { type === 'VIDEO' && 
-      <StyledVideo
-        src={piece.media}
-        poster={piece.poster}
-        muted
-        autoPlay
-        loop
-        playsInline
-      />
-    }
-    { type === 'AUDIO' && 
-      <AudioPlayer
-        height={height}
-        audioSrc={piece.media}
-        imgSrc={piece.poster}
-      />
-    }
-  </StyledDiv>
-}
 
+  componentDidMount () {
+    this.setState({ height: document.body.clientHeight - 160 })
+  }
+
+  render () {
+    const { piece, onClick } = this.props
+    const { height } = this.state
+    const type = fileType(piece.media)
+
+    return <StyledDiv onClick={onClick}>
+      { type === 'IMAGE' &&
+        <StyledImg src={piece.media} />
+      }
+      { type === 'VIDEO' && 
+        <StyledVideo
+          src={piece.media}
+          poster={piece.poster}
+          muted
+          autoPlay
+          loop
+          playsInline
+        />
+      }
+      { type === 'AUDIO' && 
+        <AudioPlayer
+          height={height}
+          audioSrc={piece.media}
+          imgSrc={piece.poster}
+        />
+      }
+    </StyledDiv>
+  }
+}
