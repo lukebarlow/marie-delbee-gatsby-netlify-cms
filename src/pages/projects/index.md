@@ -8,13 +8,6 @@ projects:
         title: Kim No 2
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: /img/cactus.mp4
-        title: Cactus Man
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
           bit of text for each piece will help a lot with testing. 
 
 
@@ -22,6 +15,13 @@ projects:
           bit of text for each piece will help a lot with testing.
         media: /img/mahameru-volcano.jpeg
         title: Puff
+      - description: >-
+          A nice bit of text for each piece will help a lot with testing. A nice
+          bit of text for each piece will help a lot with testing. A nice bit of
+          text for each piece will help a lot with testing. A nice bit of text
+          for each piece will help a lot with testing.
+        media: /img/cactus.mp4
+        title: Cactus Man
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
