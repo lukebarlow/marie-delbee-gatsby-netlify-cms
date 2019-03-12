@@ -3,6 +3,9 @@ templateKey: projects-page
 projects:
   - cover: /img/space.mp4
     pieces:
+      - media: /img/30-kim-no.-2-.mp3
+        poster: /img/charlie-parker.jpeg
+        title: Kim No 2
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
           bit of text for each piece will help a lot with testing. A nice bit of
@@ -19,9 +22,6 @@ projects:
           bit of text for each piece will help a lot with testing.
         media: /img/mahameru-volcano.jpeg
         title: Puff
-      - media: /img/30-kim-no.-2-.mp3
-        poster: /img/charlie-parker.jpeg
-        title: Kim No 2
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
