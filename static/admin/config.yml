@@ -35,5 +35,6 @@ collections:
                 fields:
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Media", name: "media", widget: "file"}
-                  - {label: "Description", name: "description", widget: "markdown"}
+                  - {label: "Poster (image for video or audio)", name: "poster", widget: "file", required: false}
+                  - {label: "Description", name: "description", widget: "markdown", required: false}
       
