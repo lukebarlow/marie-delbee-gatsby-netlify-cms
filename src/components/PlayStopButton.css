@@ -1,0 +1,17 @@
+.playStopButton circle {
+  fill: #008dff;
+  stroke: transparent;
+}
+
+.playStopButton rect {
+  fill: black;
+  stroke: transparent;
+}
+
+.playStopButton polygon {
+  fill: red;
+}
+
+.playStopButton {
+  fill: pink;
+}

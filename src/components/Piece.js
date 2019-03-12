@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import AudioPlayer from './AudioPlayer.js'
 import fileType from '../fileType.js'
 
 const StyledDiv = styled.div`
@@ -65,6 +66,7 @@ cursor: pointer;
 export default  ({ piece, onClick }) => {
   const type = fileType(piece.media)
 
+
   return <StyledDiv onClick={onClick}>
     { type === 'IMAGE' &&
       <StyledImg src={piece.media} />
@@ -77,6 +79,13 @@ export default  ({ piece, onClick }) => {
         autoPlay
         loop
         playsInline
+      />
+    }
+    { type === 'AUDIO' && 
+      <AudioPlayer
+        height={document.body.clientHeight - 160}
+        audioSrc={piece.media}
+        imgSrc={piece.poster}
       />
     }
   </StyledDiv>
