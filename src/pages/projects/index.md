@@ -20,6 +20,7 @@ projects:
         media: /img/mahameru-volcano.jpeg
         title: Puff
       - media: /img/30-kim-no.-2-.mp3
+        poster: /img/charlie-parker.jpeg
         title: Kim No 2
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
