@@ -65,7 +65,13 @@ cursor: pointer;
 
 export default  ({ piece, onClick }) => {
   const type = fileType(piece.media)
-
+  let height = 300
+  
+  try {
+    height = document.body.clientHeight - 160
+  } catch (e) {
+    console.log('Audio height not set, because document not defined')
+  }
 
   return <StyledDiv onClick={onClick}>
     { type === 'IMAGE' &&
@@ -83,7 +89,7 @@ export default  ({ piece, onClick }) => {
     }
     { type === 'AUDIO' && 
       <AudioPlayer
-        height={document.body.clientHeight - 160}
+        height={height}
         audioSrc={piece.media}
         imgSrc={piece.poster}
       />
