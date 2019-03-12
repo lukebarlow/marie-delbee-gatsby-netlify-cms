@@ -19,6 +19,8 @@ projects:
           bit of text for each piece will help a lot with testing.
         media: /img/mahameru-volcano.jpeg
         title: Puff
+      - media: /img/30-kim-no.-2-.mp3
+        title: Kim No 2
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
