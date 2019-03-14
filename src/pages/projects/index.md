@@ -22,6 +22,7 @@ projects:
           for each piece will help a lot with testing.
         media: /img/cactus.mp4
         title: Cactus Man
+    poster: /img/space-poster.jpg
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
@@ -42,12 +43,14 @@ projects:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: /img/sunset.jpg
         title: Sunset
+    poster: /img/wheat-field-poster.jpg
     title: Landscapes
   - cover: /img/deep_space_2_faststart.mp4
     pieces:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: /img/deep_space_44_faststart.mp4
         title: Deep Space
+    poster: /img/deep_space_2-poster.jpeg
     title: Deep Space
   - cover: /img/the-streets-of-edinburgh-1003295.jpg
     pieces:
