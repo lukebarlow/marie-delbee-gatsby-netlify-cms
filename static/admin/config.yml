@@ -29,6 +29,7 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Cover", name: "cover", widget: "file"}
+              - {label: "Poster (image for video)", name: "poster", widget: "file", required: false}
               - label: "Pieces"
                 name: "pieces"
                 widget: "list"

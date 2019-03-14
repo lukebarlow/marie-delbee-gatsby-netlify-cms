@@ -66,7 +66,7 @@ export default ({ project, onPieceClick }) => (
           :
           <StyledVideo
             src={project.cover}
-            poster={project.image}
+            poster={project.poster}
             muted
             autoPlay
             loop
