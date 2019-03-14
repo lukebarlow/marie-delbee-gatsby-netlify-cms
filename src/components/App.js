@@ -55,17 +55,30 @@ export default class App extends React.Component {
 
     const duration = instant ? 0 : Math.abs(this.state.projectIndex - projectIndex) * 600
 
+    // reset all the pieces which are not the current piece back to the left position
+    
+    for (var i=0;i<this.projectsContainer.children.length;i++) {
+      if (i !== this.state.projectIndex) {
+        this.projectsContainer.children[i].scrollLeft = 0
+      }
+    }
+    
     // the project we're scrolling to will always start with the cover,
     // so we first reset the scroll position of that project
     const projectElement = this.projectsContainer.children[projectIndex]
-    projectElement.scrollLeft = 0
-    this.isScrolling = true
+    // projectElement.scrollLeft = 0 // redundant - done above
 
-    scroll.top(this.projectsContainer, projectElement.offsetTop, 
-      { duration: duration }, this.finishedScrolling)
-    if (pieceIndex === 0) {
-      this.setState({ captionPieceIndex: pieceIndex })
+    if (instant) {
+      this.projectsContainer.scrollTop = projectElement.offsetTop
+    } else {
+      this.isScrolling = true
+      scroll.top(this.projectsContainer, projectElement.offsetTop, 
+        { duration: duration }, this.finishedScrolling)
+      if (pieceIndex === 0) {
+        this.setState({ captionPieceIndex: pieceIndex })
+      }
     }
+
   }
 
   horizontalScroll (pieceIndex, instant) {
@@ -74,9 +87,16 @@ export default class App extends React.Component {
     let { projectIndex } = this.state
     const projectElement = this.projectsContainer.children[projectIndex]
     const offset = projectElement.children[pieceIndex].offsetLeft
-    this.isScrolling = true
-    scroll.left(projectElement, offset, { duration }, 
-      this.finishedScrolling)
+
+    if (instant) {
+      projectElement.scrollLeft = offset
+      this.finishedScrolling()
+    } else {
+      this.isScrolling = true
+      scroll.left(projectElement, offset, { duration }, 
+        this.finishedScrolling)
+    }
+
     if (!delayCaption) {
       this.setState({ captionPieceIndex: pieceIndex })
     }
@@ -199,11 +219,10 @@ export default class App extends React.Component {
       }
     })
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', () => { 
       this.verticalScroll(this.state.projectIndex, true)
       this.horizontalScroll(this.state.pieceIndex, true)
     })
-
   }
 
   handleRef (el) {

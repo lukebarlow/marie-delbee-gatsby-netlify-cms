@@ -4,21 +4,22 @@ import styled from 'styled-components'
 import AudioPlayer from './AudioPlayer.js'
 import fileType from '../fileType.js'
 
+import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
+
 const StyledDiv = styled.div`
   height: 100vh;
   padding-left: 150px;
   padding-top: 80px;
 
-  @media only screen and (max-width: 758px) and (orientation: portrait) {
+  @media ${portraitSelector} {
     padding-left: 5px;
     padding-top: 5px;
   }
 
-  @media only screen and (max-width: 758px) and (orientation: landscape) {
+  @media ${landscapeSelector} {
     padding-left: 10px;
     padding-top: 10px;
   }
-
 `
 
 const StyledImg = styled.img`
@@ -27,7 +28,7 @@ const StyledImg = styled.img`
   height: calc(100vh - 160px);
   cursor: pointer;
   
-  @media only screen and (max-width: 758px) and (orientation: portrait) {
+  @media ${portraitSelector} {
     max-width: calc(100vw - 10px);
     max-height: calc(100vh - 20px);
     height: calc(100vh - 160px);
@@ -35,7 +36,7 @@ const StyledImg = styled.img`
     object-fit: contain;
   }
 
-  @media only screen and (max-width: 758px) and (orientation: landscape) {
+  @media ${landscapeSelector} {
     width: auto;
     height: calc(100vh - 60px);
   }
@@ -48,7 +49,7 @@ width: auto;
 height: calc(100vh - 160px);
 cursor: pointer;
 
-@media only screen and (max-width: 758px) and (orientation: portrait) {
+@media ${portraitSelector} {
   max-width: calc(100vw - 10px);
   max-height: calc(100vh - 20px);
   height: calc(100vh - 160px);
@@ -56,7 +57,7 @@ cursor: pointer;
   object-fit: contain;
 }
 
-@media only screen and (max-width: 758px) and (orientation: landscape) {
+@media ${landscapeSelector} {
   width: auto;
   height: calc(100vh - 60px);
 }
@@ -69,14 +70,8 @@ export default class Piece extends React.Component {
     this.state = { height: 300 }
   }
 
-
-  componentDidMount () {
-    this.setState({ height: document.body.clientHeight - 160 })
-  }
-
   render () {
     const { piece, onClick } = this.props
-    const { height } = this.state
     const type = fileType(piece.media)
 
     return <StyledDiv onClick={onClick}>
@@ -95,7 +90,6 @@ export default class Piece extends React.Component {
       }
       { type === 'AUDIO' && 
         <AudioPlayer
-          height={height}
           audioSrc={piece.media}
           imgSrc={piece.poster}
         />

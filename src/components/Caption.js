@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Markdown from 'react-markdown'
 import Bowser from 'bowser'
 
+import {  smallScreenSelector, portraitSelector, landscapeSelector } from '../mediaSelectors.js'
+
 const CaptionContainer = styled.div`
   position: absolute;
   width: calc(100vw);
@@ -12,13 +14,13 @@ const CaptionContainer = styled.div`
   transition: top 0.5s;
   background-color: white;
   
-  @media only screen and (max-width: 758px) {
+  @media ${smallScreenSelector} {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 0px;
   }
 
-  @media only screen and (max-width: 758px) and (orientation: landscape) {
+  @media only ${landscapeSelector} {
     font-size: 10pt;
     -webkit-text-size-adjust: 100%;
   }
@@ -31,12 +33,7 @@ const Toggle = styled.div`
   font-size: 20pt;
   cursor: pointer;
 
-  @media only screen and (max-width: 758px) and (orientation: portrait)  {
-    left: 10px;
-    top: 2px;
-  }
-
-  @media only screen and (max-width: 758px) and (orientation: landscape)  {
+  @media ${smallScreenSelector} {
     left: 10px;
     top: 2px;
   }
@@ -47,7 +44,7 @@ const Nav = styled.div`
   right: 150px;
   top: 5px;
 
-  @media only screen and (max-width: 758px) {
+  @media ${smallScreenSelector} {
     right: 10px;
     font-size: 20pt;
   }
@@ -62,12 +59,12 @@ const Title = styled.div`
   margin-bottom: 30px;
   cursor: pointer;
   
-  @media only screen and (max-width: 758px) and (orientation: portrait) {
+  @media ${portraitSelector}{
     padding-left: 20px;
     font-size: 20pt;
   }
 
-  @media only screen and (max-width: 758px) and (orientation: landscape) {
+  @media ${landscapeSelector} {
     padding-left: 20px;
     font-size: 20pt;
     margin-bottom: 0px;

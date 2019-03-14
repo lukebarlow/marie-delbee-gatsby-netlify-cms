@@ -5,7 +5,7 @@ const Bar = styled.div`
   top: 20px;
   left: 0px;
   white-space: nowrap;
-  color: ${({ isWhite }) => isWhite ? 'white': 'black'}
+  color: ${({ isWhite }) => isWhite ? 'white': 'black'};
   transition: color 0.5s;
 `
 
@@ -13,7 +13,7 @@ const NavSpan = styled.span`
   display: inline-block;
   margin-left: 40px;
   cursor: pointer;
-  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'}
+  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'};
   :hover {
     text-decoration: underline;
   }
@@ -25,8 +25,8 @@ const InfoSpan = styled.span`
   top: 20px;
   right: 30px;
   display: block;
-  color: ${({ isWhite }) => isWhite ? 'white': 'black'}
-  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'}
+  color: ${({ isWhite }) => isWhite ? 'white': 'black'};
+  text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'};
 
   :hover {
     text-decoration: underline;
