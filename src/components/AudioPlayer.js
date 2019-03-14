@@ -1,42 +1,72 @@
 import React from 'react'
-import PlayStopButton from './PlayStopButton'
-
 import styled from 'styled-components'
 
+import PlayStopButton from './PlayStopButton'
+import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
+
 const Container = styled.div`
-  width: ${({size}) => size}px;
-  height: ${({size}) => size}px;
+  width: ${({width}) => width}px;
+  height: ${({height}) => height}px;
 `
 
 const Cropper = styled.div`
   overflow: hidden;
-  width: ${({size, fractionCropped}) => fractionCropped * size}px;
-  height: ${({size}) => size}px;
+  width: ${({width, fractionCropped}) => fractionCropped * width}px;
+  height: ${({height}) => height}px;
   position: absolute;
 `
 
 const FadedImg = styled.img`
   position: absolute;
-  width: ${({size}) => size}px;
+  width: ${({width}) => width}px;
   height: auto;
   opacity: 0.2;
 `
 
 const Img = styled.img`
-  width: ${({size}) => size}px;
+  width: ${({width}) => width}px;
   height: auto;
   position: absolute;
+`
+
+const StyledImg = styled.img`
+  display: block;
+  width: auto;
+  height: calc(100vh - 160px);
+  cursor: pointer;
+  
+  @media ${portraitSelector} {
+    max-width: calc(100vw - 10px);
+    max-height: calc(100vh - 20px);
+    height: calc(100vh - 160px);
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @media ${landscapeSelector} {
+    width: auto;
+    height: calc(100vh - 60px);
+  }
 `
 
 export default class AudioPlayer extends React.Component {
   constructor () {
     super()
-    this.state = { fractionCropped: 0 }
+    this.state = { 
+      imageDimensionsCalculated: false, 
+      width: null, 
+      height: null, 
+      fractionCropped: 0 
+    }
     this.togglePlayHandler = this.togglePlayHandler.bind(this)
     this.mouseDownHandler = this.mouseDownHandler.bind(this)
     this.mouseMoveHandler = this.mouseMoveHandler.bind(this)
+    this.touchStartHandler = this.touchStartHandler.bind(this)
+    this.touchMoveHandler = this.touchMoveHandler.bind(this)
     this.stopPropagation = this.stopPropagation.bind(this)
+    this.imageLoadHandler = this.imageLoadHandler.bind(this)
     this.audio = null
+    this.sizerImage = React.createRef()
   }
 
   togglePlayHandler () {
@@ -51,56 +81,109 @@ export default class AudioPlayer extends React.Component {
     e.stopPropagation()
   }
 
+  setAudioPositionFromScreenPosition (x) {
+    const fraction = x / this.state.width
+    this.audio.currentTime = fraction * this.audio.duration
+  }
+
   mouseDownHandler (e) {
     const r = e.target.getBoundingClientRect()
-    const x = e.clientX - r.left
-    const fraction = x / this.props.height
-    this.audio.currentTime = fraction * this.audio.duration
+    this.setAudioPositionFromScreenPosition(e.clientX - r.left)
   }
 
   mouseMoveHandler (e) {
     if (e.buttons > 0) {
       const r = e.target.getBoundingClientRect()
-      const x = e.clientX - r.left
-      const fraction = x / this.props.height
-      this.audio.currentTime = fraction * this.audio.duration
+      this.setAudioPositionFromScreenPosition(e.clientX - r.left)
     }
   }
 
+  touchStartHandler (e) {
+    const r = e.target.getBoundingClientRect()
+    this.setAudioPositionFromScreenPosition(e.touches[0].clientX - r.left)
+    e.stopPropagation()
+  }
+
+  touchMoveHandler (e) {
+    const r = e.target.getBoundingClientRect()
+    this.setAudioPositionFromScreenPosition(e.touches[0].clientX - r.left)
+    e.stopPropagation()
+  }
+
+  imageLoadHandler (e) {
+
+    console.log('image load handler is fired')
+
+
+    this.setState({
+      imageDimensionsCalculated: true,
+      width: e.target.width,
+      height: e.target.height
+    })
+  }
+
   componentDidMount () {
-    const audio = this.audio = new Audio(this.props.audioSrc)
+    if (window.audio) {
+      window.audio.pause()
+    }
+    const audio = this.audio = window.audio = new Audio(this.props.audioSrc)
     audio.addEventListener('timeupdate', () => {
       this.setState({ fractionCropped: audio.currentTime / audio.duration })
     })
-    window.audio = audio
+    window.addEventListener('resize', () => {
+      this.setState({ imageDimensionsCalculated: false })
+    })
+
+    const img = this.sizerImage.current
+    if (img.complete) {
+      this.setState({
+        imageDimensionsCalculated: true,
+        width: img.width,
+        height: img.height
+      })
+    }
   }
+  
 
   render () {
-    const { imgSrc, height } = this.props
-    const size = height
+    const { imgSrc } = this.props
+    const { imageDimensionsCalculated, width, height } = this.state
+    const size = Math.min(width, height)
 
-    return <Container 
-        size={size} 
-        onMouseDown={this.mouseDownHandler} 
-        onMouseMove={this.mouseMoveHandler}
-        onClick={this.stopPropagation}
-      >
-      <div style={{position: 'absolute', width: size, height: size}}>
-        <FadedImg src={imgSrc} size={size}/>
-        <Cropper size={size} fractionCropped={this.state.fractionCropped}>
-          <Img src={imgSrc} size={size} />
-        </Cropper>
-      </div>
-      <svg width={size} height={size} style={{ position: 'absolute' }}>
-        <PlayStopButton 
-          fraction={this.state.fractionCropped} 
-          size={100} 
-          squareSize={size} 
-          x={size/2 - 50} 
-          y={size/2 - 50} 
-          onChange={this.togglePlayHandler}
-        />
-      </svg>
-    </Container>
+    const playStopSize = size / 3
+
+    if (!imageDimensionsCalculated) {
+      return <StyledImg style={{ opacity: 0.1 }} src={imgSrc} onLoad={this.imageLoadHandler} ref={this.sizerImage} />
+    } else {
+
+      return <Container 
+          width={width}
+          height={height} 
+          onMouseDown={this.mouseDownHandler} 
+          onMouseMove={this.mouseMoveHandler}
+          onTouchStart={this.touchStartHandler}
+          onTouchMove={this.touchMoveHandler}
+          onClick={this.stopPropagation}
+        >
+        <div style={{position: 'absolute', width: width, height: height}}>
+          <FadedImg src={imgSrc} width={width} height={height}/>
+          <Cropper width={width} height={height} fractionCropped={this.state.fractionCropped}>
+            <Img src={imgSrc} width={width} height={height} />
+          </Cropper>
+        </div>
+        <svg width={size} height={size} style={{ position: 'absolute' }}>
+          <PlayStopButton 
+            fraction={this.state.fractionCropped} 
+            size={playStopSize} 
+            width={width}
+            height={height}
+            x={width / 2 - playStopSize / 2} 
+            y={height / 2 - playStopSize / 2} 
+            onChange={this.togglePlayHandler}
+          />
+        </svg>
+      </Container>
+
+    }
   }
 }

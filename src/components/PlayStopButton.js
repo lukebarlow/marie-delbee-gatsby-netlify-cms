@@ -21,16 +21,11 @@ class PlayStopButton extends React.Component {
       playing: false
     }
     this.clickHandler = this.clickHandler.bind(this)
-    this.mouseDownHandler = this.mouseDownHandler.bind(this)
-    this.mouseMoveHandler = this.mouseMoveHandler.bind(this)
+    this.stopPropagation = this.stopPropagation.bind(this)
   }
 
-  mouseDownHandler (event) {
-    event.stopPropagation()
-  }
-
-  mouseMoveHandler (event) {
-    event.stopPropagation()
+  stopPropagation (e) {
+    e.stopPropagation()
   }
 
   clickHandler (event) {
@@ -54,7 +49,7 @@ class PlayStopButton extends React.Component {
 
   render () {
     // TODO : use default props
-    let { fraction, x, y, squareSize, size = 40 } = this.props
+    let { fraction, x, y, width, height, size } = this.props
     const triangleRadius = size / 3
     const top = triangleRadius * Math.sin(Math.PI * 2 / 3)
     const left = triangleRadius * Math.cos(Math.PI * 2 / 3)
@@ -100,14 +95,20 @@ class PlayStopButton extends React.Component {
         
       >
         <clipPath id="lhs">
-          <rect width={fraction * squareSize} height={squareSize} style={{fill: 'rgba(0, 255, 0, 0.2)'}} />
+          <rect width={fraction * width} height={height} style={{fill: 'rgba(0, 255, 0, 0.2)'}} />
         </clipPath>
 
         <clipPath id="rhs">
-          <rect x={fraction * squareSize} width={(1 - fraction) * squareSize} height={squareSize} style={{fill: 'rgba(0, 255, 0, 0.2)'}} />
+          <rect x={fraction * width} width={(1 - fraction) * width} height={height} style={{fill: 'rgba(0, 255, 0, 0.2)'}} />
         </clipPath>
 
-        <g fillRule='evenodd' onMouseDown={this.mouseDownHandler} onMouseMove={this.mouseMoveHandler}>
+        <g 
+          fillRule='evenodd' 
+          onMouseDown={this.stopPropagation} 
+          onMouseMove={this.stopPropagation}
+          onTouchStart={this.stopPropagation}
+          onTouchMove={this.stopPropagation}
+        >
           <path d={circlePath} style={{fill: 'transparent'}} />
           <LhsPath d={this.state.playing ? stopPath : playPath } clipPath='url(#lhs)'/>
           <RhsPath d={this.state.playing ? stopPath : playPath } clipPath='url(#rhs)'/>

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { smallScreenSelector } from '../mediaSelectors.js'
+
 export const ProjectLandingScreen = styled.div`
   display: flex;
   align-items: center;
@@ -25,7 +27,7 @@ export const ProjectTitle = styled.h1`
   font-weight: normal;
   text-align: center;
 
-  @media only screen and (max-width: 758px) {
+  @media ${smallScreenSelector} {
     font-size: 32px;
   }
 
