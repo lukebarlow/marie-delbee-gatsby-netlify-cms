@@ -22,7 +22,7 @@ projects:
           for each piece will help a lot with testing.
         media: /img/cactus.mp4
         title: Cactus Man
-    poster: /img/space-poster.jpg
+    poster: /img/atlas-1-v1.jpg
     title: Entre Chien Et Loup
   - cover: /img/wheat-field.mp4
     pieces:
