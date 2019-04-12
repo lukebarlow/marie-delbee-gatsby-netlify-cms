@@ -1,7 +1,7 @@
 ---
 templateKey: projects-page
 projects:
-  - cover: /img/space.mp4
+  - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
     pieces:
       - media: /img/30-kim-no.-2-.mp3
         poster: /img/charlie-parker.jpeg
