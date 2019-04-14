@@ -38,7 +38,7 @@ projects:
         title: atlas5
     poster: /img/atlas-1-v1.jpg
     title: entre chien et loup
-  - cover: /img/wheat-field.mp4
+  - cover: /img/stig_in_room-final.mp4
     pieces:
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
@@ -57,8 +57,8 @@ projects:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: /img/sunset.jpg
         title: Sunset
-    poster: /img/wheat-field-poster.jpg
-    title: Landscapes
+    poster: ''
+    title: chromatophore
   - cover: /img/deep_space_2_faststart.mp4
     pieces:
       - description: A nice bit of text for each piece will help a lot with testing.
