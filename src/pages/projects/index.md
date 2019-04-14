@@ -58,7 +58,7 @@ projects:
         media: /img/sunset.jpg
         title: Sunset
     poster: ''
-    title: chromatophore
+    title: chromatophores
   - cover: /img/deep_space_2_faststart.mp4
     pieces:
       - description: A nice bit of text for each piece will help a lot with testing.
