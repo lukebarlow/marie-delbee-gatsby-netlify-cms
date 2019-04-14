@@ -3,6 +3,12 @@ templateKey: projects-page
 projects:
   - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
     pieces:
+      - media: /img/vlcsnap-2018-12-13-01h08m28s78.png
+        title: atlas5
+      - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
+        title: atlas8
+      - media: /img/atlas-4-v1.jpg
+        title: atlas10
       - media: /img/vlcsnap-2018-12-13-01h16m06s91.png
         title: atlas1
       - media: /img/vlcsnap-2018-12-13-01h14m22s62.png
@@ -11,18 +17,12 @@ projects:
         title: atlas3
       - media: /img/vlcsnap-2018-12-13-01h09m00s137.png
         title: atlas4
-      - media: /img/vlcsnap-2018-12-13-01h08m28s78.png
-        title: atlas5
       - media: /img/vlcsnap-2018-12-13-01h07m34s77.png
         title: atlas6
       - media: /img/vlcsnap-2018-12-13-01h06m55s210.png
         title: atlas7
-      - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
-        title: atlas8
       - media: /img/untitled8.jpg
         title: atlas9
-      - media: /img/atlas-4-v1.jpg
-        title: atlas10
       - media: /img/atlas-2-v1.jpg
         title: atlas11
       - media: /img/_52a5375.jpg
