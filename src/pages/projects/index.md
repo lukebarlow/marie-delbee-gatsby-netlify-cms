@@ -23,7 +23,7 @@ projects:
         media: /img/cactus.mp4
         title: Cactus Man
     poster: /img/atlas-1-v1.jpg
-    title: Entre Chien Et Loup
+    title: Entre chien et loup
   - cover: /img/wheat-field.mp4
     pieces:
       - description: >-
