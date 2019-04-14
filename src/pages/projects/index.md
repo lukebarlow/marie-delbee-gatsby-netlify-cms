@@ -7,14 +7,14 @@ projects:
         title: atlas5
       - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
         title: atlas8
-      - media: /img/atlas-4-v1.jpg
-        title: atlas10
       - media: /img/atlas-5-v1.jpg
         title: atlas18
       - media: /img/_52a5351_4.jpg
         title: atlas15
       - media: /img/vlcsnap-2018-12-13-01h16m06s91.png
         title: atlas1
+      - media: /img/atlas-4-v1.jpg
+        title: atlas10
       - media: /img/vlcsnap-2018-12-13-01h14m22s62.png
         title: atlas2
       - media: /img/vlcsnap-2018-12-13-01h09m36s41.png
