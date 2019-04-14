@@ -2,7 +2,43 @@
 templateKey: projects-page
 projects:
   - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
-    pieces: []
+    pieces:
+      - media: /img/vlcsnap-2018-12-13-01h16m06s91.png
+        title: atlas1
+      - media: /img/vlcsnap-2018-12-13-01h14m22s62.png
+        title: atlas2
+      - media: /img/vlcsnap-2018-12-13-01h09m36s41.png
+        title: atlas3
+      - media: /img/vlcsnap-2018-12-13-01h09m00s137.png
+        title: atlas4
+      - media: /img/vlcsnap-2018-12-13-01h08m28s78.png
+        title: atlas5
+      - media: /img/vlcsnap-2018-12-13-01h07m34s77.png
+        title: atlas6
+      - media: /img/vlcsnap-2018-12-13-01h06m55s210.png
+        title: atlas7
+      - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
+        title: atlas8
+      - media: /img/untitled8.jpg
+        title: atlas9
+      - media: /img/atlas-4-v1.jpg
+        title: atlas10
+      - media: /img/atlas-2-v1.jpg
+        title: atlas11
+      - media: /img/_52a5375.jpg
+        title: atlas12
+      - media: /img/_52a5364_1.jpg
+        title: atlas13
+      - media: /img/_52a5354_2.jpg
+        title: atlas14
+      - media: /img/_52a5351_4.jpg
+        title: atlas15
+      - media: /img/atlas-7-v1.jpg
+        title: atlas16
+      - media: /img/atlas-1-v1.jpg
+        title: atlas17
+      - media: /img/atlas-5-v1.jpg
+        title: atlas18
     poster: /img/atlas-1-v1.jpg
     title: Entre chien et loup
   - cover: /img/wheat-field.mp4
