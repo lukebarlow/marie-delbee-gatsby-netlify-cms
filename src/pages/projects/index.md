@@ -9,6 +9,10 @@ projects:
         title: atlas8
       - media: /img/atlas-4-v1.jpg
         title: atlas10
+      - media: /img/atlas-5-v1.jpg
+        title: atlas18
+      - media: /img/_52a5351_4.jpg
+        title: atlas15
       - media: /img/vlcsnap-2018-12-13-01h16m06s91.png
         title: atlas1
       - media: /img/vlcsnap-2018-12-13-01h14m22s62.png
@@ -31,14 +35,10 @@ projects:
         title: atlas13
       - media: /img/_52a5354_2.jpg
         title: atlas14
-      - media: /img/_52a5351_4.jpg
-        title: atlas15
       - media: /img/atlas-7-v1.jpg
         title: atlas16
       - media: /img/atlas-1-v1.jpg
         title: atlas17
-      - media: /img/atlas-5-v1.jpg
-        title: atlas18
       - media: /img/live-at-atlas-128.mp3
         poster: /img/vlcsnap-2018-12-13-01h08m28s78.png
         title: atlas audio
