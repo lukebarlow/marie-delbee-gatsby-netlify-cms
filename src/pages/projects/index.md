@@ -40,7 +40,7 @@ projects:
       - media: /img/atlas-5-v1.jpg
         title: atlas18
     poster: /img/atlas-1-v1.jpg
-    title: Entre chien et loup
+    title: entre chien et loup
   - cover: /img/wheat-field.mp4
     pieces:
       - description: >-
