@@ -39,6 +39,9 @@ projects:
         title: atlas17
       - media: /img/atlas-5-v1.jpg
         title: atlas18
+      - media: /img/live-at-atlas-128.mp3
+        poster: /img/vlcsnap-2018-12-13-01h08m28s78.png
+        title: atlas audio
     poster: /img/atlas-1-v1.jpg
     title: entre chien et loup
   - cover: /img/wheat-field.mp4
