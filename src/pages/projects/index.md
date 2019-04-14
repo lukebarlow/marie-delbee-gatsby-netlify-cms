@@ -2,26 +2,7 @@
 templateKey: projects-page
 projects:
   - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
-    pieces:
-      - media: /img/30-kim-no.-2-.mp3
-        poster: /img/charlie-parker.jpeg
-        title: Kim No 2
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. 
-
-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing.
-        media: /img/mahameru-volcano.jpeg
-        title: Puff
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: /img/cactus.mp4
-        title: Cactus Man
+    pieces: []
     poster: /img/atlas-1-v1.jpg
     title: Entre chien et loup
   - cover: /img/wheat-field.mp4
