@@ -3,7 +3,8 @@ templateKey: projects-page
 projects:
   - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
     pieces:
-      - media: /img/live-at-atlas-128.mp3
+      - media: >-
+          https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128_dzg8cf.mp3
         poster: /img/vlcsnap-2018-12-13-01h08m28s78.png
         title: atlas audio
       - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
