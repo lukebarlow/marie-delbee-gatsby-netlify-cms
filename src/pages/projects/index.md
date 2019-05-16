@@ -5,9 +5,9 @@ projects:
     pieces:
       - media: >-
           https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128_dzg8cf.mp3
-        poster: /img/vlcsnap-2018-12-13-01h08m28s78.png
+        poster: /img/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas audio
-      - media: /img/vlcsnap-2018-12-13-01h03m11s37.png
+      - media: /img/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
       - media: /img/atlas-5-v1.jpg
         title: atlas18
@@ -15,11 +15,11 @@ projects:
         title: atlas15
       - media: /img/atlas-4-v1.jpg
         title: atlas10
-      - media: /img/vlcsnap-2018-12-13-01h14m22s62.png
+      - media: /img/vlcsnap-2018-12-13-01h14m22s62.jpg
         title: atlas2
-      - media: /img/vlcsnap-2018-12-13-01h09m36s41.png
+      - media: /img/vlcsnap-2018-12-13-01h09m36s41.jpg
         title: atlas3
-      - media: /img/vlcsnap-2018-12-13-01h06m55s210.png
+      - media: /img/vlcsnap-2018-12-13-01h06m55s210.jpg
         title: atlas7
       - media: /img/untitled8.jpg
         title: atlas9
@@ -35,7 +35,7 @@ projects:
         title: atlas16
       - media: /img/atlas-1-v1.jpg
         title: atlas17
-      - media: /img/vlcsnap-2018-12-13-01h08m28s78.png
+      - media: /img/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas5
     poster: /img/atlas-1-v1.jpg
     title: entre chien et loup
