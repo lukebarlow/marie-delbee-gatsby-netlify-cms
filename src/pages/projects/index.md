@@ -89,9 +89,6 @@ projects:
           Tenderloin neighborhood is an area known as the "Tendernob".
         media: /img/nob-hill.jpg
         title: Nob Hill
-      - description: Regent's Street
-        media: /img/cityscapes-streets_00425430.jpg
-        title: Regent's Street
     title: streets
   - cover: /img/volcano.mp4
     pieces:
