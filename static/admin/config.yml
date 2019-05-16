@@ -5,6 +5,12 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: ekuwol
+    api_key: 416452294223717
+
 collections:
             
   - name: "pages"
