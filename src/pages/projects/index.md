@@ -102,7 +102,8 @@ projects:
 
           The name derived from the Hindu-Buddhist mythical mountain of Meru or
           Sumeru, the abode of gods.
-        media: /img/mahameru-volcano.jpeg
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558026250/volcanoes/mahameru-volcano_lwpiap.jpg
         title: Mahameru
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
