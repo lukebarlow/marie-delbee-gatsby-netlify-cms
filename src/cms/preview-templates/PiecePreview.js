@@ -10,7 +10,7 @@ const style = {
 export default ({ piece }) => {
   return <div>
       { fileType(piece.media) === 'IMAGE' ?
-        <img src={piece.media} style={style} />
+        <img alt={piece.title} src={piece.media} style={style} />
         :
         <video
           style={style}

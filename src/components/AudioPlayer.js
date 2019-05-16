@@ -27,12 +27,16 @@ const FadedImg = styled.img`
   width: ${({width}) => width}px;
   height: auto;
   opacity: 0.7;
+  height: calc(100vh - 160px);
+  object-fit: contain;
 `
 
 const Img = styled.img`
   width: ${({width}) => width}px;
   height: auto;
   position: absolute;
+  height: calc(100vh - 160px);
+  object-fit: contain;
 `
 
 const StyledImg = styled.img`
@@ -169,7 +173,6 @@ export default class AudioPlayer extends React.Component {
           onDragStart={(e) => {
             e.preventDefault()
             return false
-            console.log('got a drag start')
           }}
           
         >

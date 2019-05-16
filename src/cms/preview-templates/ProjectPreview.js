@@ -12,7 +12,7 @@ export default ({ project }) => {
   return <div style={{ display: 'flex', margin: '20px', height: '100vh' }}>
     <div style={{backgrondColor: 'red'}}>
       { fileType(project.cover) === 'IMAGE' ?
-        <img src={project.cover} style={style} />
+        <img alt={project.title} src={project.cover} style={style} />
         :
         <video
           style={style}
