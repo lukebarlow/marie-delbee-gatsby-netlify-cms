@@ -67,13 +67,24 @@ cursor: pointer;
 export default class Piece extends React.Component {
   constructor () {
     super()
-    this.state = { height: 300, shouldLoad: false }
+    this.state = { height: 300, shouldLoad: false, imgHeightCalculated: false }
+  }
+
+  componentDidMount () {
+    const imgHeight = (document.body.clientHeight - 60) * window.devicePixelRatio
+    this.setState({ imgHeightCalculated: true, imgHeight })
   }
 
   render () {
     const { piece, onClick, deferLoading } = this.props
+    const { imgHeight, imgHeightCalculated } = this.state
+
+    if (!imgHeightCalculated) {
+      return null
+    }
+
     const type = fileType(piece.media)
-    
+
     if (!deferLoading && !this.state.shouldLoad) {
       this.setState({ shouldLoad: true })
     }
@@ -81,12 +92,12 @@ export default class Piece extends React.Component {
     if (this.state.shouldLoad) {
       return <StyledDiv onClick={onClick}>
         { type === 'IMAGE' &&
-          <StyledImg src={piece.media} />
+          <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} />
         }
         { type === 'VIDEO' && 
           <StyledVideo
             src={piece.media}
-            poster={piece.poster}
+            poster={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
             muted
             autoPlay
             loop
@@ -96,7 +107,7 @@ export default class Piece extends React.Component {
         { type === 'AUDIO' && 
           <AudioPlayer
             audioSrc={piece.media}
-            imgSrc={piece.poster}
+            imgSrc={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
           />
         }
       </StyledDiv>
