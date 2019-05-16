@@ -67,33 +67,41 @@ cursor: pointer;
 export default class Piece extends React.Component {
   constructor () {
     super()
-    this.state = { height: 300 }
+    this.state = { height: 300, shouldLoad: false }
   }
 
   render () {
-    const { piece, onClick } = this.props
+    const { piece, onClick, deferLoading } = this.props
     const type = fileType(piece.media)
+    
+    if (!deferLoading && !this.state.shouldLoad) {
+      this.setState({ shouldLoad: true })
+    }
 
-    return <StyledDiv onClick={onClick}>
-      { type === 'IMAGE' &&
-        <StyledImg src={piece.media} />
-      }
-      { type === 'VIDEO' && 
-        <StyledVideo
-          src={piece.media}
-          poster={piece.poster}
-          muted
-          autoPlay
-          loop
-          playsInline
-        />
-      }
-      { type === 'AUDIO' && 
-        <AudioPlayer
-          audioSrc={piece.media}
-          imgSrc={piece.poster}
-        />
-      }
-    </StyledDiv>
+    if (this.state.shouldLoad) {
+      return <StyledDiv onClick={onClick}>
+        { type === 'IMAGE' &&
+          <StyledImg src={piece.media} />
+        }
+        { type === 'VIDEO' && 
+          <StyledVideo
+            src={piece.media}
+            poster={piece.poster}
+            muted
+            autoPlay
+            loop
+            playsInline
+          />
+        }
+        { type === 'AUDIO' && 
+          <AudioPlayer
+            audioSrc={piece.media}
+            imgSrc={piece.poster}
+          />
+        }
+      </StyledDiv>
+    } else {
+      return null
+    }
   }
 }

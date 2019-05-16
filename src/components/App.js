@@ -265,7 +265,7 @@ export default class App extends React.Component {
 
   render () {
     const { projects, info } = this.props
-    const { projectIndex, captionPieceIndex, showInfo } = this.state
+    const { projectIndex, pieceIndex, captionPieceIndex, showInfo } = this.state
     const pieces = projects[projectIndex].pieces
 
     const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
@@ -276,7 +276,13 @@ export default class App extends React.Component {
 
     return <>
       <ProjectContainer ref={this.handleRef}>
-        { projects.map((p, i) => <Project key={i} project={p} onPieceClick={this.handlePieceClick} />)}
+        { projects.map((p, i) => <Project 
+          key={i} 
+          project={p} 
+          onPieceClick={this.handlePieceClick} 
+          isCurrent={projectIndex === i} 
+          pieceIndex={pieceIndex} 
+        />)}
       </ProjectContainer>
       <Caption 
         onMove={onMove} 

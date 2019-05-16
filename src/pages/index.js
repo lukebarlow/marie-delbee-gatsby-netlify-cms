@@ -57,11 +57,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// media {
-//   childImageSharp {
-//     fluid(maxWidth: 1075, quality: 72) {
-//       ...GatsbyImageSharpFluid
-//     }
-//   }
-// }

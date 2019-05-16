@@ -57,7 +57,7 @@ const StyledVideo = styled.video`
   min-height: calc(100vh);
 `
 
-export default ({ project, onPieceClick }) => (
+export default ({ project, onPieceClick, isCurrent = false, pieceIndex }) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image} onClick={onPieceClick}>
       <ProjectVideoWrapper>
@@ -84,7 +84,7 @@ export default ({ project, onPieceClick }) => (
       </ProjectTitle>
       
     </ProjectLandingScreen>
-      { project.pieces.map((piece, i) => <Piece key={i} piece={piece} onClick={onPieceClick} />)}
+      { project.pieces.map((piece, i) => <Piece key={i} piece={piece} onClick={onPieceClick} deferLoading={!isCurrent || Math.abs(pieceIndex - i) > 3} />)}
       <EndPadding />
     </StyledProjectPaginator>
 )
