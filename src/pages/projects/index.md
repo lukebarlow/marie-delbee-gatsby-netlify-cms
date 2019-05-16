@@ -63,9 +63,9 @@ projects:
     pieces:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: /img/deep_space_44_faststart.mp4
-        title: Deep Space
+        title: deep space
     poster: /img/deep_space_2-poster.jpeg
-    title: Deep Space
+    title: deep space
   - cover: /img/the-streets-of-edinburgh-1003295.jpg
     pieces:
       - description: Part of the new town in Edinburgh
@@ -92,7 +92,7 @@ projects:
       - description: Regent's Street
         media: /img/cityscapes-streets_00425430.jpg
         title: Regent's Street
-    title: Streets
+    title: streets
   - cover: /img/volcano.mp4
     pieces:
       - description: >-
@@ -126,6 +126,6 @@ projects:
           bit of text for each piece will help a lot with testing.
         media: /img/1280-509661971-adventurers-volcanic-eruption.jpg
         title: People Watching
-    title: Volcanoes
+    title: volcanoes
 ---
 

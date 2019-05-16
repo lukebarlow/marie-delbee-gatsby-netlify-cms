@@ -7,6 +7,12 @@ import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
 const Container = styled.div`
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `
 
 const Cropper = styled.div`
@@ -20,7 +26,7 @@ const FadedImg = styled.img`
   position: absolute;
   width: ${({width}) => width}px;
   height: auto;
-  opacity: 0.2;
+  opacity: 0.7;
 `
 
 const Img = styled.img`
@@ -111,10 +117,6 @@ export default class AudioPlayer extends React.Component {
   }
 
   imageLoadHandler (e) {
-
-    console.log('image load handler is fired')
-
-
     this.setState({
       imageDimensionsCalculated: true,
       width: e.target.width,
@@ -150,7 +152,7 @@ export default class AudioPlayer extends React.Component {
     const { imageDimensionsCalculated, width, height } = this.state
     const size = Math.min(width, height)
 
-    const playStopSize = size / 3
+    const playStopSize = size / 6
 
     if (!imageDimensionsCalculated) {
       return <StyledImg style={{ opacity: 0.1 }} src={imgSrc} onLoad={this.imageLoadHandler} ref={this.sizerImage} />
@@ -164,6 +166,12 @@ export default class AudioPlayer extends React.Component {
           onTouchStart={this.touchStartHandler}
           onTouchMove={this.touchMoveHandler}
           onClick={this.stopPropagation}
+          onDragStart={(e) => {
+            e.preventDefault()
+            return false
+            console.log('got a drag start')
+          }}
+          
         >
         <div style={{position: 'absolute', width: width, height: height}}>
           <FadedImg src={imgSrc} width={width} height={height}/>

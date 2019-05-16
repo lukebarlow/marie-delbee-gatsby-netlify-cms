@@ -39,6 +39,6 @@ export default ({projects, onLink, isWhite, selected}) => {
     <Bar isWhite={isWhite}>
       { projects.map((p, i) => <NavSpan onClick={() => onLink(i)} key={i} selected={parseInt(selected)===i} project={p}>{p.title}</NavSpan>)}
     </Bar>
-    <InfoSpan isWhite={isWhite} onClick={() => onLink('info')} selected={selected==='info'}>Info</InfoSpan>
+    <InfoSpan isWhite={isWhite} onClick={() => onLink('info')} selected={selected==='info'}>info</InfoSpan>
   </>
 }

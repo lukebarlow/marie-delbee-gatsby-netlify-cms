@@ -231,15 +231,24 @@ export default class App extends React.Component {
   }
 
   handleLink (link) {
-    this.setState({ showInfo: link === 'info' })
+
+    if (link === 'info') {
+      this.setState({ showInfo: !this.state.showInfo })
+    }
+
     link = parseInt(link)
     if (!isNaN(link)) {
-      this.verticalScroll(link)
+      if (link === this.state.projectIndex) {
+        this.horizontalScroll(0)
+      } else {
+        this.verticalScroll(link)
+      }
+
       this.setState({
         pieceIndex: 0,
         captionPieceIndex: 0,
         projectIndex: link
-      })
+      })      
     }
   }
 
