@@ -72,7 +72,7 @@ export default class Piece extends React.Component {
   }
 
   componentDidMount () {
-    const imgHeight = (document.body.clientHeight - 60) * window.devicePixelRatio
+    const imgHeight = (document.body.clientHeight - 60)
     this.setState({ imgHeightCalculated: true, imgHeight })
   }
 
