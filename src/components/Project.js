@@ -84,7 +84,7 @@ export default ({ project, onPieceClick, isCurrent = false, pieceIndex }) => (
       </ProjectTitle>
       
     </ProjectLandingScreen>
-      { project.pieces.map((piece, i) => <Piece key={i} piece={piece} onClick={onPieceClick} deferLoading={!isCurrent || Math.abs(pieceIndex - i) > 3} />)}
+      { project.pieces.map((piece, i) => <Piece key={i} piece={piece} onClick={onPieceClick} shouldLoad={isCurrent && (i - pieceIndex < 2)} />)}
       <EndPadding />
     </StyledProjectPaginator>
 )

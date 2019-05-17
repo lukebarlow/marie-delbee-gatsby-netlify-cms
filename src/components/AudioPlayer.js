@@ -94,6 +94,7 @@ export default class AudioPlayer extends React.Component {
   setAudioPositionFromScreenPosition (x) {
     const fraction = x / this.state.width
     this.audio.currentTime = fraction * this.audio.duration
+    this.setState({ fractionCropped: fraction })
   }
 
   mouseDownHandler (e) {
