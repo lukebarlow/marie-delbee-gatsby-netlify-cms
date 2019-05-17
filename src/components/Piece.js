@@ -67,7 +67,8 @@ cursor: pointer;
 export default class Piece extends React.Component {
   constructor () {
     super()
-    this.state = { height: 300, shouldLoad: false, imgHeightCalculated: false }
+    this.state = { height: 300, imgHeightCalculated: false }
+    this.shouldLoadContent = false
   }
 
   componentDidMount () {
@@ -76,7 +77,7 @@ export default class Piece extends React.Component {
   }
 
   render () {
-    const { piece, onClick, deferLoading } = this.props
+    const { piece, onClick, shouldLoad } = this.props
     const { imgHeight, imgHeightCalculated } = this.state
 
     if (!imgHeightCalculated) {
@@ -85,11 +86,9 @@ export default class Piece extends React.Component {
 
     const type = fileType(piece.media)
 
-    if (!deferLoading && !this.state.shouldLoad) {
-      this.setState({ shouldLoad: true })
-    }
+    this.shouldLoadContent = this.shouldLoadContent || shouldLoad
 
-    if (this.state.shouldLoad) {
+    if (this.shouldLoadContent) {
       return <StyledDiv onClick={onClick}>
         { type === 'IMAGE' &&
           <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} />
