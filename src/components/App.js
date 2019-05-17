@@ -4,6 +4,8 @@ import scroll from 'scroll'
 import Markdown from 'react-markdown'
 import MediaQuery from 'react-responsive'
 
+import History from 'hash-history'
+
 import NavigationLinks from './NavigationLinks'
 import Caption from './Caption'
 import '../styles/App.css'
@@ -40,6 +42,19 @@ export default class App extends React.Component {
     this.handleLink = this.handleLink.bind(this)
     this.finishedScrolling = this.finishedScrolling.bind(this)
     this.handlePieceClick = this.handlePieceClick.bind(this)
+    this.scrollTo = this.scrollTo.bind(this)
+    
+    this.navHistory = new History('n', {
+      stringify: ({ projectIndex, pieceIndex }) => [projectIndex, pieceIndex].toString(),
+      parse: (s) => {
+        const [ projectIndex, pieceIndex ] = s ? s.split(',').map(x => parseInt(x)) : [0, 0]
+        return { projectIndex, pieceIndex }
+      }
+    }).on('change', ({ projectIndex, pieceIndex }) => {
+      this.scrollTo({ projectIndex, pieceIndex })
+      this.setState({ projectIndex, pieceIndex })
+    })
+
     this.state = {
       showInfo: false,
       projectIndex: 0,
@@ -50,6 +65,23 @@ export default class App extends React.Component {
     }
   }
 
+  scrollTo ({ projectIndex, pieceIndex }, instant) {
+    console.log('changed', projectIndex, pieceIndex)
+
+    const previousProjectIndex = this.state.projectIndex
+    const previousPieceIndex = this.state.pieceIndex
+
+    this.setState({ projectIndex, pieceIndex })
+    window.setTimeout(() => {
+      if (projectIndex !== previousProjectIndex) {
+        this.verticalScroll(projectIndex, instant)
+      }
+      if (pieceIndex !== previousPieceIndex) {
+        this.horizontalScroll(pieceIndex, instant)
+      }
+    }, 1)
+  }
+
   verticalScroll (projectIndex, instant) {
     let { pieceIndex } = this.state
 
@@ -57,22 +89,24 @@ export default class App extends React.Component {
 
     // reset all the pieces which are not the current piece back to the left position
     
-    for (var i=0;i<this.projectsContainer.children.length;i++) {
+    const projectsContainer = this.projectsContainer
+
+    for (var i=0;i < projectsContainer.children.length; i++) {
       if (i !== this.state.projectIndex) {
-        this.projectsContainer.children[i].scrollLeft = 0
+        projectsContainer.children[i].scrollLeft = 0
       }
     }
     
     // the project we're scrolling to will always start with the cover,
     // so we first reset the scroll position of that project
-    const projectElement = this.projectsContainer.children[projectIndex]
+    const projectElement = projectsContainer.children[projectIndex]
     // projectElement.scrollLeft = 0 // redundant - done above
 
     if (instant) {
-      this.projectsContainer.scrollTop = projectElement.offsetTop
+      projectsContainer.scrollTop = projectElement.offsetTop
     } else {
       this.isScrolling = true
-      scroll.top(this.projectsContainer, projectElement.offsetTop, 
+      scroll.top(projectsContainer, projectElement.offsetTop, 
         { duration: duration }, this.finishedScrolling)
       if (pieceIndex === 0) {
         this.setState({ captionPieceIndex: pieceIndex })
@@ -116,7 +150,7 @@ export default class App extends React.Component {
       pieceIndex = 0
       projectIndex -= 1
       this.verticalScroll(projectIndex)
-      this.setState({ projectIndex, pieceIndex })
+      this.setStateAndHistory({ projectIndex, pieceIndex })
     }
   }
 
@@ -128,7 +162,7 @@ export default class App extends React.Component {
       pieceIndex = 0
       projectIndex += 1
       this.verticalScroll(projectIndex)
-      this.setState({ projectIndex, pieceIndex })
+      this.setStateAndHistory({ projectIndex, pieceIndex })
     }
   }
 
@@ -137,7 +171,7 @@ export default class App extends React.Component {
     if (pieceIndex > 0) {
       pieceIndex -= 1
       this.horizontalScroll(pieceIndex)
-      this.setState({ projectIndex, pieceIndex })
+      this.setStateAndHistory({ projectIndex, pieceIndex })
     }
   }
 
@@ -148,7 +182,7 @@ export default class App extends React.Component {
       if (pieceIndex < pieces.length) {
         pieceIndex += 1
         this.horizontalScroll(pieceIndex)
-        this.setState({ projectIndex, pieceIndex })
+        this.setStateAndHistory({ projectIndex, pieceIndex })
       }
   }
   
@@ -223,6 +257,18 @@ export default class App extends React.Component {
       this.verticalScroll(this.state.projectIndex, true)
       this.horizontalScroll(this.state.pieceIndex, true)
     })
+
+    const { projectIndex, pieceIndex } = this.navHistory.get()
+    this.scrollTo({ projectIndex, pieceIndex }, true)
+  }
+
+  setHistory ({ projectIndex, pieceIndex }) {
+    this.navHistory.set({ projectIndex, pieceIndex })
+  }
+
+  setStateAndHistory(state) {
+    this.setState(state)
+    this.setHistory(state)
   }
 
   handleRef (el) {
@@ -244,11 +290,12 @@ export default class App extends React.Component {
         this.verticalScroll(link)
       }
 
-      this.setState({
+      this.setStateAndHistory({
         pieceIndex: 0,
         captionPieceIndex: 0,
         projectIndex: link
-      })      
+      })
+      // this.setHistory({ projectIndex, pieceIndex })   
     }
   }
 

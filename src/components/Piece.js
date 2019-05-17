@@ -44,24 +44,23 @@ const StyledImg = styled.img`
 `
 
 const StyledVideo = styled.video`
-display: block;
-width: auto;
-height: calc(100vh - 160px);
-cursor: pointer;
-
-@media ${portraitSelector} {
-  max-width: calc(100vw - 10px);
-  max-height: calc(100vh - 20px);
-  height: calc(100vh - 160px);
-  width: 100%;
-  object-fit: contain;
-}
-
-@media ${landscapeSelector} {
+  display: block;
   width: auto;
-  height: calc(100vh - 60px);
-}
+  height: calc(100vh - 160px);
+  cursor: pointer;
 
+  @media ${portraitSelector} {
+    max-width: calc(100vw - 10px);
+    max-height: calc(100vh - 20px);
+    height: calc(100vh - 160px);
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @media ${landscapeSelector} {
+    width: auto;
+    height: calc(100vh - 60px);
+  }
 `
 
 export default class Piece extends React.Component {
