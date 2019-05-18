@@ -76,7 +76,7 @@ export default class Piece extends React.Component {
   }
 
   render () {
-    const { piece, onClick, shouldLoad } = this.props
+    const { piece, onClick, shouldLoad, onImageLoad } = this.props
     const { imgHeight, imgHeightCalculated } = this.state
 
     if (!imgHeightCalculated) {
@@ -91,7 +91,7 @@ export default class Piece extends React.Component {
       { this.shouldLoadContent &&
         <>
           { type === 'IMAGE' &&
-            <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} />
+            <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} onLoad={onImageLoad} />
           }
           { type === 'VIDEO' && 
             <StyledVideo
