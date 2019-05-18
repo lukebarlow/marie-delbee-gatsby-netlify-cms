@@ -87,7 +87,7 @@ export default ({ project, isCurrent = false, pieceIndex, onPieceClick, onImageL
       { project.pieces.map((piece, i) => <Piece 
           key={i} 
           piece={piece} 
-          shouldLoad={isCurrent && (i - pieceIndex < 2)} 
+          shouldLoad={isCurrent && (i - pieceIndex < 3)} 
           onClick={onPieceClick}
           onImageLoad={onImageLoad}
         />)

@@ -88,7 +88,7 @@ export default class Piece extends React.Component {
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
 
     return <StyledDiv onClick={onClick}>
-      { this.shouldLoadContent &&
+      { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
             <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} onLoad={onImageLoad} />
@@ -109,7 +109,7 @@ export default class Piece extends React.Component {
               imgSrc={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
             />
           }
-        </>
+        </> : <StyledImg src='img/grey-square.gif' onLoad={onImageLoad} />
       }
     </StyledDiv>
   
