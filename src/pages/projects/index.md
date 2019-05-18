@@ -120,11 +120,6 @@ projects:
           for each piece will help a lot with testing.
         media: /img/shutterstock_569669356.jpg
         title: Lava Flow
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing.
-        media: /img/1280-509661971-adventurers-volcanic-eruption.jpg
-        title: People Watching
     title: volcanoes
 ---
 

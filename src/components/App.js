@@ -54,53 +54,59 @@ export default class App extends React.Component {
   }
 
   scrollTo ({ projectIndex, pieceIndex }, instant) {
-    console.log('changed', projectIndex, pieceIndex)
-
     const previousProjectIndex = this.state.projectIndex
     const previousPieceIndex = this.state.pieceIndex
 
-    this.setState({ projectIndex, pieceIndex })
-    window.setTimeout(() => {
-      if (projectIndex !== previousProjectIndex) {
-        this.verticalScroll(projectIndex, instant)
-      }
-      if (pieceIndex !== previousPieceIndex) {
-        this.horizontalScroll(pieceIndex, instant)
-      }
-    }, 1)
+    if (projectIndex !== previousProjectIndex) {
+      // first set the destination piece to be in the correct position
+      const projectElement = this.projectsContainer.children[projectIndex]
+      const offset = projectElement.children[pieceIndex].offsetLeft
+      projectElement.scrollLeft = offset
+      // then scroll vertically to it
+      this.verticalScroll(projectIndex, instant, true)
+    } else if (pieceIndex !== previousPieceIndex) {
+      this.horizontalScroll(pieceIndex, instant)
+    }
+    this.setState({ projectIndex, pieceIndex, captionPieceIndex: pieceIndex })
   }
 
-  verticalScroll (projectIndex, instant) {
-    let { pieceIndex } = this.state
+  async verticalScroll (projectIndex, instant, retainPieceIndex) {
 
-    const duration = instant ? 0 : Math.abs(this.state.projectIndex - projectIndex) * 600
+    return new Promise((resolve) => {
+      let { pieceIndex } = this.state
 
-    // reset all the pieces which are not the current piece back to the left position
-    
-    const projectsContainer = this.projectsContainer
+      const duration = instant ? 0 : Math.abs(this.state.projectIndex - projectIndex) * 600
 
-    for (var i=0;i < projectsContainer.children.length; i++) {
-      if (i !== this.state.projectIndex) {
-        projectsContainer.children[i].scrollLeft = 0
+      // reset all the pieces which are not the current piece back to the left position
+      
+      const projectsContainer = this.projectsContainer
+
+      for (var i=0;i < projectsContainer.children.length; i++) {
+        if (i !== this.state.projectIndex && (!retainPieceIndex || i !== projectIndex)) {
+          projectsContainer.children[i].scrollLeft = 0
+        }
       }
-    }
-    
-    // the project we're scrolling to will always start with the cover,
-    // so we first reset the scroll position of that project
-    const projectElement = projectsContainer.children[projectIndex]
-    // projectElement.scrollLeft = 0 // redundant - done above
+      
+      // the project we're scrolling to will always start with the cover,
+      // so we first reset the scroll position of that project
+      const projectElement = projectsContainer.children[projectIndex]
+      // projectElement.scrollLeft = 0 // redundant - done above
 
-    if (instant) {
-      projectsContainer.scrollTop = projectElement.offsetTop
-    } else {
-      this.isScrolling = true
-      scroll.top(projectsContainer, projectElement.offsetTop, 
-        { duration: duration }, this.finishedScrolling)
-      if (pieceIndex === 0) {
-        this.setState({ captionPieceIndex: pieceIndex })
+      if (instant) {
+        projectsContainer.scrollTop = projectElement.offsetTop
+        resolve()
+      } else {
+        this.isScrolling = true
+        scroll.top(projectsContainer, projectElement.offsetTop, 
+          { duration: duration }, () => {
+            this.finishedScrolling()
+            resolve()
+          })
+        if (pieceIndex === 0) {
+          this.setState({ captionPieceIndex: pieceIndex })
+        }
       }
-    }
-
+    })
   }
 
   horizontalScroll (pieceIndex, instant) {
@@ -254,11 +260,13 @@ export default class App extends React.Component {
       }
     }).on('change', ({ projectIndex, pieceIndex }) => {
       this.scrollTo({ projectIndex, pieceIndex })
-      this.setState({ projectIndex, pieceIndex })
     })
 
-    const { projectIndex, pieceIndex } = this.navHistory.get()
-    this.scrollTo({ projectIndex, pieceIndex }, true)
+    setTimeout(() => {
+      const { projectIndex, pieceIndex } = this.navHistory.get()
+      this.scrollTo({ projectIndex, pieceIndex }, true)
+    }, 0)
+    
   }
 
   setHistory ({ projectIndex, pieceIndex }) {

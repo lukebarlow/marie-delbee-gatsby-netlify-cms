@@ -87,30 +87,31 @@ export default class Piece extends React.Component {
 
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
 
-    if (this.shouldLoadContent) {
-      return <StyledDiv onClick={onClick}>
-        { type === 'IMAGE' &&
-          <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} />
-        }
-        { type === 'VIDEO' && 
-          <StyledVideo
-            src={piece.media}
-            poster={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
-            muted
-            autoPlay
-            loop
-            playsInline
-          />
-        }
-        { type === 'AUDIO' && 
-          <AudioPlayer
-            audioSrc={piece.media}
-            imgSrc={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
-          />
-        }
-      </StyledDiv>
-    } else {
-      return null
-    }
+    return <StyledDiv onClick={onClick}>
+      { this.shouldLoadContent &&
+        <>
+          { type === 'IMAGE' &&
+            <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} />
+          }
+          { type === 'VIDEO' && 
+            <StyledVideo
+              src={piece.media}
+              poster={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
+              muted
+              autoPlay
+              loop
+              playsInline
+            />
+          }
+          { type === 'AUDIO' && 
+            <AudioPlayer
+              audioSrc={piece.media}
+              imgSrc={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
+            />
+          }
+        </>
+      }
+    </StyledDiv>
+  
   }
 }
