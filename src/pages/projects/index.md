@@ -5,7 +5,8 @@ projects:
     pieces:
       - media: >-
           https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128_dzg8cf.mp3
-        poster: /img/vlcsnap-2018-12-13-01h08m28s78.jpg
+        poster: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_ey7uoy.png
         title: atlas audio
       - media: /img/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
