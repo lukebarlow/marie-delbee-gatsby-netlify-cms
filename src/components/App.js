@@ -42,6 +42,7 @@ export default class App extends React.Component {
     this.handleLink = this.handleLink.bind(this)
     this.finishedScrolling = this.finishedScrolling.bind(this)
     this.handlePieceClick = this.handlePieceClick.bind(this)
+    this.handleImageLoad = this.handleImageLoad.bind(this)
     this.scrollTo = this.scrollTo.bind(this)
     this.state = {
       showInfo: false,
@@ -55,7 +56,6 @@ export default class App extends React.Component {
 
   scrollTo ({ projectIndex, pieceIndex }, instant) {
     const previousProjectIndex = this.state.projectIndex
-    const previousPieceIndex = this.state.pieceIndex
 
     if (projectIndex !== previousProjectIndex) {
       // first set the destination piece to be in the correct position
@@ -64,7 +64,7 @@ export default class App extends React.Component {
       projectElement.scrollLeft = offset
       // then scroll vertically to it
       this.verticalScroll(projectIndex, instant, true)
-    } else if (pieceIndex !== previousPieceIndex) {
+    } else {
       this.horizontalScroll(pieceIndex, instant)
     }
     this.setState({ projectIndex, pieceIndex, captionPieceIndex: pieceIndex })
@@ -248,8 +248,11 @@ export default class App extends React.Component {
     })
 
     window.addEventListener('resize', () => { 
-      this.verticalScroll(this.state.projectIndex, true)
-      this.horizontalScroll(this.state.pieceIndex, true)
+      // this.verticalScroll(this.state.projectIndex, true)
+      // this.horizontalScroll(this.state.pieceIndex, true)
+
+      this.scrollTo(this.state, true)
+
     })
 
     this.navHistory = new History('n', {
@@ -317,6 +320,10 @@ export default class App extends React.Component {
     }
   }
 
+  handleImageLoad () {
+    this.scrollTo(this.state, true)
+  }
+
   render () {
     const { projects, info } = this.props
     const { projectIndex, pieceIndex, captionPieceIndex, showInfo } = this.state
@@ -333,9 +340,10 @@ export default class App extends React.Component {
         { projects.map((p, i) => <Project 
           key={i} 
           project={p} 
-          onPieceClick={this.handlePieceClick} 
           isCurrent={projectIndex === i} 
           pieceIndex={pieceIndex} 
+          onPieceClick={this.handlePieceClick}
+          onImageLoad={this.handleImageLoad}
         />)}
       </ProjectContainer>
       <Caption 
