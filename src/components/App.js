@@ -43,18 +43,6 @@ export default class App extends React.Component {
     this.finishedScrolling = this.finishedScrolling.bind(this)
     this.handlePieceClick = this.handlePieceClick.bind(this)
     this.scrollTo = this.scrollTo.bind(this)
-    
-    this.navHistory = new History('n', {
-      stringify: ({ projectIndex, pieceIndex }) => [projectIndex, pieceIndex].toString(),
-      parse: (s) => {
-        const [ projectIndex, pieceIndex ] = s ? s.split(',').map(x => parseInt(x)) : [0, 0]
-        return { projectIndex, pieceIndex }
-      }
-    }).on('change', ({ projectIndex, pieceIndex }) => {
-      this.scrollTo({ projectIndex, pieceIndex })
-      this.setState({ projectIndex, pieceIndex })
-    })
-
     this.state = {
       showInfo: false,
       projectIndex: 0,
@@ -256,6 +244,17 @@ export default class App extends React.Component {
     window.addEventListener('resize', () => { 
       this.verticalScroll(this.state.projectIndex, true)
       this.horizontalScroll(this.state.pieceIndex, true)
+    })
+
+    this.navHistory = new History('n', {
+      stringify: ({ projectIndex, pieceIndex }) => [projectIndex, pieceIndex].toString(),
+      parse: (s) => {
+        const [ projectIndex, pieceIndex ] = s ? s.split(',').map(x => parseInt(x)) : [0, 0]
+        return { projectIndex, pieceIndex }
+      }
+    }).on('change', ({ projectIndex, pieceIndex }) => {
+      this.scrollTo({ projectIndex, pieceIndex })
+      this.setState({ projectIndex, pieceIndex })
     })
 
     const { projectIndex, pieceIndex } = this.navHistory.get()
