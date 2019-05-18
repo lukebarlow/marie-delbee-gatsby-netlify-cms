@@ -12,7 +12,8 @@ projects:
         title: atlas8
       - media: /img/atlas-5-v1.jpg
         title: atlas18
-      - media: /img/_52a5351_4.jpg
+      - media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025289/entre-chien-et-loup/_52a5351_4_ld9uow.jpg
         title: atlas15
       - media: /img/atlas-4-v1.jpg
         title: atlas10
