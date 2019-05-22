@@ -63,6 +63,21 @@ const StyledVideo = styled.video`
   }
 `
 
+function parseCloudinaryUrl(url) {
+  const re = /https:\/\/res\.cloudinary\.com\/([a-z]+)\/image\/upload\/v[0-9]+\/(.+)/
+  const match = url.match(re)
+  return match ? { cloudName: match[1], path: match[2] } : null
+}
+
+function transformCloudinaryImage(url, height) {
+  const parsed = parseCloudinaryUrl(url)
+  if (!parsed) {
+    return url
+  }
+  const { cloudName, path } = parsed
+  return `https://res.cloudinary.com/${cloudName}/image/upload/q_auto,h_${height},fl_progressive:steep/${path}`
+}
+
 export default class Piece extends React.Component {
   constructor () {
     super()
@@ -84,19 +99,19 @@ export default class Piece extends React.Component {
     }
 
     const type = fileType(piece.media)
-
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
-
+    
     return <StyledDiv onClick={onClick}>
+
       { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
-            <StyledImg src={ `${piece.media}?nf_resize=fit&h=${imgHeight}`} onLoad={onImageLoad} />
+            <StyledImg src={transformCloudinaryImage(piece.media, imgHeight)} onLoad={onImageLoad} />
           }
           { type === 'VIDEO' && 
             <StyledVideo
               src={piece.media}
-              poster={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
+              poster={`${piece.poster}`}
               muted
               autoPlay
               loop

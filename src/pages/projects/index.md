@@ -2,45 +2,47 @@
 templateKey: projects-page
 projects:
   - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
+    poster: /img/atlas-1-v1.jpg
+    title: entre chien et loup
     pieces:
       - media: >-
           https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128.mp3
         poster: >-
           https://res.cloudinary.com/ekuwol/image/upload/fl_progressive:steep,q_58/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas audio
-      - media: /img/vlcsnap-2018-12-13-01h03m11s37.jpg
+      - media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
-      - media: /img/atlas-5-v1.jpg
+      - media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025370/entre-chien-et-loup/atlas-5-v1.jpg
         title: atlas18
       - media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025289/entre-chien-et-loup/_52a5351_4.jpg
         title: atlas15
-      - media: /img/atlas-4-v1.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025374/entre-chien-et-loup/atlas-4-v1.jpg
         title: atlas10
-      - media: /img/vlcsnap-2018-12-13-01h14m22s62.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025359/entre-chien-et-loup/vlcsnap-2018-12-13-01h14m22s62.jpg
         title: atlas2
-      - media: /img/vlcsnap-2018-12-13-01h09m36s41.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025340/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41.jpg
         title: atlas3
-      - media: /img/vlcsnap-2018-12-13-01h06m55s210.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025361/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210.jpg
         title: atlas7
-      - media: /img/untitled8.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025373/entre-chien-et-loup/untitled8.jpg
         title: atlas9
-      - media: /img/atlas-2-v1.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025367/entre-chien-et-loup/atlas-2-v1.jpg
         title: atlas11
-      - media: /img/_52a5375.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025279/entre-chien-et-loup/_52a5375.jpg
         title: atlas12
-      - media: /img/_52a5364_1.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025354/entre-chien-et-loup/_52a5364_1.jpg
         title: atlas13
-      - media: /img/_52a5354_2.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025295/entre-chien-et-loup/_52a5354_2.jpg
         title: atlas14
-      - media: /img/atlas-7-v1.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558262314/entre-chien-et-loup/atlas-7-v1_nq0uy9.jpg
         title: atlas16
-      - media: /img/atlas-1-v1.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558026265/entre-chien-et-loup/atlas-1-v1.jpg
         title: atlas17
-      - media: /img/vlcsnap-2018-12-13-01h08m28s78.jpg
+      - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas5
-    poster: /img/atlas-1-v1.jpg
-    title: entre chien et loup
   - cover: /img/stig_in_room-final.mp4
     pieces:
       - description: >-
@@ -48,17 +50,17 @@ projects:
           bit of text for each piece will help a lot with testing. A nice bit of
           text for each piece will help a lot with testing. A nice bit of text
           for each piece will help a lot with testing.
-        media: /img/field.jpeg
+        media: https://res.cloudinary.com/ekuwol/image/upload/v1558025103/chromatophores/field.jpg
         title: A field
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
           bit of text for each piece will help a lot with testing. A nice bit of
           text for each piece will help a lot with testing. A nice bit of text
           for each piece will help a lot with testing.
-        media: /img/mountain.jpg
+        media: https://res.cloudinary.com/ekuwol/image/upload/v1558025372/chromatophores/mountain.jpg
         title: Mountain
       - description: A nice bit of text for each piece will help a lot with testing.
-        media: /img/sunset.jpg
+        media: https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
         title: Sunset
     poster: ''
     title: chromatophores
@@ -106,7 +108,7 @@ projects:
           The name derived from the Hindu-Buddhist mythical mountain of Meru or
           Sumeru, the abode of gods.
         media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558026250/volcanoes/mahameru-volcano_lwpiap.jpg
+          https://res.cloudinary.com/ekuwol/image/upload/v1558026250/volcanoes/mahameru-volcano.jpg
         title: Mahameru
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
