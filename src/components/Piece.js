@@ -64,18 +64,18 @@ const StyledVideo = styled.video`
 `
 
 function parseCloudinaryUrl(url) {
-  const re = /https:\/\/res\.cloudinary\.com\/([a-z]+)\/image\/upload\/v[0-9]+\/(.+)/
+  const re = /https:\/\/res\.cloudinary\.com\/([a-z]+)\/([a-z]+)\/upload\/v[0-9]+\/(.+)/
   const match = url.match(re)
-  return match ? { cloudName: match[1], path: match[2] } : null
+  return match ? { cloudName: match[1], type: match[2], path: match[3] } : null
 }
 
-function transformCloudinaryImage(url, height) {
+function transformCloudinaryUrl(url, height) {
   const parsed = parseCloudinaryUrl(url)
   if (!parsed) {
     return url
   }
-  const { cloudName, path } = parsed
-  return `https://res.cloudinary.com/${cloudName}/image/upload/q_auto,h_${height},fl_progressive:steep/${path}`
+  const { cloudName, path, type } = parsed
+  return `https://res.cloudinary.com/${cloudName}/${type}/upload/q_auto,h_${height},fl_progressive:steep/${path}`
 }
 
 export default class Piece extends React.Component {
@@ -106,12 +106,12 @@ export default class Piece extends React.Component {
       { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
-            <StyledImg src={transformCloudinaryImage(piece.media, imgHeight)} onLoad={onImageLoad} />
+            <StyledImg src={transformCloudinaryUrl(piece.media, imgHeight)} onLoad={onImageLoad} />
           }
           { type === 'VIDEO' && 
             <StyledVideo
-              src={piece.media}
-              poster={`${piece.poster}`}
+              src={transformCloudinaryUrl(piece.media, imgHeight)}
+              poster={transformCloudinaryUrl(piece.poster, imgHeight)}
               muted
               autoPlay
               loop
@@ -121,7 +121,7 @@ export default class Piece extends React.Component {
           { type === 'AUDIO' && 
             <AudioPlayer
               audioSrc={piece.media}
-              imgSrc={`${piece.poster}?nf_resize=fit&h=${imgHeight}`}
+              imgSrc={transformCloudinaryUrl(piece.poster, imgHeight)}
             />
           }
         </> : <StyledImg src='img/grey-square.gif' onLoad={onImageLoad} />
