@@ -1,14 +1,14 @@
 ---
 templateKey: projects-page
 projects:
-  - cover: /img/entre-chien-et-loup-title-loop-simple-fade.mp4
-    poster: /img/atlas-1-v1.jpg
+  - cover: https://res.cloudinary.com/ekuwol/video/upload/v1558025278/entre-chien-et-loup/entre-chien-et-loup-title-loop-simple-fade.mp4
+    poster: https://res.cloudinary.com/ekuwol/image/upload/v1558026265/entre-chien-et-loup/atlas-1-v1.jpg
     title: entre chien et loup
     pieces:
       - media: >-
           https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128.mp3
         poster: >-
-          https://res.cloudinary.com/ekuwol/image/upload/fl_progressive:steep,q_58/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas audio
       - media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
@@ -43,7 +43,7 @@ projects:
         title: atlas17
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas5
-  - cover: /img/stig_in_room-final.mp4
+  - cover: https://res.cloudinary.com/ekuwol/video/upload/v1558025372/chromatophores/stig_in_room-final.mp4
     pieces:
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
@@ -64,12 +64,13 @@ projects:
         title: Sunset
     poster: ''
     title: chromatophores
-  - cover: /img/deep_space_2_faststart.mp4
+  - cover: https://res.cloudinary.com/ekuwol/video/upload/v1558025364/deep-space/deep_space_2_faststart.mp4
     pieces:
       - description: A nice bit of text for each piece will help a lot with testing.
-        media: /img/deep_space_44_faststart.mp4
+        media: https://res.cloudinary.com/ekuwol/video/upload/v1558025310/deep-space/deep_space_44_faststart.mp4
+        poster: https://res.cloudinary.com/ekuwol/image/upload/v1558026289/deep-space/deep_space_44-poster.jpg
         title: deep space
-    poster: /img/deep_space_2-poster.jpeg
+    poster: https://res.cloudinary.com/ekuwol/image/upload/v1558026281/deep-space/deep_space_2-poster.jpg
     title: deep space
   - cover: /img/the-streets-of-edinburgh-1003295.jpg
     pieces:
