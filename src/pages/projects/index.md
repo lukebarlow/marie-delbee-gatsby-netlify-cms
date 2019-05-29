@@ -10,39 +10,54 @@ projects:
         poster: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas audio
+        type: Audio
       - media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
+        type: Image
       - media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025370/entre-chien-et-loup/atlas-5-v1.jpg
         title: atlas18
+        type: Image
       - media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025289/entre-chien-et-loup/_52a5351_4.jpg
         title: atlas15
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025374/entre-chien-et-loup/atlas-4-v1.jpg
         title: atlas10
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025359/entre-chien-et-loup/vlcsnap-2018-12-13-01h14m22s62.jpg
         title: atlas2
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025340/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41.jpg
         title: atlas3
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025361/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210.jpg
         title: atlas7
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025373/entre-chien-et-loup/untitled8.jpg
         title: atlas9
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025367/entre-chien-et-loup/atlas-2-v1.jpg
         title: atlas11
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025279/entre-chien-et-loup/_52a5375.jpg
         title: atlas12
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025354/entre-chien-et-loup/_52a5364_1.jpg
         title: atlas13
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025295/entre-chien-et-loup/_52a5354_2.jpg
         title: atlas14
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558262314/entre-chien-et-loup/atlas-7-v1_nq0uy9.jpg
         title: atlas16
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558026265/entre-chien-et-loup/atlas-1-v1.jpg
         title: atlas17
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas5
+        type: Image
   - cover: https://res.cloudinary.com/ekuwol/video/upload/v1558025372/chromatophores/stig_in_room-final.mp4
     pieces:
       - description: >-
