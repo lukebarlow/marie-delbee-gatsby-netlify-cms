@@ -34,7 +34,7 @@ body {
 }
 
 body {
-  font-family: ProgrammeLight, sans-serif;
+  font-family: Times New Roman; /* ProgrammeLight, sans-serif; */
   font-size: 100%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
