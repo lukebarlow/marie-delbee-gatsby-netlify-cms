@@ -1,6 +1,6 @@
 import React from 'react'
 
-import fileType from '../../fileType.js'
+import fileType from '../../common/fileType.js'
 
 const style = {
   height: '100%',

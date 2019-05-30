@@ -8,7 +8,7 @@ import {
   ProjectVideoWrapper,
 } from '../styles/elements.js'
 
-import fileType from '../fileType.js'
+import fileType from '../common/fileType.js'
 import Piece from './Piece.js'
 
 const StyledProjectPaginator = styled.div`
