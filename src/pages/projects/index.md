@@ -31,6 +31,7 @@ projects:
         type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025340/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41.jpg
         title: atlas3
+        type: Image
       - media: https://res.cloudinary.com/ekuwol/image/upload/v1558025361/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210.jpg
         title: atlas7
         type: Image

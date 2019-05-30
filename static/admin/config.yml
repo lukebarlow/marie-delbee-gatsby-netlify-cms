@@ -34,14 +34,14 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Cover", name: "cover", widget: "file"}
-              - {label: "Poster (image for video)", name: "poster", widget: "file", required: false}
+              - {label: "Cover", name: "cover", widget: "media"}
+              - {label: "Poster (image for video)", name: "poster", widget: "media", required: false}
               - label: "Pieces"
                 name: "pieces"
-                widget: "list"
+                widget: "listOfPieces"
                 fields:
                   - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Media", name: "media", widget: "file"}
-                  - {label: "Poster (image for video or audio)", name: "poster", widget: "file", required: false}
+                  - {label: "Media", name: "media", widget: "media"}
+                  - {label: "Poster (image for video or audio)", name: "poster", widget: "media", required: false}
                   - {label: "Description", name: "description", widget: "markdown", required: false}
       
