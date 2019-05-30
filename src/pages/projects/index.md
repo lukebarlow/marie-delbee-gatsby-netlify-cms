@@ -94,7 +94,8 @@ projects:
     poster: >-
       https://res.cloudinary.com/ekuwol/image/upload/v1558026281/deep-space/deep_space_2-poster.jpg
     title: deep space
-  - cover: /img/the-streets-of-edinburgh-1003295.jpg
+  - cover: >-
+      https://res.cloudinary.com/ekuwol/image/upload/v1558026217/streets/the-streets-of-edinburgh-1003295.jpg
     pieces:
       - description: >-
           The actual peak of Nob Hill lies approximately at the intersection of
@@ -120,7 +121,8 @@ projects:
           https://res.cloudinary.com/ekuwol/image/upload/v1558026217/streets/the-streets-of-edinburgh-1003295.jpg
         title: Edinburgh Street
     title: streets
-  - cover: /img/volcano.mp4
+  - cover: >-
+      https://res.cloudinary.com/ekuwol/video/upload/v1558025335/volcanoes/volcano.mp4
     pieces:
       - description: >-
           Semeru, or Mount Semeru (Indonesian: Gunung Semeru), is an active
