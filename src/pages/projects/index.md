@@ -142,14 +142,16 @@ projects:
           bit of text for each piece will help a lot with testing. A nice bit of
           text for each piece will help a lot with testing. A nice bit of text
           for each piece will help a lot with testing.
-        media: /img/volcanoes-2.jpg
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558026199/volcanoes/volcanoes-2.jpg
         title: Plume
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
           bit of text for each piece will help a lot with testing. A nice bit of
           text for each piece will help a lot with testing. A nice bit of text
           for each piece will help a lot with testing.
-        media: /img/shutterstock_569669356.jpg
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558026242/volcanoes/italy-sicily-stromboli-volcano-eruption.jpg
         title: Lava Flow
     title: volcanoes
 ---
