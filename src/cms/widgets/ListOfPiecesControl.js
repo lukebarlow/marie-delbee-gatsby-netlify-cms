@@ -323,7 +323,7 @@ export default class ListControl extends React.Component {
           onCollapseToggle={partial(this.handleItemCollapseToggle, index)}
           onRemove={partial(this.handleRemove, index)}
           dragHandleHOC={SortableHandle}
-          label={`${item.get('title')} (${fileType(item.get('media')).toLowerCase()})`}
+          label={`${item.get('title')} (${(fileType(item.get('media')) || '').toLowerCase()})`}
         />
         <NestedObjectLabel collapsed={collapsed}>
           {this.objectLabel(item)}
