@@ -8,8 +8,8 @@ public_folder: /img
 media_library:
   name: cloudinary
   config:
-    cloud_name: ekuwol
-    api_key: 416452294223717
+    cloud_name: dcnxlnkpw
+    api_key: 969523756913376
 
 collections:
             
