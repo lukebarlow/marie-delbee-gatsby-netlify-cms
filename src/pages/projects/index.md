@@ -68,7 +68,63 @@ projects:
         media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
-      - media: >-
+      - description: >-
+          entre chien et loup
+
+
+          installation sonore réfractive et concert animal électronique
+
+
+          atlas, anderlecht, belgium
+
+
+          Dans le ventre souterrain de l’Atlas
+
+
+          Prendre corps immense
+
+
+          Rythmique mugissante
+
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas
+
+          Takes colossal form
+
+          Lowing rhythmics
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025370/entre-chien-et-loup/atlas-5-v1.jpg
         title: atlas18
       - media: >-
