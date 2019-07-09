@@ -2,12 +2,12 @@
 templateKey: projects-page
 projects:
   - cover: >-
-      https://res.cloudinary.com/ekuwol/video/upload/v1558025278/entre-chien-et-loup/entre-chien-et-loup-title-loop-simple-fade.mp4
+      https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710614/entre-chien-et-loup/entre-chien-et-loup-title-loop-simple-fade_ubai9i.mp4
     pieces:
       - media: >-
-          https://res.cloudinary.com/ekuwol/video/upload/v1558025441/entre-chien-et-loup/live-at-atlas-128.mp3
+          https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710511/entre-chien-et-loup/live-at-atlas-128_hbgapc.mp3
         poster: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
         title: atlas audio
       - description: >-
           entre chien et loup
@@ -66,7 +66,7 @@ projects:
           The performance responds to the vibrations repelled off the walls and
           filling the space.
         media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710548/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37_avitzt.png
         title: atlas8
       - description: >-
           entre chien et loup
@@ -125,49 +125,49 @@ projects:
           The performance responds to the vibrations repelled off the walls and
           filling the space.
         media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025370/entre-chien-et-loup/atlas-5-v1.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710648/entre-chien-et-loup/atlas-5-v1_to7w2y.jpg
         title: atlas18
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025289/entre-chien-et-loup/_52a5351_4.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710812/entre-chien-et-loup/_52a5351_4_bwjkrh.jpg
         title: atlas15
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025374/entre-chien-et-loup/atlas-4-v1.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710514/entre-chien-et-loup/atlas-4-v1_aq2bqa.jpg
         title: atlas10
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025359/entre-chien-et-loup/vlcsnap-2018-12-13-01h14m22s62.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710555/entre-chien-et-loup/vlcsnap-2018-12-13-01h14m22s62_vp0fwb.png
         title: atlas2
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025340/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710554/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41_jzr56m.png
         title: atlas3
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025361/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710551/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210_ef8z59.png
         title: atlas7
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025373/entre-chien-et-loup/untitled8.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710584/entre-chien-et-loup/untitled8_nknwrk.jpg
         title: atlas9
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025367/entre-chien-et-loup/atlas-2-v1.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710657/entre-chien-et-loup/atlas-2-v1_elxz9s.jpg
         title: atlas11
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025279/entre-chien-et-loup/_52a5375.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710811/entre-chien-et-loup/_52a5375_cugbcz.jpg
         title: atlas12
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025354/entre-chien-et-loup/_52a5364_1.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710815/entre-chien-et-loup/_52a5364_1_uqebma.jpg
         title: atlas13
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025295/entre-chien-et-loup/_52a5354_2.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710812/entre-chien-et-loup/_52a5354_2_pggelf.jpg
         title: atlas14
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558262314/entre-chien-et-loup/atlas-7-v1_nq0uy9.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562709707/entre-chien-et-loup/atlas-7-v1_pi0rsy.jpg
         title: atlas16
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558026265/entre-chien-et-loup/atlas-1-v1.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
         title: atlas17
       - media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
         title: atlas5
     poster: >-
-      https://res.cloudinary.com/ekuwol/image/upload/v1558026265/entre-chien-et-loup/atlas-1-v1.jpg
+      https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
     title: entre chien et loup
   - cover: >-
       https://res.cloudinary.com/ekuwol/video/upload/v1558025372/chromatophores/stig_in_room-final.mp4
