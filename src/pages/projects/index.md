@@ -9,7 +9,10 @@ projects:
         poster: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025335/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78.jpg
         title: atlas audio
-      - description: "entre chien et loup\r\n\ninstallation sonore réfractive et concert animal électronique\r\n\natlas, anderlecht, belgium\r\n\nDans le ventre souterrain de l’Atlas\r\n\n\r\n\nPrendre corps immense\r\n\nRythmique mugissante\r\n\nAu cœur de la bête\r\n\n\r\n\nComme les animaux de l’obscurité comprennent leur environnement en émettant des fréquences sonores et en appréciant le temps de retour de l’écho.\r\n\nEn réponse au retour des bruits sur les murs, la performance prend appui sur les vibrations qui repoussent le son dans l’espace.\r\n\n\r\n\n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\__\r\n\n\r\n\nentre chien et loup\r\n\nrefractive sound installation and animal electronic performance\r\n\natlas, anderlecht, belgium\r\n\n\r\n\nIn the depths of Atlas\r\n\n\r\n\nTakes colossal form\r\n\nLowing rhythmics\r\n\nAt the heart of the beast\r\n\n\r\n\nLike animals in the darkness, understanding the environment by emitting sonic frequencies and evaluating the return of the echo.\r\n\nThe performance responds to the vibrations repelled off the walls and filling the space."
+      - description: |-
+          acbsakcja
+
+          acasj
         media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558025346/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37.jpg
         title: atlas8
