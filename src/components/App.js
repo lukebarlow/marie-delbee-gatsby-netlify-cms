@@ -303,7 +303,8 @@ export default class App extends React.Component {
       this.setStateAndHistory({
         pieceIndex: 0,
         captionPieceIndex: 0,
-        projectIndex: link
+        projectIndex: link,
+        showInfo: false
       })
       // this.setHistory({ projectIndex, pieceIndex })   
     }
