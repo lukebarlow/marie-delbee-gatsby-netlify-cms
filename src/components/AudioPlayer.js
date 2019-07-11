@@ -196,9 +196,9 @@ export default class AudioPlayer extends React.Component {
     // const seekBarY = `calc(100% - ${seekBarSize}px)`
     const seekBarY = `${actualHeight + effectiveTopMargin - seekBarSize}px`
 
-    const topLeftClipPath = `polygon(0 0, ${playedWidth}px 0, ${playedWidth}px ${seekBarY}, 0 ${seekBarY})`
+    const topLeftClipPath = `polygon(0 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
     const bottomLeftClipPath = `polygon(0 ${seekBarY}, ${playedWidth}px ${seekBarY}, ${playedWidth}px 100%, 0 100%)`
-    const topRightClipPath = `polygon(${playedWidth}px 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
+    // const topRightClipPath = `polygon(${playedWidth}px 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
     const bottomRightClipPath = `polygon(${playedWidth}px ${seekBarY}, 100% ${seekBarY}, 100% 100%, ${playedWidth}px 100%)`
 
     if (!imageDimensionsCalculated) {
@@ -218,9 +218,9 @@ export default class AudioPlayer extends React.Component {
           }}
         >
           <Img src={imgSrc} style={{position: 'absolute', clipPath: topLeftClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomLeftClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', clipPath: bottomRightClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.9, clipPath: bottomLeftClipPath}} />
+          {/* <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath}} /> */}
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomRightClipPath}} />
         </div>
         <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute' }}>
           <PlayStopButton 
