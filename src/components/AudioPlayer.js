@@ -193,12 +193,10 @@ export default class AudioPlayer extends React.Component {
     const seekBarSize = Math.max(Math.round(playStopSize / 2), 50)
     const playedWidth = width * this.state.fractionCropped
 
-    // const seekBarY = `calc(100% - ${seekBarSize}px)`
     const seekBarY = `${actualHeight + effectiveTopMargin - seekBarSize}px`
 
     const topLeftClipPath = `polygon(0 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
     const bottomLeftClipPath = `polygon(0 ${seekBarY}, ${playedWidth}px ${seekBarY}, ${playedWidth}px 100%, 0 100%)`
-    // const topRightClipPath = `polygon(${playedWidth}px 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
     const bottomRightClipPath = `polygon(${playedWidth}px ${seekBarY}, 100% ${seekBarY}, 100% 100%, ${playedWidth}px 100%)`
 
     if (!imageDimensionsCalculated) {
