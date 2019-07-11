@@ -122,6 +122,7 @@ export default class Piece extends React.Component {
           }
           { type === 'AUDIO' && 
             <AudioPlayer
+              height={imgHeight}
               audioSrc={piece.media}
               imgSrc={transformCloudinaryUrl(piece.poster, imgHeight)}
             />
