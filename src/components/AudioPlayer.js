@@ -15,21 +15,26 @@ const Container = styled.div`
   user-select: none;
 `
 
-const Cropper = styled.div`
-  overflow: hidden;
-  width: ${({width, fractionCropped}) => fractionCropped * width}px;
-  height: ${({height}) => height}px;
-  position: absolute;
-`
+// const Cropper = styled.div`
+//   overflow: hidden;
+//   width: ${({width, fractionCropped}) => fractionCropped * width}px;
+//   height: ${({height}) => height}px;
+//   position: absolute;
+// `
 
-const FadedImg = styled.img`
-  position: absolute;
-  width: ${({width}) => width}px;
-  height: auto;
-  opacity: 0.7;
-  height: calc(100vh - 160px);
-  object-fit: contain;
-`
+// const FadedImg = styled.img`
+//   position: absolute;
+//   width: ${({width}) => width}px;
+//   height: auto;
+//   opacity: 0.7;
+//   height: calc(100vh - 160px);
+//   object-fit: contain;
+
+//   @media ${landscapeSelector} {
+//     width: auto;
+//     height: calc(100vh - 60px);
+//   }
+// `
 
 const Img = styled.img`
   width: ${({width}) => width}px;
@@ -37,6 +42,19 @@ const Img = styled.img`
   position: absolute;
   height: calc(100vh - 160px);
   object-fit: contain;
+
+  @media ${portraitSelector} {
+    max-width: calc(100vw - 10px);
+    max-height: calc(100vh - 20px);
+    height: calc(100vh - 160px);
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @media ${landscapeSelector} {
+    width: auto;
+    height: calc(100vh - 60px);
+  }
 `
 
 const StyledImg = styled.img`
@@ -55,6 +73,7 @@ const StyledImg = styled.img`
 
   @media ${landscapeSelector} {
     width: auto;
+    max-width: calc(100vw - 10px);
     height: calc(100vh - 60px);
   }
 `
@@ -122,10 +141,22 @@ export default class AudioPlayer extends React.Component {
   }
 
   imageLoadHandler (e) {
+    const img = window.img = e.target
+    
+    let { width, height } = img
+    let actualHeight = height
+    let effectiveTopMargin = 0
+    if (img.height > img.width && img.naturalHeight < img.naturalWidth) {
+      actualHeight = img.width / (img.naturalWidth / img.naturalHeight)
+      effectiveTopMargin = (height - actualHeight) / 2
+    }
+
     this.setState({
       imageDimensionsCalculated: true,
-      width: e.target.width,
-      height: e.target.height
+      width,
+      height,
+      actualHeight,
+      effectiveTopMargin
     })
   }
 
@@ -141,31 +172,41 @@ export default class AudioPlayer extends React.Component {
       this.setState({ imageDimensionsCalculated: false })
     })
 
-    const img = this.sizerImage.current
-    if (img.complete) {
-      this.setState({
-        imageDimensionsCalculated: true,
-        width: img.width,
-        height: img.height
-      })
-    }
+    // const img = this.sizerImage.current
+
+    // if (img.complete) {
+    //   this.setState({
+    //     imageDimensionsCalculated: true,
+    //     width: img.width,
+    //     height: img.height
+    //   })
+    // }
   }
   
 
   render () {
     const { imgSrc } = this.props
-    const { imageDimensionsCalculated, width, height } = this.state
+    const { imageDimensionsCalculated, width, height, actualHeight, effectiveTopMargin } = this.state
     const size = Math.min(width, height)
 
     const playStopSize = size / 6
+    const seekBarSize = Math.max(Math.round(playStopSize / 2), 50)
+    const playedWidth = width * this.state.fractionCropped
+
+    // const seekBarY = `calc(100% - ${seekBarSize}px)`
+    const seekBarY = `${actualHeight + effectiveTopMargin - seekBarSize}px`
+
+    const topLeftClipPath = `polygon(0 0, ${playedWidth}px 0, ${playedWidth}px ${seekBarY}, 0 ${seekBarY})`
+    const bottomLeftClipPath = `polygon(0 ${seekBarY}, ${playedWidth}px ${seekBarY}, ${playedWidth}px 100%, 0 100%)`
+    const topRightClipPath = `polygon(${playedWidth}px 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
+    const bottomRightClipPath = `polygon(${playedWidth}px ${seekBarY}, 100% ${seekBarY}, 100% 100%, ${playedWidth}px 100%)`
 
     if (!imageDimensionsCalculated) {
       return <StyledImg style={{ opacity: 0.1 }} src={imgSrc} onLoad={this.imageLoadHandler} ref={this.sizerImage} />
     } else {
 
-      return <Container 
-          width={width}
-          height={height} 
+      return <Container width={width} height={height}>
+        <div style={{position: 'absolute', width: width, height: height}}
           onMouseDown={this.mouseDownHandler} 
           onMouseMove={this.mouseMoveHandler}
           onTouchStart={this.touchStartHandler}
@@ -175,15 +216,13 @@ export default class AudioPlayer extends React.Component {
             e.preventDefault()
             return false
           }}
-          
         >
-        <div style={{position: 'absolute', width: width, height: height}}>
-          <FadedImg src={imgSrc} width={width} height={height}/>
-          <Cropper width={width} height={height} fractionCropped={this.state.fractionCropped}>
-            <Img src={imgSrc} width={width} height={height} />
-          </Cropper>
+          <Img src={imgSrc} style={{position: 'absolute', clipPath: topLeftClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomLeftClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', clipPath: bottomRightClipPath}} />
         </div>
-        <svg width={size} height={size} style={{ position: 'absolute' }}>
+        <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute' }}>
           <PlayStopButton 
             fraction={this.state.fractionCropped} 
             size={playStopSize} 
