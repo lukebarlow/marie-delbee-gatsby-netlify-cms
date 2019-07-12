@@ -220,7 +220,7 @@ export default class AudioPlayer extends React.Component {
           {/* <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath}} /> */}
           <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomRightClipPath}} />
         </div>
-        <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute' }}>
+        <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute', cursor: 'pointer' }}>
           <PlayStopButton 
             fraction={this.state.fractionCropped} 
             size={playStopSize} 
