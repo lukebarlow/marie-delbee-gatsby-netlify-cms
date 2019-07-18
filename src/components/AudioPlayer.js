@@ -229,8 +229,7 @@ export default class AudioPlayer extends React.Component {
               position: 'absolute', 
               opacity: 1, 
               clipPath: topLeftClipPath, 
-              WebkitClipPath: topLeftClipPath,
-              backgroundColor: 'pink'
+              WebkitClipPath: topLeftClipPath
             }} 
           />
           <Img 
@@ -250,14 +249,13 @@ export default class AudioPlayer extends React.Component {
               cursor: 'ew-resize', 
               opacity: 0.6,
               clipPath: bottomRightClipPath, 
-              WebkitClipPath: bottomRightClipPath,
-              backgroundColor: 'green'
+              WebkitClipPath: bottomRightClipPath
             }} 
           />
         </div>
         <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute', cursor: 'pointer', zIndex: 10 }}>
           <PlayStopButton 
-            fraction={this.state.fractionCropped} 
+            fraction={1} 
             size={playStopSize} 
             width={width}
             height={height}
