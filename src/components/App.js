@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import scroll from 'scroll'
 import Markdown from 'react-markdown'
-import MediaQuery from 'react-responsive'
 
 import History from 'hash-history'
 
@@ -356,15 +355,12 @@ export default class App extends React.Component {
       <Info visible={showInfo}>
         <Markdown source={info} />
       </Info>
-      
-      <MediaQuery minWidth={768}>
-        <NavigationLinks
-          selected={ showInfo ? 'info' : projectIndex }
-          isWhite={captionPieceIndex===0 && !showInfo} 
-          projects={projects} 
-          onLink={this.handleLink} 
-        />
-      </MediaQuery>
+      <NavigationLinks
+        selected={ showInfo ? 'info' : projectIndex }
+        isWhite={captionPieceIndex===0 && !showInfo} 
+        projects={projects} 
+        onLink={this.handleLink} 
+      />
     </>
   }
 }

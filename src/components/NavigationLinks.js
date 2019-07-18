@@ -1,4 +1,5 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
 import styled from 'styled-components'
 const Bar = styled.div`
   position: absolute;
@@ -25,7 +26,7 @@ const InfoSpan = styled.span`
   top: 20px;
   right: 30px;
   display: block;
-  color: ${({ isWhite }) => isWhite ? 'white': 'black'};
+  color: ${({ color }) => color};
   text-decoration: ${({ selected }) => selected ? 'underline' : 'inherit'};
 
   :hover {
@@ -36,9 +37,19 @@ const InfoSpan = styled.span`
 
 export default ({projects, onLink, isWhite, selected}) => {
   return <>
-    <Bar isWhite={isWhite}>
-      { projects.map((p, i) => <NavSpan onClick={() => onLink(i)} key={i} selected={parseInt(selected)===i} project={p}>{p.title}</NavSpan>)}
-    </Bar>
-    <InfoSpan isWhite={isWhite} onClick={() => onLink('info')} selected={selected==='info'}>info</InfoSpan>
+    <MediaQuery minWidth={768}>
+      <Bar isWhite={isWhite}>
+        { projects.map((p, i) => <NavSpan onClick={() => onLink(i)} key={i} selected={parseInt(selected)===i} project={p}>{p.title}</NavSpan>)}
+      </Bar>
+      <InfoSpan color={isWhite ? 'white' : 'black'} onClick={() => onLink('info')} selected={selected==='info'}>
+        { selected==='info' ? 'close' : 'info' }
+      </InfoSpan>
+    </MediaQuery>
+    <MediaQuery maxWidth={768}>
+      <InfoSpan color='gray' onClick={() => onLink('info')} selected={selected==='info'}>
+        { selected==='info' ? 'close' : 'info' }
+      </InfoSpan>
+    </MediaQuery>
+    
   </>
 }
