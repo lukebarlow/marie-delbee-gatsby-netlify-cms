@@ -32,7 +32,6 @@ const InfoSpan = styled.span`
   :hover {
     text-decoration: underline;
   }
-
 `
 
 export default ({projects, onLink, isWhite, selected}) => {
@@ -50,6 +49,5 @@ export default ({projects, onLink, isWhite, selected}) => {
         { selected==='info' ? 'close' : 'info' }
       </InfoSpan>
     </MediaQuery>
-    
   </>
 }

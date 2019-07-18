@@ -10,6 +10,7 @@ import Caption from './Caption'
 import '../styles/App.css'
 
 import Project from './Project'
+import { smallScreenSelector } from '../mediaSelectors.js'
 
 const ProjectContainer = styled.div`
   height: 100vh;
@@ -27,7 +28,12 @@ const Info = styled.div`
   padding-top: 100px;
   padding-left: 150px;
   padding-right: 150px;
-  visibility: ${({visible}) => visible ? 'visible' : 'hidden'}
+  visibility: ${({visible}) => visible ? 'visible' : 'hidden'};
+
+  @media ${smallScreenSelector} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `
 
 const scrollTriggerThreshold = 51
@@ -352,7 +358,7 @@ export default class App extends React.Component {
         count={pieces.length} 
         piece={piece} 
       />
-      <Info visible={showInfo}>
+      <Info visible={showInfo} onWheel={(e) => e.stopPropagation()}>
         <Markdown source={info} />
       </Info>
       <NavigationLinks
