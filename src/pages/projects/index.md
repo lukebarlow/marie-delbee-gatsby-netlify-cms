@@ -170,7 +170,7 @@ projects:
       https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
     title: entre chien et loup
   - cover: >-
-      https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562711380/chromatophores/stig_in_room-final_fncbs1.mp4
+      https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563448792/chromatophores/chromatophores_loop_time_remap_5_youtube_ffeyk9.mp4
     pieces:
       - description: >-
           A nice bit of text for each piece will help a lot with testing. A nice
