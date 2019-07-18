@@ -8,11 +8,11 @@ import {  smallScreenSelector, portraitSelector, landscapeSelector } from '../me
 const CaptionContainer = styled.div`
   position: absolute;
   width: calc(100vw);
-  min-height: 150px;
   padding-left: 150px;
   padding-right: 150px;
   transition: top 0.5s;
   background-color: white;
+  overflow-y: auto;
   
   @media ${smallScreenSelector} {
     padding-left: 10px;
@@ -77,6 +77,7 @@ export default class Caption extends React.Component {
     this.state = { expanded: false }
     this.toggleExpanded = this.toggleExpanded.bind(this)
     this.handleRef = this.handleRef.bind(this)
+    this.stopPropagation = this.stopPropagation.bind(this)
   }
 
   toggleExpanded () {
@@ -87,47 +88,66 @@ export default class Caption extends React.Component {
     this.el = el
   }
 
-  calculateStyleTop () {
+  calculateTopAndHeight () {
     const { piece } = this.props
     const { expanded } = this.state
-    const elementHeight = this.el ? this.el.offsetHeight : 200
+    // const elementHeight = Math.min(this.el ? this.el.offsetHeight : 200, document.body.offsetHeight - 100)
+
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
     const browser = Bowser.getParser(window.navigator.userAgent)
     const h = window.innerHeight
 
+    let top
+    let height = isMobile && isLandscape ? 'calc(50% + 50px)' : '50%'
+
     if (isMobile) {
-      if (isLandscape) {
-        const t = !piece ? h : ( expanded ? h - elementHeight + 50 : h - 50)
-        return t + 'px' 
+      // if (isLandscape) {
+      //   const t = !piece ? h : ( expanded ? h - elementHeight + 50 : h - 50)
+      //   top = t + 'px' 
 
-
-        // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
-      } else {
+      //   // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
+      // } else {
         if (browser.getBrowserName() === 'Safari') {
-          return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 70}px)` : 'calc(100vh - 125px)')
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
         } else {
-          return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 20}px)` : 'calc(100vh - 60px)')
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 60px)')
         }
-      }
+      //}
     } else {
-      return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight}px)` : 'calc(100vh - 40px)')
+      top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 40px)')
     }
+
+    return { top, height }
+  }
+
+  updateTopAndHeight () {
+    const { top, height } = this.calculateTopAndHeight()
+    this.el.style.top = top
+    this.el.style.height = height
   }
 
   componentDidUpdate () {
-    this.el.style.top = this.calculateStyleTop()
+    this.updateTopAndHeight()
   }
 
   componentDidMount () {
-    this.el.style.top = this.calculateStyleTop()
+    this.updateTopAndHeight()
+  }
+
+  stopPropagation (e) {
+    e.stopPropagation()
   }
 
   render () {
     const { piece, index, count, onMove } = this.props
     const { expanded } = this.state
     
-    return <CaptionContainer ref={this.handleRef}>
+    return <CaptionContainer 
+        ref={this.handleRef} 
+        onWheel={this.stopPropagation} 
+        onTouchMove={this.stopPropagation}
+      >
       <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
       { index > 0 && 
         <Nav>
@@ -137,7 +157,11 @@ export default class Caption extends React.Component {
         </Nav>
       }
       <Title onClick={this.toggleExpanded}>{piece && piece.title}</Title>
-      <Markdown source={piece ? piece.description : ''} />
+      { 
+        expanded && 
+        <Markdown source={piece ? piece.description : ''} />
+      }
+      
     </CaptionContainer>
   }
 }
