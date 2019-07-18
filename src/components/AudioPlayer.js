@@ -141,23 +141,27 @@ export default class AudioPlayer extends React.Component {
   }
 
   imageLoadHandler (e) {
-    const img = window.img = e.target
     
-    let { width, height } = img
-    let actualHeight = height
-    let effectiveTopMargin = 0
-    if (img.height > img.width && img.naturalHeight < img.naturalWidth) {
-      actualHeight = img.width / (img.naturalWidth / img.naturalHeight)
-      effectiveTopMargin = (height - actualHeight) / 2
-    }
+    const img = window.img = e.target
 
-    this.setState({
-      imageDimensionsCalculated: true,
-      width,
-      height,
-      actualHeight,
-      effectiveTopMargin
-    })
+    setTimeout(() => {
+      let { width, height } = img
+      let actualHeight = height
+      let effectiveTopMargin = 0
+      if (img.height > img.width && img.naturalHeight < img.naturalWidth) {
+        actualHeight = img.width / (img.naturalWidth / img.naturalHeight)
+        effectiveTopMargin = (height - actualHeight) / 2
+      }
+
+      this.setState({
+        imageDimensionsCalculated: true,
+        width,
+        height,
+        actualHeight,
+        effectiveTopMargin
+      })
+
+    }, 10)
   }
 
   componentDidMount () {
@@ -193,13 +197,14 @@ export default class AudioPlayer extends React.Component {
     const seekBarSize = Math.max(Math.round(playStopSize / 2), 50)
     const playedWidth = width * this.state.fractionCropped
 
-    // const seekBarY = `calc(100% - ${seekBarSize}px)`
-    const seekBarY = `${actualHeight + effectiveTopMargin - seekBarSize}px`
+    const top = effectiveTopMargin
+    const bottom = top + actualHeight
+    const seekBarY = bottom - seekBarSize
 
-    const topLeftClipPath = `polygon(0 0, ${playedWidth}px 0, ${playedWidth}px ${seekBarY}, 0 ${seekBarY})`
-    const bottomLeftClipPath = `polygon(0 ${seekBarY}, ${playedWidth}px ${seekBarY}, ${playedWidth}px 100%, 0 100%)`
-    const topRightClipPath = `polygon(${playedWidth}px 0, 100% 0, 100% ${seekBarY}, 0 ${seekBarY})`
-    const bottomRightClipPath = `polygon(${playedWidth}px ${seekBarY}, 100% ${seekBarY}, 100% 100%, ${playedWidth}px 100%)`
+    const topLeftClipPath = `polygon(0 ${top}px, ${playedWidth}px ${top}px, ${playedWidth}px ${seekBarY}px, 0 ${seekBarY}px)`
+    const bottomLeftClipPath = `polygon(0 ${seekBarY}px, ${playedWidth}px ${seekBarY}px, ${playedWidth}px ${bottom}px, 0 ${bottom}px)`
+    const topRightClipPath = `polygon(${playedWidth}px ${top}px, 100% ${top}px, 100% ${seekBarY}px, 0 ${seekBarY}px)`
+    const bottomRightClipPath = `polygon(${playedWidth}px ${seekBarY}px, 100% ${seekBarY}px, 100% ${bottom}px, ${playedWidth}px ${bottom}px)`
 
     if (!imageDimensionsCalculated) {
       return <StyledImg style={{ opacity: 0.1 }} src={imgSrc} onLoad={this.imageLoadHandler} ref={this.sizerImage} />
@@ -217,10 +222,10 @@ export default class AudioPlayer extends React.Component {
             return false
           }}
         >
-          <Img src={imgSrc} style={{position: 'absolute', clipPath: topLeftClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomLeftClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath}} />
-          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', clipPath: bottomRightClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', clipPath: topLeftClipPath, WebkitClipPath: topLeftClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', opacity: 0.7, clipPath: bottomLeftClipPath, WebkitClipPath: bottomLeftClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', opacity: 0.7, clipPath: topRightClipPath, WebkitClipPath: topRightClipPath}} />
+          <Img src={imgSrc} style={{position: 'absolute', cursor: 'ew-resize', clipPath: bottomRightClipPath, WebkitClipPath: bottomRightClipPath}} />
         </div>
         <svg width={width} height={actualHeight + effectiveTopMargin - seekBarSize} style={{ position: 'absolute' }}>
           <PlayStopButton 
