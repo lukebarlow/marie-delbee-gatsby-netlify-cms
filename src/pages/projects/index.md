@@ -10,23 +10,17 @@ projects:
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
         title: atlas audio
       - description: >-
-          entre chien et loup
+          entre chien et loup\
 
+          installation sonore réfractive et concert animal électronique\
 
-          installation sonore réfractive et concert animal électronique
+          atlas, anderlecht, belgium\
 
+          Dans le ventre souterrain de l’Atlas\
 
-          atlas, anderlecht, belgium
+          Prendre corps immense\
 
-
-          Dans le ventre souterrain de l’Atlas
-
-
-          Prendre corps immense
-
-
-          Rythmique mugissante
-
+          Rythmique mugissante\
 
           Au cœur de la bête
 
