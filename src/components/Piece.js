@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import AudioPlayer from './AudioPlayer.js'
+import AudioPlayer2 from './AudioPlayer2.js'
 import fileType from '../common/fileType.js'
 import transformCloudinaryUrl from '../common/transformCloudinaryUrl.js'
 
@@ -121,7 +121,7 @@ export default class Piece extends React.Component {
             />
           }
           { type === 'AUDIO' && 
-            <AudioPlayer
+            <AudioPlayer2
               height={imgHeight}
               audioSrc={piece.media}
               imgSrc={transformCloudinaryUrl(piece.poster, imgHeight)}

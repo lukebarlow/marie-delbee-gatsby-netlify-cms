@@ -96,7 +96,7 @@ export default class Caption extends React.Component {
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
     const browser = Bowser.getParser(window.navigator.userAgent)
-    const h = window.innerHeight
+    // const h = window.innerHeight
 
     let top
     let height = isMobile && isLandscape ? 'calc(50% + 50px)' : '50%'
