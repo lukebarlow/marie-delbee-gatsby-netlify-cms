@@ -51,10 +51,13 @@ const StyledImg = styled.img`
 `
 
 const StyledVideo = styled.video`
-  display: block;
-  width: auto;
-  min-width: calc(100vw);
-  min-height: calc(100vh);
+display: block;
+width: auto;
+min-width: calc(100vw);
+min-height: calc(100vh);
+max-width: calc(100vmax);
+max-height: calc(100vmax);
+object-fit: cover;
 `
 
 export default ({ project, isCurrent = false, pieceIndex, onPieceClick, onImageLoad }) => (
