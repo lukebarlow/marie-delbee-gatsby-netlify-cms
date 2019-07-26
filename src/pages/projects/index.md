@@ -2,6 +2,31 @@
 templateKey: projects-page
 projects:
   - cover: >-
+      https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
+    pieces:
+      - description: >-
+          A nice bit of text for each piece will help a lot with testing. A nice
+          bit of text for each piece will help a lot with testing. A nice bit of
+          text for each piece will help a lot with testing. A nice bit of text
+          for each piece will help a lot with testing.
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025103/chromatophores/field.jpg
+        title: A field
+      - description: >-
+          A nice bit of text for each piece will help a lot with testing. A nice
+          bit of text for each piece will help a lot with testing. A nice bit of
+          text for each piece will help a lot with testing. A nice bit of text
+          for each piece will help a lot with testing.
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558025372/chromatophores/mountain.jpg
+        title: Mountain
+      - description: A nice bit of text for each piece will help a lot with testing.
+        media: >-
+          https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
+        title: Sunset
+    poster: ''
+    title: chromatophores
+  - cover: >-
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710614/entre-chien-et-loup/entre-chien-et-loup-title-loop-simple-fade_ubai9i.mp4
     pieces:
       - media: >-
@@ -163,31 +188,6 @@ projects:
     poster: >-
       https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
     title: entre chien et loup
-  - cover: >-
-      https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
-    pieces:
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025103/chromatophores/field.jpg
-        title: A field
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025372/chromatophores/mountain.jpg
-        title: Mountain
-      - description: A nice bit of text for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
-        title: Sunset
-    poster: ''
-    title: chromatophores
   - cover: >-
       https://res.cloudinary.com/ekuwol/video/upload/v1558025364/deep-space/deep_space_2_faststart.mp4
     pieces:
