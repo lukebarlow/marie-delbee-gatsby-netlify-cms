@@ -5,8 +5,6 @@ import { timeFormat } from 'd3-time-format'
 import PlayStopButton2 from './PlayStopButton2'
 import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
 
-window.timeFormat = timeFormat
-
 const Container = styled.div`
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
