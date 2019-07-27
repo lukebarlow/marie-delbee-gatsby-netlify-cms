@@ -33,7 +33,7 @@ const StyledImg = styled.img`
   @media ${landscapeSelector} {
     width: auto;
     max-width: calc(100vw - 10px);
-    height: calc(100vh - 60px);
+    height: calc(100vh - 40px);
   }
 `
 

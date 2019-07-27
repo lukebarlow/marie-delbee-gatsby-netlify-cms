@@ -30,43 +30,50 @@ const Toggle = styled.div`
   position: absolute;
   left: 20px;
   top: -5px;
-  font-size: 20pt;
+  font-size: 27px;
   cursor: pointer;
 
   @media ${smallScreenSelector} {
     left: 10px;
-    top: 2px;
+    top: -3px;
   }
 `
 
 const Nav = styled.div`
   position: absolute;
   right: 150px;
-  top: 5px;
+  top: -6px;
 
   @media ${smallScreenSelector} {
     right: 10px;
-    font-size: 20pt;
+    font-size: 16px;
   }
 `
 
 const NavLink = styled.span`
+  font-size: 27px;
   cursor: pointer;
+  position: relative;
+  top: 3px;
 `
 
 const Title = styled.div`
   margin-top: 5px;
   margin-bottom: 30px;
   cursor: pointer;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 100px);
   
   @media ${portraitSelector}{
-    padding-left: 20px;
-    font-size: 20pt;
+    padding-left: 30px;
+    font-size: 16px;
   }
 
   @media ${landscapeSelector} {
-    padding-left: 20px;
-    font-size: 20pt;
+    padding-left: 30px;
+    font-size: 16px;
     margin-bottom: 0px;
   }
 `
@@ -111,7 +118,7 @@ export default class Caption extends React.Component {
         if (browser.getBrowserName() === 'Safari') {
           top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
         } else {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 60px)')
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
         }
       //}
     } else {

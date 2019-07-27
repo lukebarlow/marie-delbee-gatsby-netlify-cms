@@ -48,6 +48,7 @@ export default class App extends React.Component {
     this.finishedScrolling = this.finishedScrolling.bind(this)
     this.handlePieceClick = this.handlePieceClick.bind(this)
     this.handleImageLoad = this.handleImageLoad.bind(this)
+    this.stopPropagation = this.stopPropagation.bind(this)
     this.scrollTo = this.scrollTo.bind(this)
     this.state = {
       showInfo: false,
@@ -324,6 +325,10 @@ export default class App extends React.Component {
     this.scrollTo(this.state, true)
   }
 
+  stopPropagation (e) {
+    e.stopPropagation()
+  }
+
   render () {
     const { projects, info } = this.props
     const { projectIndex, pieceIndex, captionPieceIndex, showInfo } = this.state
@@ -346,13 +351,17 @@ export default class App extends React.Component {
           onImageLoad={this.handleImageLoad}
         />)}
       </ProjectContainer>
-      <Caption 
-        onMove={onMove} 
-        index={captionPieceIndex} 
-        count={pieces.length} 
-        piece={piece} 
-      />
-      <Info visible={showInfo} onWheel={(e) => e.stopPropagation()}>
+      { 
+        captionPieceIndex > 0 &&
+        <Caption 
+          onMove={onMove} 
+          index={captionPieceIndex} 
+          count={pieces.length} 
+          piece={piece} 
+        />
+      }
+      
+      <Info visible={showInfo} onWheel={this.stopPropagation} onTouchMove={this.stopPropagation} onTouchStart={this.stopPropagation}>
         <Markdown source={info} />
       </Info>
       <NavigationLinks

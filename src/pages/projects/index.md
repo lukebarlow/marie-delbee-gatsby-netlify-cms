@@ -23,7 +23,7 @@ projects:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
-        title: Sunset
+        title: The old quarry, Sun, with bleeding scales, flaps up the gullies, wets their crystal pebbles
     poster: ''
     title: chromatophores
   - cover: >-
