@@ -97,12 +97,10 @@ export default class Caption extends React.Component {
   calculateTopAndHeight () {
     const { piece } = this.props
     const { expanded } = this.state
-    // const elementHeight = Math.min(this.el ? this.el.offsetHeight : 200, document.body.offsetHeight - 100)
 
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
     const browser = Bowser.getParser(window.navigator.userAgent)
-    // const h = window.innerHeight
 
     let top
     let height = isMobile && isLandscape ? 'calc(50% + 50px)' : '50%'
@@ -114,11 +112,11 @@ export default class Caption extends React.Component {
 
       //   // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
       // } else {
-        if (browser.getBrowserName() === 'Safari') {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 75px)')
-        } else {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
-        }
+        //if (browser.getBrowserName() === 'Safari') {
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
+        //} else {
+        //  top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
+        //}
       //}
     } else {
       top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 40px)')
