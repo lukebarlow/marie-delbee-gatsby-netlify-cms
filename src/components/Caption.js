@@ -21,7 +21,6 @@ const CaptionContainer = styled.div`
   }
 
   @media only ${landscapeSelector} {
-    font-size: 10pt;
     -webkit-text-size-adjust: 100%;
   }
 `
@@ -116,7 +115,7 @@ export default class Caption extends React.Component {
       //   // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
       // } else {
         if (browser.getBrowserName() === 'Safari') {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 75px)')
         } else {
           top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
         }
