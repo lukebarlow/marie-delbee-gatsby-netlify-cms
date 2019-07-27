@@ -42,7 +42,7 @@ const Toggle = styled.div`
 const Nav = styled.div`
   position: absolute;
   right: 150px;
-  top: -6px;
+  top: -7px;
 
   @media ${smallScreenSelector} {
     right: 10px;
@@ -54,7 +54,7 @@ const NavLink = styled.span`
   font-size: 27px;
   cursor: pointer;
   position: relative;
-  top: 3px;
+  top: 4px;
 `
 
 const Title = styled.div`
