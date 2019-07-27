@@ -92,10 +92,7 @@ export default class App extends React.Component {
         }
       }
       
-      // the project we're scrolling to will always start with the cover,
-      // so we first reset the scroll position of that project
       const projectElement = projectsContainer.children[projectIndex]
-      // projectElement.scrollLeft = 0 // redundant - done above
 
       if (instant) {
         projectsContainer.scrollTop = projectElement.offsetTop
@@ -253,11 +250,8 @@ export default class App extends React.Component {
     })
 
     window.addEventListener('resize', () => { 
-      // this.verticalScroll(this.state.projectIndex, true)
-      // this.horizontalScroll(this.state.pieceIndex, true)
-
-      this.scrollTo(this.state, true)
-
+        this.scrollTo(this.state, true)
+        this.verticalScroll(this.state.projectIndex, true)
     })
 
     this.navHistory = new History('n', {
