@@ -64,18 +64,18 @@ projects:
           \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
 
 
-          entre chien et loup
+          entre chien et loup\
 
           refractive sound installation and animal electronic performance
 
           atlas, anderlecht, belgium
 
 
-          In the depths of Atlas
+          In the depths of Atlas\
 
-          Takes colossal form
+          Takes colossal form\
 
-          Lowing rhythmics
+          Lowing rhythmics\
 
           At the heart of the beast
 
