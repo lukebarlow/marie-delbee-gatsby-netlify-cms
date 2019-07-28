@@ -23,7 +23,9 @@ projects:
       - description: A nice bit of text for each piece will help a lot with testing.
         media: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
-        title: The old quarry, Sun, with bleeding scales, flaps up the gullies, wets their crystal pebbles
+        title: >-
+          The old quarry, Sun, with bleeding scales, flaps up the gullies, wets
+          their crystal pebbles
     poster: ''
     title: chromatophores
   - cover: >-
@@ -35,17 +37,17 @@ projects:
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
         title: atlas audio
       - description: >-
-          entre chien et loup\
+          entre chien et loup
 
-          installation sonore réfractive et concert animal électronique\
+          installation sonore réfractive et concert animal électronique
 
-          atlas, anderlecht, belgium\
+          atlas, anderlecht, belgium
 
-          Dans le ventre souterrain de l’Atlas\
+          Dans le ventre souterrain de l’Atlas
 
-          Prendre corps immense\
+          Prendre corps immense
 
-          Rythmique mugissante\
+          Rythmique mugissante
 
           Au cœur de la bête
 
