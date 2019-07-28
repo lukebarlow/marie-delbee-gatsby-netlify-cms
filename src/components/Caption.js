@@ -170,7 +170,7 @@ export default class Caption extends React.Component {
       <Title onClick={this.toggleExpanded}>{piece && piece.title}</Title>
       { 
         expanded && 
-        <Markdown source={piece ? piece.description : ''} />
+        <Markdown source={piece ? piece.description.replace(/\\/g, '  ') : ''} />
       }
       
     </CaptionContainer>

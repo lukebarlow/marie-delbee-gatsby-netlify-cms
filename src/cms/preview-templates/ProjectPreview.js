@@ -5,12 +5,14 @@ import fileType from '../../common/fileType.js'
 import PiecePreview from './PiecePreview.js'
 
 const style = {
-  height: '100%'
+  height: '100px',
+  width: 'auto'
 }
 
 export default ({ project }) => {
-  return <div style={{ display: 'flex', margin: '20px', height: '100vh' }}>
-    <div style={{backgrondColor: 'red'}}>
+  return <div >
+    <h1>{project.title}</h1>
+    <div>
       { fileType(project.cover) === 'IMAGE' ?
         <img alt={project.title} src={project.cover} style={style} />
         :
@@ -26,5 +28,6 @@ export default ({ project }) => {
       }
     </div>
     { project.pieces.map((piece, i) => <PiecePreview key={i} piece={piece} />)}
+    <hr />
   </div>
 }
