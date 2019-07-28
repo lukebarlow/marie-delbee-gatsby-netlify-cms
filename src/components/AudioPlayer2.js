@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { timeFormat } from 'd3-time-format'
 
 import PlayStopButton2 from './PlayStopButton2'
-import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
+import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
+import { pieceSizeCss } from '../styles/elements.js'
 
 const Container = styled.div`
   width: ${({width}) => width}px;
@@ -16,25 +17,10 @@ const Container = styled.div`
   user-select: none;
 `
 
-const StyledImg = styled.img`
-  display: block;
-  width: auto;
-  height: calc(100vh - 160px);
-  cursor: pointer;
-  
-  @media ${portraitSelector} {
-    max-width: calc(100vw - 10px);
-    max-height: calc(100vh - 20px);
-    height: calc(100vh - 160px);
-    width: 100%;
-    object-fit: contain;
-  }
+console.log('pieceSizeCss', pieceSizeCss)
 
-  @media ${landscapeSelector} {
-    width: auto;
-    max-width: calc(100vw - 10px);
-    height: calc(100vh - 40px);
-  }
+const StyledImg = styled.img`
+  ${pieceSizeCss}
 `
 
 const fmt = timeFormat('%M:%S')

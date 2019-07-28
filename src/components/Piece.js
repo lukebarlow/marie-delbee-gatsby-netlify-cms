@@ -5,8 +5,8 @@ import AudioPlayer2 from './AudioPlayer2.js'
 import fileType from '../common/fileType.js'
 import transformCloudinaryUrl from '../common/transformCloudinaryUrl.js'
 
-
-import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
+import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
+import { pieceSizeCss } from '../styles/elements.js'
 
 const StyledDiv = styled.div`
   height: 100vh;
@@ -25,44 +25,11 @@ const StyledDiv = styled.div`
 `
 
 const StyledImg = styled.img`
-  display: block;
-  width: auto;
-  height: calc(100vh - 160px);
-  cursor: pointer;
-  
-  @media ${portraitSelector} {
-    max-width: calc(100vw - 10px);
-    max-height: calc(100vh - 20px);
-    height: calc(100vh - 160px);
-    width: 100%;
-    object-fit: contain;
-  }
-
-  @media ${landscapeSelector} {
-    width: auto;
-    height: calc(100vh - 40px);
-  }
-
+  ${pieceSizeCss}
 `
 
 const StyledVideo = styled.video`
-  display: block;
-  width: auto;
-  height: calc(100vh - 160px);
-  cursor: pointer;
-
-  @media ${portraitSelector} {
-    max-width: calc(100vw - 10px);
-    max-height: calc(100vh - 20px);
-    height: calc(100vh - 160px);
-    width: 100%;
-    object-fit: contain;
-  }
-
-  @media ${landscapeSelector} {
-    width: auto;
-    height: calc(100vh - 40px);
-  }
+  ${pieceSizeCss}
 `
 
 export default class Piece extends React.Component {

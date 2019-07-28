@@ -115,12 +115,11 @@ export default class Caption extends React.Component {
         //if (browser.getBrowserName() === 'Safari') {
 
         if (isLandscape) {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 75px)')
+          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 95px)')
         } else {
           top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
         }
 
-          
         //} else {
         //  top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
         //}

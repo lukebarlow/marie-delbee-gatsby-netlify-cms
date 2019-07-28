@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { smallScreenSelector } from '../mediaSelectors.js'
+import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
 
 export const ProjectLandingScreen = styled.div`
   display: flex;
@@ -58,4 +58,27 @@ export const UnstyledButton = styled.button`
   border: none;
   outline: none;
   color: inherit;
+`
+
+export const pieceSizeCss = `
+display: block;
+width: auto;
+height: calc(100vh - 160px);
+cursor: pointer;
+
+@media ${portraitSelector} {
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vh - 20px);
+  height: calc(100vh - 160px);
+  width: 100%;
+  object-fit: contain;
+}
+
+@media ${landscapeSelector} {
+  width: auto;
+  height: calc(100vh - 40px);
+  @media ${smallScreenSelector} {
+    height: calc(100vh - 120px);
+  }
+}
 `

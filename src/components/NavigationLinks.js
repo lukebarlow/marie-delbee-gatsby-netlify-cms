@@ -34,7 +34,7 @@ const InfoSpan = styled.span`
   }
 `
 
-export default ({projects, onLink, isWhite, selected}) => {
+export default ({projects, onLink, isWhite, selected, isLastPieceInProject}) => {
   return <>
     <MediaQuery minWidth={768}>
       <Bar isWhite={isWhite}>
@@ -44,8 +44,13 @@ export default ({projects, onLink, isWhite, selected}) => {
         { selected==='info' ? 'close' : 'info' }
       </InfoSpan>
     </MediaQuery>
-    <MediaQuery maxWidth={768}>
-      <InfoSpan color='gray' onClick={() => onLink('info')} selected={selected==='info'}>
+    <MediaQuery maxWidth={768} orientation='landscape'>
+      <InfoSpan color={selected === 'info' ? 'black' : isLastPieceInProject ? 'black' : 'white'} onClick={() => onLink('info')} selected={selected==='info'}>
+        { selected==='info' ? 'close' : 'info' }
+      </InfoSpan>
+    </MediaQuery>
+    <MediaQuery maxWidth={768} orientation='portrait'>
+      <InfoSpan color={isWhite ? 'white' : 'black'} onClick={() => onLink('info')} selected={selected==='info'}>
         { selected==='info' ? 'close' : 'info' }
       </InfoSpan>
     </MediaQuery>

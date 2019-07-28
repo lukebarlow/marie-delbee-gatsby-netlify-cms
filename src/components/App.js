@@ -369,6 +369,7 @@ export default class App extends React.Component {
         isWhite={captionPieceIndex===0 && !showInfo} 
         projects={projects} 
         onLink={this.handleLink} 
+        isLastPieceInProject={pieceIndex >= projects[projectIndex].pieces.length}
       />
     </>
   }
