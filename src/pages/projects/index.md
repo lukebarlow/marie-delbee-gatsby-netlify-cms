@@ -19,7 +19,7 @@ projects:
       - description: "Inspired by cephalopods, Chromatophores enables humans to disappear and merge with their surroundings.\r\n\r\nThe need to belong is an inherent part of being human, though many people feel they live in a world in which they do not fit.\r Chromatophores enables all humans to experience feelings of belonging and being at one with the universe.\r\n\r\nChromatophores creates haptic and nomadic spaces in which the tactile and the visual converge and collide. The limits of human bodies become fluid, dissolving into the environment and seeming to merge with it. The space is alive, expanding and contracting like the gentle tide of the universe. The human body goes through a deterritorialization process as its limits are blurred by the folding and unfolding of the all-encompassing artwork. Identity become porous and shifting.\r\n\r\nChromatophores calls to connect with pre-form states, a deep underlying reality where all is one. It calls for the finite body to surrender to the infinite body.\r\n\r\nThis work further explores the overarching idea of animal-environment: an animal that becomes an environment and an environment that becomes an animal.\r"
         media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683724/chromatophores/bhb_qrt3y8.jpg
-        title: chromatophores fragment 1
+        title: 'chromatophores, fragment I, print, 2019'
       - description: "Inspired by cephalopods, Chromatophores enables humans to disappear and merge with their surroundings.\r\n\r\nThe need to belong is an inherent part of being human, though many people feel they live in a world in which they do not fit.\r Chromatophores enables all humans to experience feelings of belonging and being at one with the universe.\r\n\r\nChromatophores creates haptic and nomadic spaces in which the tactile and the visual converge and collide. The limits of human bodies become fluid, dissolving into the environment and seeming to merge with it. The space is alive, expanding and contracting like the gentle tide of the universe. The human body goes through a deterritorialization process as its limits are blurred by the folding and unfolding of the all-encompassing artwork. Identity become porous and shifting.\r\n\r\nChromatophores calls to connect with pre-form states, a deep underlying reality where all is one. It calls for the finite body to surrender to the infinite body.\r\n\r\nThis work further explores the overarching idea of animal-environment: an animal that becomes an environment and an environment that becomes an animal.\r"
         media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684356/chromatophores/render_no_repeat_03_applyu.jpg
@@ -182,9 +182,6 @@ projects:
       - media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
         title: atlas17
-      - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
-        title: atlas5
     poster: >-
       https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
     title: entre chien et loup
@@ -200,5 +197,24 @@ projects:
     poster: >-
       https://res.cloudinary.com/ekuwol/image/upload/v1558026281/deep-space/deep_space_2-poster.jpg
     title: deep space
+  - cover: >-
+      https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759550/and%20the%20moon/cover_photo_and_the_moon_f3cb7w.jpg
+    pieces:
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759555/and%20the%20moon/And_the_moon.Still003_ssk5sa.jpg
+        title: 'and the moon, photography, 2019'
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759554/and%20the%20moon/And_the_moon.Still004_eu06iw.jpg
+        title: 'and the moon, photography, 2019'
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759554/and%20the%20moon/And_the_moon.Still001_rlyd3k.jpg
+        title: 'and the moon, photography, 2019'
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759553/and%20the%20moon/And_the_moon.Still005_lkjw5i.jpg
+        title: 'and the moon, photography, 2019'
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562759552/and%20the%20moon/And_the_moon.Still002_g1lm7s.jpg
+        title: 'and the moon, photography, 2019'
+    title: and the moon ...
 ---
 
