@@ -4,7 +4,9 @@ projects:
   - cover: >-
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
     pieces:
-      - {}
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684356/chromatophores/render_no_repeat_03_applyu.jpg
+        title: chromatophores view 1
     poster: ''
     title: chromatophores
   - cover: >-
