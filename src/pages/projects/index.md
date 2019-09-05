@@ -195,14 +195,6 @@ projects:
         poster: >-
           https://res.cloudinary.com/ekuwol/image/upload/v1558026289/deep-space/deep_space_44-poster.jpg
         title: deep space
-      - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710511/entre-chien-et-loup/live-at-atlas-128_hbgapc.mp3
-        poster: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
-        title: atlas audio
-      - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
-        title: atlas5
     poster: >-
       https://res.cloudinary.com/ekuwol/image/upload/v1558026281/deep-space/deep_space_2-poster.jpg
     title: deep space
