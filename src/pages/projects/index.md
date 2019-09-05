@@ -5,23 +5,20 @@ projects:
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
     pieces:
       - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684356/chromatophores/render_no_repeat_03_applyu.jpg
-        title: chromatophores view 1
-      - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684315/chromatophores/1920_03b_bt71mg.jpg
-        title: chromatophores view 2
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683991/chromatophores/chrom_u3xfdp.jpg
+        title: chromatophores close up
       - media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684309/chromatophores/1920_03a_mketls.jpg
         title: chromatophores view 3
       - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683991/chromatophores/chrom_u3xfdp.jpg
-        title: chromatophores close up
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684315/chromatophores/1920_03b_bt71mg.jpg
+        title: chromatophores view 2
       - media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683724/chromatophores/bhb_qrt3y8.jpg
         title: chromatophores fragment 1
       - media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683830/chromatophores/whaleshark_edited_cop_back_dlemck.jpg
-        title: chromatophores fragment 2
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567684356/chromatophores/render_no_repeat_03_applyu.jpg
+        title: chromatophores view 1
     poster: ''
     title: chromatophores
   - cover: >-
