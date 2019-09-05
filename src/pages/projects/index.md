@@ -906,5 +906,45 @@ projects:
       - media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567713516/constellations/vlcsnap-2019-09-05-21h38m24s235_qrogqh.png
     title: constellations
+  - cover: >-
+      https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712166/en%20silence/19227387_263621554044518_2383799667818233856_n_cnxe4h.jpg
+    pieces:
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712216/en%20silence/20170614_210713_ksr0hm.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712207/en%20silence/20170614_170451_glfirs.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712204/en%20silence/vlcsnap-2018-12-04-20h19m30s57_omyn3c.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712201/en%20silence/vlcsnap-2018-12-04-20h15m53s215_pdxlgy.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712200/en%20silence/vlcsnap-2018-12-04-20h17m54s174_l1zic4.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712199/en%20silence/vlcsnap-2018-12-04-20h17m08s165_zoicna.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712197/en%20silence/vlcsnap-2018-12-04-20h03m09s1_uwro8o.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712197/en%20silence/vlcsnap-2018-12-04-20h14m46s77_gw10pt.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712194/en%20silence/vlcsnap-2018-12-04-20h10m24s239_ybeaof.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712194/en%20silence/20170614_200006_pvveke.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712194/en%20silence/vlcsnap-2018-12-04-20h12m23s121_xkq9rn.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712191/en%20silence/vlcsnap-2018-12-04-20h07m04s39_1_zycqed.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712190/en%20silence/20170614_213009_d3clyf.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712189/en%20silence/20170614_170222_kany2s.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712176/en%20silence/jonas_meie_ashinoa_bear_bones_flyer_2x_bgin0p.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712174/en%20silence/img_9156_m2dvqo.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712171/en%20silence/en_silence_poster_ld6tfw.jpg
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712166/en%20silence/19227387_263621554044518_2383799667818233856_n_cnxe4h.jpg
+    title: en silence
 ---
 
