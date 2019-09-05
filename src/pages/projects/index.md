@@ -4,7 +4,8 @@ projects:
   - cover: >-
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
     pieces:
-      - media: >-
+      - description: "Inspired by cephalopods, Chromatophores enables humans to disappear and merge with their surroundings.\r\n\r\nThe need to belong is an inherent part of being human, though many people feel they live in a world in which they do not fit.\r\n\r\nChromatophores enables all humans to experience feelings of belonging and being at one with the universe.\r\n\r\nChromatophores creates haptic and nomadic spaces in which the tactile and the visual converge and collide. The limits of human bodies become fluid, dissolving into the environment and seeming to merge with it. The space is alive, expanding and contracting like the gentle tide of the universe. The human body goes through a deterritorialization process as its limits are blurred by the folding and unfolding of the all-encompassing artwork. Identity become porous and shifting.\r\n\r\nChromatophores calls to connect with pre-form states, a deep underlying reality where all is one. It calls for the finite body to surrender to the infinite body.\r\n\r\nThis work further explores the overarching idea of animal-environment: an animal that becomes an environment and an environment that becomes an animal.\r\n"
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567683991/chromatophores/chrom_u3xfdp.jpg
         title: chromatophores close up
       - media: >-
