@@ -946,5 +946,19 @@ projects:
       - media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712166/en%20silence/19227387_263621554044518_2383799667818233856_n_cnxe4h.jpg
     title: en silence
+  - cover: >-
+      https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710545/animal%20behaviours/Animal_Behaviours_8_ugpu0k.png
+    pieces:
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710553/animal%20behaviours/Animal_Behaviours_2_bsgh0l.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710552/animal%20behaviours/Animal_Behaviours_1_n0cjtm.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710545/animal%20behaviours/Animal_Behaviours_7_rqpmxy.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710540/animal%20behaviours/Animal_Behaviours_6_rj2xdn.png
+      - media: >-
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567710538/animal%20behaviours/Animal_Behaviours_51_s3jvad.jpg
+    title: animal behaviours
 ---
 
