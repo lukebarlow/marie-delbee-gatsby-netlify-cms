@@ -29,7 +29,57 @@ projects:
   - cover: >-
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710614/entre-chien-et-loup/entre-chien-et-loup-title-loop-simple-fade_ubai9i.mp4
     pieces:
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/video/upload/v1562710511/entre-chien-et-loup/live-at-atlas-128_hbgapc.mp3
         poster: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710562/entre-chien-et-loup/vlcsnap-2018-12-13-01h08m28s78_yoc5zz.png
@@ -88,23 +138,17 @@ projects:
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710548/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37_avitzt.png
         title: atlas8
       - description: >-
-          entre chien et loup
+          entre chien et loup  
 
+          installation sonore réfractive et concert animal électronique  
 
-          installation sonore réfractive et concert animal électronique
+          atlas, anderlecht, belgium  
 
+          Dans le ventre souterrain de l’Atlas  
 
-          atlas, anderlecht, belgium
+          Prendre corps immense  
 
-
-          Dans le ventre souterrain de l’Atlas
-
-
-          Prendre corps immense
-
-
-          Rythmique mugissante
-
+          Rythmique mugissante  
 
           Au cœur de la bête
 
@@ -121,18 +165,18 @@ projects:
           \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
 
 
-          entre chien et loup
+          entre chien et loup  
 
           refractive sound installation and animal electronic performance
 
           atlas, anderlecht, belgium
 
 
-          In the depths of Atlas
+          In the depths of Atlas  
 
-          Takes colossal form
+          Takes colossal form  
 
-          Lowing rhythmics
+          Lowing rhythmics  
 
           At the heart of the beast
 
@@ -146,40 +190,640 @@ projects:
         media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710648/entre-chien-et-loup/atlas-5-v1_to7w2y.jpg
         title: atlas18
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710812/entre-chien-et-loup/_52a5351_4_bwjkrh.jpg
         title: atlas15
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710514/entre-chien-et-loup/atlas-4-v1_aq2bqa.jpg
         title: atlas10
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710555/entre-chien-et-loup/vlcsnap-2018-12-13-01h14m22s62_vp0fwb.png
         title: atlas2
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710554/entre-chien-et-loup/vlcsnap-2018-12-13-01h09m36s41_jzr56m.png
         title: atlas3
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710551/entre-chien-et-loup/vlcsnap-2018-12-13-01h06m55s210_ef8z59.png
         title: atlas7
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710584/entre-chien-et-loup/untitled8_nknwrk.jpg
         title: atlas9
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710657/entre-chien-et-loup/atlas-2-v1_elxz9s.jpg
         title: atlas11
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710811/entre-chien-et-loup/_52a5375_cugbcz.jpg
         title: atlas12
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710815/entre-chien-et-loup/_52a5364_1_uqebma.jpg
         title: atlas13
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710812/entre-chien-et-loup/_52a5354_2_pggelf.jpg
         title: atlas14
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562709707/entre-chien-et-loup/atlas-7-v1_pi0rsy.jpg
         title: atlas16
-      - media: >-
+      - description: >-
+          entre chien et loup  
+
+          installation sonore réfractive et concert animal électronique  
+
+          atlas, anderlecht, belgium  
+
+          Dans le ventre souterrain de l’Atlas  
+
+          Prendre corps immense  
+
+          Rythmique mugissante  
+
+          Au cœur de la bête
+
+
+          Comme les animaux de l’obscurité comprennent leur environnement en
+          émettant des fréquences sonores et en appréciant le temps de retour de
+          l’écho.
+
+
+          En réponse au retour des bruits sur les murs, la performance prend
+          appui sur les vibrations qui repoussent le son dans l’espace.
+
+
+          \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
+
+
+          entre chien et loup  
+
+          refractive sound installation and animal electronic performance
+
+          atlas, anderlecht, belgium
+
+
+          In the depths of Atlas  
+
+          Takes colossal form  
+
+          Lowing rhythmics  
+
+          At the heart of the beast
+
+
+          Like animals in the darkness, understanding the environment by
+          emitting sonic frequencies and evaluating the return of the echo.
+
+
+          The performance responds to the vibrations repelled off the walls and
+          filling the space.
+        media: >-
           https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710450/entre-chien-et-loup/atlas-1-v1_vnlxnj.jpg
         title: atlas17
     poster: >-
