@@ -4,28 +4,7 @@ projects:
   - cover: >-
       https://res.cloudinary.com/dcnxlnkpw/video/upload/v1563543204/chromatophores/chromatophoresyoutube1080compressed_lj5jby.mp4
     pieces:
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025103/chromatophores/field.jpg
-        title: A field
-      - description: >-
-          A nice bit of text for each piece will help a lot with testing. A nice
-          bit of text for each piece will help a lot with testing. A nice bit of
-          text for each piece will help a lot with testing. A nice bit of text
-          for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558025372/chromatophores/mountain.jpg
-        title: Mountain
-      - description: A nice bit of text for each piece will help a lot with testing.
-        media: >-
-          https://res.cloudinary.com/ekuwol/image/upload/v1558026233/chromatophores/sunset.jpg
-        title: >-
-          The old quarry, Sun, with bleeding scales, flaps up the gullies, wets
-          their crystal pebbles
+      - {}
     poster: ''
     title: chromatophores
   - cover: >-
