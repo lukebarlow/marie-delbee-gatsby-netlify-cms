@@ -5,7 +5,7 @@ import AudioPlayer2 from './AudioPlayer2.js'
 import fileType from '../common/fileType.js'
 import transformCloudinaryUrl from '../common/transformCloudinaryUrl.js'
 
-import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
+import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
 import { pieceSizeCss } from '../styles/elements.js'
 
 const StyledDiv = styled.div`

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { timeFormat } from 'd3-time-format'
 
 import PlayStopButton2 from './PlayStopButton2'
-import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
+// import { portraitSelector, landscapeSelector, smallScreenSelector } from '../mediaSelectors.js'
 import { pieceSizeCss } from '../styles/elements.js'
 
 const Container = styled.div`
@@ -16,8 +16,6 @@ const Container = styled.div`
   -ms-user-select: none;
   user-select: none;
 `
-
-console.log('pieceSizeCss', pieceSizeCss)
 
 const StyledImg = styled.img`
   ${pieceSizeCss}

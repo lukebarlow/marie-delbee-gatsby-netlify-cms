@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Markdown from 'react-markdown'
-import Bowser from 'bowser'
+// import Bowser from 'bowser'
 
 import {  smallScreenSelector, portraitSelector, landscapeSelector } from '../mediaSelectors.js'
 
@@ -100,7 +100,7 @@ export default class Caption extends React.Component {
 
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
-    const browser = Bowser.getParser(window.navigator.userAgent)
+    // const browser = Bowser.getParser(window.navigator.userAgent)
 
     let top
     let height = isMobile && isLandscape ? 'calc(50% + 50px)' : '50%'
