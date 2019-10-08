@@ -61,6 +61,9 @@ export default class App extends React.Component {
   }
 
   scrollTo ({ projectIndex, pieceIndex }, instant) {
+    if (!this.projectsContainer) {
+      return
+    }
     const previousProjectIndex = this.state.projectIndex
 
     if (projectIndex !== previousProjectIndex) {
@@ -77,6 +80,9 @@ export default class App extends React.Component {
   }
 
   async verticalScroll (projectIndex, instant, retainPieceIndex) {
+    if (!this.projectsContainer) {
+      return
+    }
 
     return new Promise((resolve) => {
       let { pieceIndex } = this.state
@@ -113,6 +119,9 @@ export default class App extends React.Component {
   }
 
   horizontalScroll (pieceIndex, instant) {
+    if (!this.projectsContainer) {
+      return
+    }
     const duration = instant ? 0 : 600
     const delayCaption = pieceIndex === 1
     let { projectIndex } = this.state

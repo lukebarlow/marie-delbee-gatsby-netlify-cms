@@ -1,15 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import MediaQuery from 'react-responsive'
 
 import App from '../components/App.js'
+import PortraitApp from '../components/PortraitApp.js'
 
 export default class IndexPage extends React.Component {
   render () {
     const { data } = this.props
     const projects = data.projects.edges[0].node.frontmatter.projects
     const info = data.infoPage.edges[0].node.body
-    return <App projects={projects} info={info} />
+    return <>
+      <MediaQuery orientation='landscape'>
+        <App projects={projects} info={info} />
+      </MediaQuery>
+      <MediaQuery orientation='portrait'>
+        <PortraitApp projects={projects} info={info} />
+      </MediaQuery>
+    </>
   }
 }
 
