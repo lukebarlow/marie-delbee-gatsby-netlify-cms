@@ -86,7 +86,7 @@ export default class Caption extends React.Component {
 
     return <div style={{ 
         position: 'absolute', 
-        top: expanded ? innerHeight / 1.5 : innerHeight - 40, 
+        top: (expanded && piece && piece.description) ? innerHeight / 1.5 : innerHeight - 40, 
         width: innerWidth, 
         backgroundColor: 'white',
         maxHeight: innerHeight / 2,
