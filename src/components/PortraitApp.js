@@ -1,14 +1,8 @@
-// import React from 'react'
-// export default class PortraitApp extends React.Component {
-//   render () {
-//     return "PORTRAIT APP"
-//   }
-// }
-
 import React from 'react'
 import scroll from 'scroll'
 import { scaleLinear } from 'd3-scale'
 import { timer } from 'd3-timer'
+import Markdown from 'react-markdown'
 
 import '../styles/App.css'
 
@@ -16,6 +10,7 @@ import createTransition from '../common/createTransition'
 import ProjectCover from './ProjectCover'
 import PortraitProjectPieces from './PortraitProjectPieces'
 import PortraitCaption from './PortraitCaption'
+import NavigationLinks from './NavigationLinks'
 
 const scrollTriggerThreshold = 51
 const swipeTriggerThreshold = 51
@@ -50,7 +45,8 @@ export default class PortraitApp extends React.Component {
     this.state = {
       innerWidth: 1000,
       innerHeight: 700,
-      isPortrait: true
+      isPortrait: true,
+      showInfo: false
     }
 
     this.transitions = []
@@ -237,10 +233,14 @@ export default class PortraitApp extends React.Component {
   removeTransition (t) {
     this.transitions = []
   }
+
+  stopPropagation (e) {
+    e.stopPropagation()
+  }
   
   render () {
-    const { projects } = this.props
-    const { innerHeight, innerWidth, isMobile, isPortrait } = this.state
+    const { projects, info } = this.props
+    const { innerHeight, innerWidth, isMobile, isPortrait, showInfo } = this.state
   
     const project = projects[this.projectIndex]
     const pieces = project.pieces
@@ -256,7 +256,30 @@ export default class PortraitApp extends React.Component {
       overflowY: 'scroll',
       position: 'absolute',
       left: -innerWidth * horizontalPosition
-    } 
+    }
+
+    const infoStyle = {
+      position: 'absolute',
+      backgroundColor: 'white',
+      top: 0,
+      left: 0,
+      width: innerWidth,
+      height: innerHeight,
+      overflowY: 'auto',
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingTop: 100
+    }
+
+    const infoLinkStyle = {
+      position: 'absolute',
+      cursor: 'pointer',
+      top: '20px',
+      right: '30px',
+      display: 'block',
+      transition: 'color 0.5s',
+      color: pieceIndex == 0 ? 'white' : 'black'
+    }
 
     return <div style={{ position: 'absolute', height: innerHeight, width: innerWidth, overflowX: 'hidden', left: 0 }} ref={this.masterContainer}>
       <div style={ coverContainerStyle } ref={this.coversContainer}>
@@ -284,16 +307,29 @@ export default class PortraitApp extends React.Component {
         />
       </div>
       
-        <PortraitCaption 
-          onMove={ this.moveHorizontal } 
-          index={pieceIndex} 
-          count={pieces.length} 
-          piece={piece}
-          innerWidth={innerWidth}
-          innerHeight={innerHeight}
-          left={horizontalPosition >= 1 ? 0 : innerWidth * (1 - horizontalPosition)}
-        />
-     
+      <PortraitCaption 
+        onMove={ this.moveHorizontal } 
+        index={pieceIndex} 
+        count={pieces.length} 
+        piece={piece}
+        innerWidth={innerWidth}
+        innerHeight={innerHeight}
+        left={horizontalPosition >= 1 ? 0 : innerWidth * (1 - horizontalPosition)}
+      />
+
+      { showInfo && 
+        <div 
+          style={infoStyle} 
+          onWheel={this.stopPropagation} 
+          onTouchMove={this.stopPropagation} 
+          onTouchStart={this.stopPropagation}
+        >
+          <Markdown source={info} />
+        </div>
+      }
+      <div style={infoLinkStyle} onClick={() => { this.setState({ showInfo: !this.state.showInfo })}}>
+        { showInfo ? 'close' : 'info'}
+      </div>     
     </div>
   }
 }

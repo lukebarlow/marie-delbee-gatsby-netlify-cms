@@ -388,7 +388,12 @@ export default class LandscapeApp extends React.Component {
         />
       }
       
-      <Info visible={showInfo} onWheel={this.stopPropagation} onTouchMove={this.stopPropagation} onTouchStart={this.stopPropagation}>
+      <Info 
+        visible={showInfo} 
+        onWheel={this.stopPropagation} 
+        onTouchMove={this.stopPropagation} 
+        onTouchStart={this.stopPropagation}
+      >
         <Markdown source={info} />
       </Info>
       <NavigationLinks
