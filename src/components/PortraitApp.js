@@ -107,10 +107,11 @@ export default class PortraitApp extends React.Component {
   touchstartHandler (e) {
     this.touchStartX = e.touches[0].clientX
     this.touchStartY = e.touches[0].clientY
+    e.preventDefault()
   }
 
   touchmoveHandler (e) {
-    e.preventDefault()
+    
     if (this.transitions.length > 0) {
       return
     }
@@ -122,13 +123,17 @@ export default class PortraitApp extends React.Component {
     const ady = Math.abs(dy)
 
     // no vertical swiping in the portrait mode
-    
+
     // if (ady > adx && ady > swipeTriggerThreshold) {
     //   dy > 0 ? this.moveVertical(-1) : this.moveVertical(1)
     // }
 
-    if (adx > ady && adx > swipeTriggerThreshold) {
+    if (this.pieceIndex !== 0 && adx > ady && adx > swipeTriggerThreshold) {
       dx > 0 ? this.moveHorizontal(-1) : this.moveHorizontal(1)
+    }
+
+    if (adx > ady || this.pieceIndex > 0) {
+      e.preventDefault()
     }
   }
 
@@ -138,7 +143,7 @@ export default class PortraitApp extends React.Component {
     window.addEventListener('keydown', this.keydownHandler)
     window.addEventListener('wheel', this.wheelHandler)
     window.addEventListener('touchstart', this.touchstartHandler)
-    window.addEventListener('touchmove', this.touchmoveHandler)
+    window.addEventListener('touchmove', this.touchmoveHandler, { passive: false })
 
     let lastTick = 0
     const tick = (time) => {
@@ -261,7 +266,12 @@ export default class PortraitApp extends React.Component {
             onClick={() => this.handleCoverClick(i)}
         />)}
       </div>
-      <div style={{ position: 'absolute', left: innerWidth * (1 - horizontalPosition), width: innerWidth, top: 0 }}>
+      <div style={{ 
+        position: 'absolute', 
+        left: innerWidth * (1 - horizontalPosition), 
+        width: innerWidth,
+        top: 0 
+      }}>
         <PortraitProjectPieces project={projects[this.projectIndex]} innerHeight={innerHeight} innerWidth={innerWidth} />
       </div>
       
