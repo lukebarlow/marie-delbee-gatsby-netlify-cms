@@ -1,6 +1,6 @@
 import { easeQuad } from 'd3-ease'
 
-const TRANSITION_DURATION = 1000
+const TRANSITION_DURATION = 600
 
 export default function createTransition ({ 
   startValue, 

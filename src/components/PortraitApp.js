@@ -121,9 +121,11 @@ export default class PortraitApp extends React.Component {
     const adx = Math.abs(dx)
     const ady = Math.abs(dy)
 
-    if (ady > adx && ady > swipeTriggerThreshold) {
-      dy > 0 ? this.moveVertical(-1) : this.moveVertical(1)
-    }
+    // no vertical swiping in the portrait mode
+    
+    // if (ady > adx && ady > swipeTriggerThreshold) {
+    //   dy > 0 ? this.moveVertical(-1) : this.moveVertical(1)
+    // }
 
     if (adx > ady && adx > swipeTriggerThreshold) {
       dx > 0 ? this.moveHorizontal(-1) : this.moveHorizontal(1)
