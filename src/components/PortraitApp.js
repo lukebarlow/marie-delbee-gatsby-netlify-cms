@@ -169,7 +169,7 @@ export default class PortraitApp extends React.Component {
     this.timer.stop()
   }
 
-  moveHorizontal (horizontal) {
+  moveHorizontal (horizontal, rewindAtEnd = false) {
     this.pieceIndex += horizontal
     if (this.pieceIndex < 0) {
       this.pieceIndex = 0
@@ -178,7 +178,11 @@ export default class PortraitApp extends React.Component {
     const numberOfPieces = project.pieces.length
 
     if (this.pieceIndex > numberOfPieces) {
-      this.pieceIndex = numberOfPieces
+      if (rewindAtEnd) {
+        this.pieceIndex = 0
+      } else {
+        this.pieceIndex = numberOfPieces
+      }
     }
     this.moveToPiece(this.pieceIndex)
   }
@@ -272,7 +276,12 @@ export default class PortraitApp extends React.Component {
         width: innerWidth,
         top: 0 
       }}>
-        <PortraitProjectPieces project={projects[this.projectIndex]} innerHeight={innerHeight} innerWidth={innerWidth} />
+        <PortraitProjectPieces 
+          onPieceClick={() => this.moveHorizontal(1, true)}
+          project={projects[this.projectIndex]} 
+          innerHeight={innerHeight} 
+          innerWidth={innerWidth} 
+        />
       </div>
       
         <PortraitCaption 
