@@ -84,8 +84,7 @@ export default ({ project, isCurrent = false, pieceIndex, onPieceClick, onImageL
             <img alt="" src="/img/arrow.svg" />
           </ProjectArrow>
         </MediaQuery>
-      </ProjectTitle>
-      
+      </ProjectTitle>  
     </ProjectLandingScreen>
       { project.pieces.map((piece, i) => <Piece 
           key={i} 

@@ -1,19 +1,19 @@
 import React from 'react'
 import fileType from '../../common/fileType.js'
-import transformCloudinaryUrl from '../../common/transformCloudinaryUrl.js'
+import { transformCloudinaryUrlForHeight } from '../../common/transformCloudinaryUrl.js'
 
 export default ({ height = 100, src, poster }) => {
   const type = fileType(src)
 
   if (type === 'IMAGE') {
-    return <img alt={`thumbnail of ${src}`} height={height} src={transformCloudinaryUrl(src, height)} />
+    return <img alt={`thumbnail of ${src}`} height={height} src={transformCloudinaryUrlForHeight(src, height)} />
   }
   if (type === 'VIDEO' || type === 'AUDIO') {
     if (poster) {
-      return <img alt={`poster for ${src}`} height={height} src={transformCloudinaryUrl(poster, height)} />
+      return <img alt={`poster for ${src}`} height={height} src={transformCloudinaryUrlForHeight(poster, height)} />
     } else {
       if (type === 'VIDEO') {
-        return <video controls allowFullScreen height={height} src={transformCloudinaryUrl(src, height * 4)} />
+        return <video controls allowFullScreen height={height} src={transformCloudinaryUrlForHeight(src, height * 4)} />
       } else {
         return <audio controls src={src} />
       }

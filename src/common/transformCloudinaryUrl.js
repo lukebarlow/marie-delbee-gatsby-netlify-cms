@@ -4,7 +4,10 @@ function parseCloudinaryUrl(url) {
   return match ? { cloudName: match[1], type: match[2], path: match[3] } : null
 }
 
-function transformCloudinaryUrl(url, height) {
+function transformCloudinaryUrlForHeight(url, height) {
+  if (!url) {
+    return url
+  }
   const parsed = parseCloudinaryUrl(url)
   if (!parsed) {
     return url
@@ -13,4 +16,20 @@ function transformCloudinaryUrl(url, height) {
   return `https://res.cloudinary.com/${cloudName}/${type}/upload/q_auto,h_${height},fl_progressive:steep/${path}`
 }
 
-export default transformCloudinaryUrl
+function transformCloudinaryUrlForWidth(url, width) {
+  if (!url) {
+    return url
+  }
+  const parsed = parseCloudinaryUrl(url)
+  if (!parsed) {
+    return url
+  }
+  const { cloudName, path, type } = parsed
+  return `https://res.cloudinary.com/${cloudName}/${type}/upload/q_auto,w_${width},fl_progressive:steep/${path}`
+}
+
+
+export {
+  transformCloudinaryUrlForHeight,
+  transformCloudinaryUrlForWidth
+}

@@ -39,7 +39,7 @@ const Info = styled.div`
 const scrollTriggerThreshold = 51
 const swipeTriggerThreshold = 51
 
-export default class App extends React.Component {
+export default class LandscapeApp extends React.Component {
   constructor () {
     super()
     this.isScrolling = false
@@ -50,6 +50,13 @@ export default class App extends React.Component {
     this.handleImageLoad = this.handleImageLoad.bind(this)
     this.stopPropagation = this.stopPropagation.bind(this)
     this.scrollTo = this.scrollTo.bind(this)
+
+    this.kekdownHandler = this.keydownHandler.bind(this)
+    this.wheelHandler = this.wheelHandler.bind(this)
+    this.touchstartHandler = this.touchstartHandler.bind(this)
+    this.touchmoveHandler = this.touchmoveHandler.bind(this)
+    this.resizeHandler = this.resizeHandler.bind(this)
+
     this.state = {
       showInfo: false,
       projectIndex: 0,
@@ -58,6 +65,9 @@ export default class App extends React.Component {
                            // a slightly different moment to get the transitions
                            // correct
     }
+
+    this.touchStartX = null
+    this.touchStartY = null
   }
 
   scrollTo ({ projectIndex, pieceIndex }, instant) {
@@ -192,77 +202,77 @@ export default class App extends React.Component {
       }
   }
   
+  keydownHandler (e) {
+    switch(e.key) {
+      case 'ArrowUp':
+        this.up()
+      break
+      case 'ArrowDown':
+        this.down()
+      break
+      case 'ArrowLeft':
+        this.left()
+      break
+      case 'ArrowRight':
+        this.right()
+      break
+      default :
+        // do nothing
+      break
+    }
+  }
 
+  wheelHandler (e) {
+    e.preventDefault()
+    if (this.isScrolling) {
+      return
+    }
+
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && Math.abs(e.deltaY) > scrollTriggerThreshold) {
+      e.deltaY > 0 ? this.down() : this.up()
+    }
+
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > scrollTriggerThreshold) {
+      e.deltaX > 0 ? this.right() : this.left()
+    }
+  }
+
+  touchstartHandler (e) {
+    this.touchStartX = e.touches[0].clientX
+    this.touchStartY = e.touches[0].clientY
+  }
+
+  touchmoveHandler (e) {
+    if (this.isScrolling) {
+      return
+    }
+
+    const dx = e.touches[0].clientX - this.touchStartX
+    const dy = e.touches[0].clientY - this.touchStartY
+
+    const adx = Math.abs(dx)
+    const ady = Math.abs(dy)
+
+    if (ady > adx && ady > swipeTriggerThreshold) {
+      dy > 0 ? this.up() : this.down()
+    }
+
+    if (adx > ady && adx > swipeTriggerThreshold) {
+      dx > 0 ? this.left() : this.right()
+    }
+  }
+
+  resizeHandler () {
+    this.scrollTo(this.state, true)
+    this.verticalScroll(this.state.projectIndex, true)
+  }
+  
   componentDidMount () {
-    let touchStartX = null
-    let touchStartY = null
-
-    window.addEventListener('keydown', (e) => {
-      switch(e.key) {
-        case 'ArrowUp':
-          this.up()
-        break
-        case 'ArrowDown':
-          this.down()
-        break
-        case 'ArrowLeft':
-          this.left()
-        break
-        case 'ArrowRight':
-          this.right()
-        break
-        default :
-          // do nothing
-        break
-      }
-    })
-
-    window.addEventListener('wheel', (e) => {
-      e.preventDefault()
-
-      if (this.isScrolling) {
-        return
-      }
-
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && Math.abs(e.deltaY) > scrollTriggerThreshold) {
-        e.deltaY > 0 ? this.down() : this.up()
-      }
-
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > scrollTriggerThreshold) {
-        e.deltaX > 0 ? this.right() : this.left()
-      }
-
-    }, { passive: false })
-
-    window.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].clientX
-      touchStartY = e.touches[0].clientY
-    })
-
-    window.addEventListener('touchmove', (e) => {
-      if (this.isScrolling) {
-        return
-      }
-
-      const dx = e.touches[0].clientX - touchStartX
-      const dy = e.touches[0].clientY - touchStartY
-
-      const adx = Math.abs(dx)
-      const ady = Math.abs(dy)
-
-      if (ady > adx && ady > swipeTriggerThreshold) {
-        dy > 0 ? this.up() : this.down()
-      }
-
-      if (adx > ady && adx > swipeTriggerThreshold) {
-        dx > 0 ? this.left() : this.right()
-      }
-    })
-
-    window.addEventListener('resize', () => { 
-        this.scrollTo(this.state, true)
-        this.verticalScroll(this.state.projectIndex, true)
-    })
+    window.addEventListener('keydown', this.keydownHandler)
+    window.addEventListener('wheel', this.wheelHandler, { passive: false })
+    window.addEventListener('touchstart', this.touchstartHandler)
+    window.addEventListener('touchmove', this.touchmoveHandler)
+    window.addEventListener('resize', this.resizeHandler)
 
     this.navHistory = new History('n', {
       stringify: ({ projectIndex, pieceIndex }) => [projectIndex, pieceIndex].toString(),
@@ -279,6 +289,14 @@ export default class App extends React.Component {
       this.scrollTo({ projectIndex, pieceIndex }, true)
     }, 0)
     
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('keydown', this.keydownHandler)
+    window.removeEventListener('wheel', this.wheelHandler)
+    window.removeEventListener('touchstart', this.touchstartHandler)
+    window.removeEventListener('touchmove', this.touchmoveHandler)
+    window.removeEventListener('resize', this.resizeHandler)
   }
 
   setHistory ({ projectIndex, pieceIndex }) {

@@ -153,6 +153,8 @@ export default class Caption extends React.Component {
     const { piece, index, count, onMove } = this.props
     const { expanded } = this.state
     
+    console.log('rendering the caption')
+
     return <CaptionContainer 
         ref={this.handleRef} 
         onWheel={this.stopPropagation} 

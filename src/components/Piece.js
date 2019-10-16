@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import AudioPlayer2 from './AudioPlayer2.js'
 import fileType from '../common/fileType.js'
-import transformCloudinaryUrl from '../common/transformCloudinaryUrl.js'
+import { transformCloudinaryUrlForHeight } from '../common/transformCloudinaryUrl.js'
 
 import { portraitSelector, landscapeSelector } from '../mediaSelectors.js'
 import { pieceSizeCss } from '../styles/elements.js'
@@ -60,12 +60,12 @@ export default class Piece extends React.Component {
       { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
-            <StyledImg src={transformCloudinaryUrl(piece.media, imgHeight)} onLoad={onImageLoad} />
+            <StyledImg src={transformCloudinaryUrlForHeight(piece.media, imgHeight)} onLoad={onImageLoad} />
           }
           { type === 'VIDEO' && 
             <StyledVideo
-              src={transformCloudinaryUrl(piece.media, imgHeight)}
-              poster={transformCloudinaryUrl(piece.poster, imgHeight)}
+              src={transformCloudinaryUrlForHeight(piece.media, imgHeight)}
+              poster={transformCloudinaryUrlForHeight(piece.poster, imgHeight)}
               muted
               autoPlay
               loop
@@ -76,7 +76,7 @@ export default class Piece extends React.Component {
             <AudioPlayer2
               height={imgHeight}
               audioSrc={piece.media}
-              imgSrc={transformCloudinaryUrl(piece.poster, imgHeight)}
+              imgSrc={transformCloudinaryUrlForHeight(piece.poster, imgHeight)}
             />
           }
         </> : <StyledImg src='img/grey-square.gif' onLoad={onImageLoad} />
