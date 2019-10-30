@@ -70,6 +70,10 @@ export default class LandscapeApp extends React.Component {
     this.touchStartY = null
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    console.log('landscape app did')
+  }
+
   scrollTo ({ projectIndex, pieceIndex }, instant) {
     if (!this.projectsContainer) {
       return
@@ -268,7 +272,7 @@ export default class LandscapeApp extends React.Component {
   }
   
   componentDidMount () {
-    window.addEventListener('keydown', this.keydownHandler)
+    
     window.addEventListener('wheel', this.wheelHandler, { passive: false })
     window.addEventListener('touchstart', this.touchstartHandler)
     window.addEventListener('touchmove', this.touchmoveHandler)

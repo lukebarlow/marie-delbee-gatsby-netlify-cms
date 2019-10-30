@@ -10,9 +10,9 @@ import createTransition from '../common/createTransition'
 import ProjectCover from './ProjectCover'
 import PortraitProjectPieces from './PortraitProjectPieces'
 import PortraitCaption from './PortraitCaption'
-import NavigationLinks from './NavigationLinks'
+// import NavigationLinks from './NavigationLinks'
 
-const scrollTriggerThreshold = 51
+// const scrollTriggerThreshold = 51
 const swipeTriggerThreshold = 51
 
 // given an ordered list of numbers, give the 
@@ -26,8 +26,8 @@ export default class PortraitApp extends React.Component {
     super()
     // this.handleRef = this.handleRef.bind(this)
 
-    this.setSizes = this.setSizes.bind(this)
-    this.resizeHandler = this.resizeHandler.bind(this)
+    // this.setSizes = this.setSizes.bind(this)
+    
     this.keydownHandler = this.keydownHandler.bind(this)
     this.wheelHandler = this.wheelHandler.bind(this)
     this.touchstartHandler = this.touchstartHandler.bind(this)
@@ -43,9 +43,6 @@ export default class PortraitApp extends React.Component {
     this.projectIndex = 0
     
     this.state = {
-      innerWidth: 1000,
-      innerHeight: 700,
-      isPortrait: true,
       showInfo: false
     }
 
@@ -57,18 +54,7 @@ export default class PortraitApp extends React.Component {
   //   window.projectsContainer = el
   // }
 
-  setSizes () {
-    this.setState({
-      innerWidth: window.innerWidth,
-      innerHeight: window.innerHeight,
-      isMobile: window.innerWidth < 758,
-      isPortrait: window.innerWidth < window.innerHeight
-    })
-  }
-
-  resizeHandler () {
-    this.setSizes()
-  }
+  
 
   keydownHandler (e) {
     if (!e.repeat) {
@@ -134,8 +120,8 @@ export default class PortraitApp extends React.Component {
   }
 
   componentDidMount () {
-    this.setSizes()
-    window.addEventListener('resize', this.resizeHandler)
+    // this.setSizes()
+    
     window.addEventListener('keydown', this.keydownHandler)
     window.addEventListener('wheel', this.wheelHandler)
     window.addEventListener('touchstart', this.touchstartHandler)
@@ -157,7 +143,6 @@ export default class PortraitApp extends React.Component {
   }
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.resizeHandler)
     window.removeEventListener('keydown', this.keydownHandler)
     window.removeEventListener('wheel', this.wheelHandler)
     window.removeEventListener('touchstart', this.touchstartHandler)
@@ -239,8 +224,10 @@ export default class PortraitApp extends React.Component {
   }
   
   render () {
-    const { projects, info } = this.props
-    const { innerHeight, innerWidth, isMobile, isPortrait, showInfo } = this.state
+    console.log('rendering portrait', this.props)
+
+    const { projects, info, innerHeight, innerWidth, isMobile, isPortrait } = this.props
+    const {  showInfo } = this.state
   
     const project = projects[this.projectIndex]
     const pieces = project.pieces
