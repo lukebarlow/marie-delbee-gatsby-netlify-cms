@@ -77,7 +77,7 @@ export default class Caption extends React.Component {
   }
 
   render () {
-    const { piece, index, count, onMove, left, innerHeight, innerWidth } = this.props
+    const { piece, index, count, onMove, left, innerHeight, innerWidth, isPortrait } = this.props
     const { expanded } = this.state
     
     if (!piece) {
@@ -86,7 +86,7 @@ export default class Caption extends React.Component {
 
     return <div style={{ 
         position: 'absolute', 
-        top: (expanded && piece && piece.description) ? innerHeight / 1.5 : innerHeight - 40, 
+        top: (expanded && piece && piece.description) ? innerHeight / (isPortrait ? 1.5 : 2) : innerHeight - 40, 
         width: innerWidth, 
         backgroundColor: 'white',
         maxHeight: innerHeight / 2,

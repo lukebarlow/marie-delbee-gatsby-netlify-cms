@@ -27,8 +27,8 @@ export default class MarieDelbeeApp extends React.Component {
       innerHeight: 700,
       isMobile: false,
       isPortrait: false,
-      projectIndex: 0,
-      pieceIndex: 0,
+      projectIndex: 8,
+      pieceIndex: 1,
       showInfo: false
     }
 
@@ -121,11 +121,6 @@ export default class MarieDelbeeApp extends React.Component {
     if (showInfo || (isPortrait && pieceIndex === 0 && absY > absX)) {
       return
     }
-
-    e.preventDefault()
-    // if (this.isScrolling) {
-    //   return
-    // }
 
     if (this.lastScrollTriggered === null || new Date() - this.lastScrollTriggered > SCROLL_TIME_RECOVERY) {
       if (absY > absX && absY > SCROLL_TRIGGER_THRESHOLD) {

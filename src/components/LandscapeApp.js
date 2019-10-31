@@ -6,16 +6,16 @@ import Markdown from 'react-markdown'
 // import History from 'hash-history'
 
 import NavigationLinks from './NavigationLinks'
-import Caption from './Caption'
+import Caption2 from './Caption2'
 import '../styles/App.css'
 
 import Project from './Project'
 import { smallScreenSelector } from '../mediaSelectors.js'
 
-const ProjectContainer = styled.div`
-  height: 100vh;
-  overflow: hidden;
-`
+// const ProjectContainer = styled.div`
+//   height: 100vh;
+//   overflow: hidden;
+// `
 
 const Info = styled.div`
   position: absolute;
@@ -76,12 +76,6 @@ export default class LandscapeApp extends React.Component {
       return
     }
 
-    // if (pieceIndex === 0 && projectIndex !== 0) {
-    //   // this.verticalScroll(1, false, false)
-    //   return
-    // }
-
-
     if (projectIndex !== this.lastScrolledToProjectIndex) {
       // first set the destination piece to be in the correct position
       const projectElement = this.projectsContainer.children[projectIndex]
@@ -99,34 +93,37 @@ export default class LandscapeApp extends React.Component {
     }
 
     return new Promise((resolve) => {
-      let { pieceIndex } = this.props
+      // dirty delay fix - not sure why it's needed but it works
+      setTimeout(() => {
+        let { pieceIndex } = this.props
 
-      const duration = instant ? 0 : Math.abs(projectIndex - this.lastScrolledToProjectIndex) * 600
-      const projectsContainer = this.projectsContainer
+        const duration = instant ? 0 : Math.abs(projectIndex - this.lastScrolledToProjectIndex) * 600
+        const projectsContainer = this.projectsContainer
 
-      for (var i=0;i < projectsContainer.children.length; i++) {
-        if (i !== this.lastScrolledToProjectIndex && (!retainPieceIndex || i !== projectIndex)) {
-          projectsContainer.children[i].scrollLeft = 0
+        for (var i=0;i < projectsContainer.children.length; i++) {
+          if (i !== this.lastScrolledToProjectIndex && (!retainPieceIndex || i !== projectIndex)) {
+            projectsContainer.children[i].scrollLeft = 0
+          }
         }
-      }
-      
-      const projectElement = projectsContainer.children[projectIndex]
-
-      if (instant) {
-        projectsContainer.scrollTop = projectElement.offsetTop
-        resolve()
-      } else {
-        this.isScrolling = true
-        scroll.top(projectsContainer, projectElement.offsetTop, 
-          { duration: duration }, () => {
-            this.finishedScrolling()
-            resolve()
-          })
-        if (pieceIndex === 0) {
-          this.setState({ captionPieceIndex: pieceIndex })
+        
+        const projectElement = projectsContainer.children[projectIndex]
+        if (instant) {
+          projectsContainer.scrollTop = projectElement.offsetTop
+          console.log('just set scrollTop to', projectsContainer.scrollTop)
+          resolve()
+        } else {
+          this.isScrolling = true
+          scroll.top(projectsContainer, projectElement.offsetTop, 
+            { duration: duration }, () => {
+              this.finishedScrolling()
+              resolve()
+            })
+          if (pieceIndex === 0) {
+            this.setState({ captionPieceIndex: pieceIndex })
+          }
         }
-      }
-      this.lastScrolledToProjectIndex = projectIndex
+        this.lastScrolledToProjectIndex = projectIndex
+      }, 100)
     })
   }
 
@@ -218,6 +215,7 @@ export default class LandscapeApp extends React.Component {
       innerHeight, 
       innerWidth,
       isMobile,
+      isPortrait,
       showInfo,
       onMove
     } = this.props
@@ -225,8 +223,17 @@ export default class LandscapeApp extends React.Component {
     const pieces = projects[projectIndex].pieces
     const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
 
+    console.log('LANDSCAPE RENDER', innerWidth, innerHeight, projectIndex, pieceIndex)
+
     return <>
-      <ProjectContainer ref={this.handleRef}>
+      <div 
+        style={{
+          width: innerWidth,
+          height: innerHeight,
+          overflow: 'hidden'
+        }}
+        ref={this.handleRef}
+      >
         { projects.map((p, i) => <Project 
           key={i} 
           project={p} 
@@ -238,15 +245,17 @@ export default class LandscapeApp extends React.Component {
           innerWidth={innerWidth}
           isMobile={isMobile}
         />)}
-      </ProjectContainer>
+      </div>
       { 
         captionPieceIndex > 0 &&
-        <Caption 
+        <Caption2 
           onMove={(moveBy) => onMove(0, moveBy)} 
           index={captionPieceIndex} 
           count={pieces.length} 
           piece={piece}
+          innerWidth={innerWidth}
           innerHeight={innerHeight}
+          isPortrait={isPortrait}
         />
       }
       

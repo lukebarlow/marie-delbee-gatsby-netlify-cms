@@ -9,7 +9,7 @@ import '../styles/App.css'
 import createTransition from '../common/createTransition'
 import ProjectCover from './ProjectCover'
 import PortraitProjectPieces from './PortraitProjectPieces'
-import PortraitCaption from './PortraitCaption'
+import Caption2 from './Caption2'
 
 // given an ordered list of numbers, give the 
 function positionInList(value, list) {
@@ -166,7 +166,7 @@ export default class PortraitApp extends React.Component {
       overflowY: 'auto',
       paddingLeft: 20,
       paddingRight: 20,
-      paddingTop: 100
+      paddingTop: 100,
     }
 
     const infoLinkStyle = {
@@ -206,7 +206,7 @@ export default class PortraitApp extends React.Component {
         />
       </div>
       
-      <PortraitCaption 
+      <Caption2 
         onMove={ (moveBy) => onMove(0, moveBy) } 
         index={pieceIndex} 
         count={pieces.length} 
@@ -214,6 +214,7 @@ export default class PortraitApp extends React.Component {
         innerWidth={innerWidth}
         innerHeight={innerHeight}
         left={horizontalPosition >= 1 ? 0 : innerWidth * (1 - horizontalPosition)}
+        isPortrait={isPortrait}
       />
 
       { showInfo && 
