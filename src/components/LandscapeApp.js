@@ -195,18 +195,28 @@ export default class LandscapeApp extends React.Component {
 
     link = parseInt(link)
     if (!isNaN(link)) {
-      if (link === this.props.projectIndex) {
-        this.horizontalScroll(0)
-      } else {
-        this.verticalScroll(link)
+      // if (link === this.props.projectIndex) {
+      //   // this.horizontalScroll(0)
+      //   this.props.onMove(this.props.projectIndex, 0, false, true)
+      // } else {
+
+      // turn info off if it's on
+      if (this.props.showInfo) {
+        this.props.onInfoToggle()
       }
 
-      this.setStateAndHistory({
-        pieceIndex: 0,
-        captionPieceIndex: 0,
-        projectIndex: link,
-        showInfo: false
-      })
+      this.props.onMove(link, 0, false, true)
+        // this.verticalScroll(link)
+      //}
+
+      // this.setStateAndHistory({
+      //   pieceIndex: 0,
+      //   captionPieceIndex: 0,
+      //   projectIndex: link,
+      //   showInfo: false
+      // })
+
+
       // this.setHistory({ projectIndex, pieceIndex })   
     }
   }
