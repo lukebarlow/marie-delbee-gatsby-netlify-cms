@@ -164,12 +164,6 @@ export default class LandscapeApp extends React.Component {
       this.isScrolling = false
     }, 200)
   }
-
-  // resizeHandler () {
-  //   return
-  //   this.scrollTo(this.props, true)
-  //   this.verticalScroll(this.props.projectIndex, true)
-  // }
   
   setHistory ({ projectIndex, pieceIndex }) {
     this.navHistory.set({ projectIndex, pieceIndex })
@@ -188,50 +182,20 @@ export default class LandscapeApp extends React.Component {
   handleLink (link) {
 
     if (link === 'info') {
-      // this.setState({ showInfo: !this.props.showInfo })
       this.props.onInfoToggle()
       return
     }
 
     link = parseInt(link)
     if (!isNaN(link)) {
-      // if (link === this.props.projectIndex) {
-      //   // this.horizontalScroll(0)
-      //   this.props.onMove(this.props.projectIndex, 0, false, true)
-      // } else {
-
       // turn info off if it's on
       if (this.props.showInfo) {
         this.props.onInfoToggle()
       }
 
-      this.props.onMove(link, 0, false, true)
-        // this.verticalScroll(link)
-      //}
-
-      // this.setStateAndHistory({
-      //   pieceIndex: 0,
-      //   captionPieceIndex: 0,
-      //   projectIndex: link,
-      //   showInfo: false
-      // })
-
-
-      // this.setHistory({ projectIndex, pieceIndex })   
+      this.props.onMove(link, 0, false, true) 
     }
   }
-
-  // handlePieceClick () {
-  //   return
-  //   const { projects } = this.props
-  //   const { projectIndex, pieceIndex } = this.props
-  //   const pieces = projects[projectIndex].pieces
-  //   if (pieces.length > pieceIndex) {
-  //     this.right()
-  //   } else if (projects.length > projectIndex - 1) {
-  //     this.down()
-  //   }
-  // }
 
   handleImageLoad () {
     this.scrollTo(this.props, true)
@@ -249,6 +213,7 @@ export default class LandscapeApp extends React.Component {
       pieceIndex,
       innerHeight, 
       innerWidth,
+      isMobile,
       showInfo,
       onMove
     } = this.props
@@ -267,6 +232,7 @@ export default class LandscapeApp extends React.Component {
           onImageLoad={this.handleImageLoad}
           innerHeight={innerHeight}
           innerWidth={innerWidth}
+          isMobile={isMobile}
         />)}
       </ProjectContainer>
       { 

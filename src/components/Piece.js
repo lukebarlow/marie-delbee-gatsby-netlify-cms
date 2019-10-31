@@ -39,23 +39,12 @@ export default class Piece extends React.Component {
     this.shouldLoadContent = false
   }
 
-  // componentDidMount () {
-  //   const imgHeight = (document.body.clientHeight - 60)
-  //   this.setState({ imgHeightCalculated: true, imgHeight })
-  // }
-
   render () {
-    const { piece, onClick, shouldLoad, onImageLoad, innerHeight, innerWidth } = this.props
-    // const { imgHeight, imgHeightCalculated } = this.state
-
-    // if (!imgHeightCalculated) {
-    //   return null
-    // }
-
+    const { piece, onClick, shouldLoad, onImageLoad, innerHeight, isMobile } = this.props
     const type = fileType(piece.media)
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
-    
-    const imgHeight = innerHeight - 60
+  
+    const imgHeight = innerHeight - (isMobile ? 40 : 160)
 
     const sizeStyles = {
       height: imgHeight

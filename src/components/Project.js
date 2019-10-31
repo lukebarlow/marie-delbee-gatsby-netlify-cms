@@ -67,7 +67,8 @@ export default ({
   onPieceClick, 
   onImageLoad,
   innerHeight,
-  innerWidth
+  innerWidth,
+  isMobile
 }) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image} onClick={onPieceClick}>
@@ -102,6 +103,7 @@ export default ({
           onImageLoad={onImageLoad}
           innerHeight={innerHeight}
           innerWidth={innerWidth}
+          isMobile={isMobile}
         />)
       }
       <EndPadding />
