@@ -24,108 +24,20 @@ function positionInList(value, list) {
 export default class PortraitApp extends React.Component {
   constructor () {
     super()
-    // this.handleRef = this.handleRef.bind(this)
-
-    // this.setSizes = this.setSizes.bind(this)
-    
-    this.keydownHandler = this.keydownHandler.bind(this)
-    this.wheelHandler = this.wheelHandler.bind(this)
-    this.touchstartHandler = this.touchstartHandler.bind(this)
-    this.touchmoveHandler = this.touchmoveHandler.bind(this)
-    this.handleCoverClick = this.handleCoverClick.bind(this)
-    this.moveHorizontal = this.moveHorizontal.bind(this)
     this.horizontalPosition = 0
 
     this.masterContainer = React.createRef()
     this.coversContainer = React.createRef()
-
-    this.pieceIndex = 0 // 0 is project splash screen, higher numbers are the pieces
-    this.projectIndex = 0
     
-    this.state = {
-      showInfo: false
-    }
+    this.lastRenderProjectIndex = null
+    this.lastRenderPieceIndex = null
+    this.isAnimating = false
 
     this.transitions = []
   }
 
-  // handleCoverContainerRef (el) {
-  //   this.projectsContainer = el
-  //   window.projectsContainer = el
-  // }
-
-  
-
-  keydownHandler (e) {
-    if (!e.repeat) {
-      switch(e.key) {
-        case 'ArrowUp':
-          e.preventDefault()
-          this.moveVertical(-1)
-        break
-        case 'ArrowDown':
-          e.preventDefault()
-          this.moveVertical(1)
-        break
-        case 'ArrowLeft':
-          e.preventDefault()
-          this.moveHorizontal(-1)
-        break
-        case 'ArrowRight':
-          e.preventDefault()
-          this.moveHorizontal(1)
-        break
-        default :
-          // do nothing
-        break
-      }
-    }
-  }
-
-  wheelHandler (e) {
-    console.log('got a wheel event')
-  }
-
-  touchstartHandler (e) {
-    this.touchStartX = e.touches[0].clientX
-    this.touchStartY = e.touches[0].clientY
-    e.preventDefault()
-  }
-
-  touchmoveHandler (e) {
-    
-    if (this.transitions.length > 0) {
-      return
-    }
-
-    const dx = e.touches[0].clientX - this.touchStartX
-    const dy = e.touches[0].clientY - this.touchStartY
-
-    const adx = Math.abs(dx)
-    const ady = Math.abs(dy)
-
-    // no vertical swiping in the portrait mode
-
-    // if (ady > adx && ady > swipeTriggerThreshold) {
-    //   dy > 0 ? this.moveVertical(-1) : this.moveVertical(1)
-    // }
-
-    if (this.pieceIndex !== 0 && adx > ady && adx > swipeTriggerThreshold) {
-      dx > 0 ? this.moveHorizontal(-1) : this.moveHorizontal(1)
-    }
-
-    if (adx > ady || this.pieceIndex > 0) {
-      e.preventDefault()
-    }
-  }
-
   componentDidMount () {
-    // this.setSizes()
-    
-    window.addEventListener('keydown', this.keydownHandler)
-    window.addEventListener('wheel', this.wheelHandler)
-    window.addEventListener('touchstart', this.touchstartHandler)
-    window.addEventListener('touchmove', this.touchmoveHandler, { passive: false })
+    this.horizontalPosition = this.props.pieceIndex
 
     let lastTick = 0
     const tick = (time) => {
@@ -143,29 +55,26 @@ export default class PortraitApp extends React.Component {
   }
 
   componentWillUnmount () {
-    window.removeEventListener('keydown', this.keydownHandler)
-    window.removeEventListener('wheel', this.wheelHandler)
-    window.removeEventListener('touchstart', this.touchstartHandler)
-    window.removeEventListener('touchmove', this.touchmoveHandler)
     this.timer.stop()
   }
 
-  moveHorizontal (horizontal, rewindAtEnd = false) {
-    this.pieceIndex += horizontal
-    if (this.pieceIndex < 0) {
-      this.pieceIndex = 0
-    }
-    const project = this.props.projects[this.projectIndex]
-    const numberOfPieces = project.pieces.length
+  componentDidUpdate (prevProps) {
+    const { projectIndex, pieceIndex } = this.props
 
-    if (this.pieceIndex > numberOfPieces) {
-      if (rewindAtEnd) {
-        this.pieceIndex = 0
+    if (prevProps.projectIndex !== projectIndex) {
+      if (pieceIndex === 0) {
+        // if it's moving to another cover page, we move vertically
+        this.moveVertical(projectIndex - prevProps.projectIndex)
       } else {
-        this.pieceIndex = numberOfPieces
+        // otherwise, since multiple covers are visible at the same
+        // time in portrait mode, we re-render with the right
+        // pieces then slide horizontally
+        this.forceUpdate()
+        this.moveToPiece(pieceIndex)
       }
+    } else if (prevProps.pieceIndex !== pieceIndex) {
+      this.moveToPiece(pieceIndex)
     }
-    this.moveToPiece(this.pieceIndex)
   }
 
   moveVertical (moveBy) {
@@ -186,29 +95,26 @@ export default class PortraitApp extends React.Component {
       } else {
         position = moveBy > 0 ? Math.ceil(position) : Math.floor(position)        
       }
-      this.projectIndex = position
+
       this.forceUpdate()
       scroll.top(coversContainer, topOffsets[position])
     }
   }
 
   handleCoverClick (projectIndex) {
-    this.projectIndex = projectIndex
-    this.forceUpdate()
-    this.pieceIndex = 1
-    this.moveToPiece()
+    this.props.onMove(projectIndex, 1, false, true)
   }
 
-  moveToPiece () {
+  moveToPiece (pieceIndex) {
     const transition = createTransition({
       startValue: this.horizontalPosition,
-      endValue: this.pieceIndex,
+      endValue: pieceIndex,
       setter: (value) => {
         this.horizontalPosition = value
       },
       onEnd: () => {
         this.removeTransition(transition)
-        this.horizontalPosition = this.pieceIndex
+        this.horizontalPosition = pieceIndex
         this.forceUpdate()
       }
     })
@@ -224,16 +130,25 @@ export default class PortraitApp extends React.Component {
   }
   
   render () {
-    console.log('rendering portrait', this.props)
+    const { 
+      projects, 
+      info, 
+      innerHeight, 
+      innerWidth, 
+      isMobile, 
+      isPortrait,
+      projectIndex,
+      pieceIndex,
+      showInfo,
+      onMove,
+      onCoverTouch,
+      onInfoToggle
+    } = this.props
 
-    const { projects, info, innerHeight, innerWidth, isMobile, isPortrait } = this.props
-    const {  showInfo } = this.state
-  
-    const project = projects[this.projectIndex]
+    const project = projects[projectIndex]
     const pieces = project.pieces
-    const pieceIndex = this.pieceIndex
     const piece = pieceIndex > 0 ? pieces[pieceIndex - 1] : null
-
+    
     const horizontalPosition = this.horizontalPosition
 
     const coverContainerStyle = {
@@ -265,7 +180,7 @@ export default class PortraitApp extends React.Component {
       right: '30px',
       display: 'block',
       transition: 'color 0.5s',
-      color: pieceIndex == 0 ? 'white' : 'black'
+      color: pieceIndex === 0 && !showInfo ? 'white' : 'black'
     }
 
     return <div style={{ position: 'absolute', height: innerHeight, width: innerWidth, overflowX: 'hidden', left: 0 }} ref={this.masterContainer}>
@@ -278,6 +193,7 @@ export default class PortraitApp extends React.Component {
             isMobile={isMobile}
             isPortrait={isPortrait}
             onClick={() => this.handleCoverClick(i)}
+            onTouchStart={() => onCoverTouch(i)}
         />)}
       </div>
       <div style={{ 
@@ -287,15 +203,19 @@ export default class PortraitApp extends React.Component {
         top: 0 
       }}>
         <PortraitProjectPieces 
-          onPieceClick={() => this.moveHorizontal(1, true)}
-          project={projects[this.projectIndex]} 
+          onPieceClick={() => {
+            // this.moveHorizontal(1, true)
+            // this.props.onMove
+            onMove(0, 1, true)
+          }}
+          project={projects[projectIndex]} 
           innerHeight={innerHeight} 
           innerWidth={innerWidth} 
         />
       </div>
       
       <PortraitCaption 
-        onMove={ this.moveHorizontal } 
+        onMove={ (moveBy) => onMove(0, moveBy) } 
         index={pieceIndex} 
         count={pieces.length} 
         piece={piece}
@@ -314,7 +234,7 @@ export default class PortraitApp extends React.Component {
           <Markdown source={info} />
         </div>
       }
-      <div style={infoLinkStyle} onClick={() => { this.setState({ showInfo: !this.state.showInfo })}}>
+      <div style={infoLinkStyle} onClick={onInfoToggle}>
         { showInfo ? 'close' : 'info'}
       </div>     
     </div>

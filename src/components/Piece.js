@@ -39,31 +39,42 @@ export default class Piece extends React.Component {
     this.shouldLoadContent = false
   }
 
-  componentDidMount () {
-    const imgHeight = (document.body.clientHeight - 60)
-    this.setState({ imgHeightCalculated: true, imgHeight })
-  }
+  // componentDidMount () {
+  //   const imgHeight = (document.body.clientHeight - 60)
+  //   this.setState({ imgHeightCalculated: true, imgHeight })
+  // }
 
   render () {
-    const { piece, onClick, shouldLoad, onImageLoad } = this.props
-    const { imgHeight, imgHeightCalculated } = this.state
+    const { piece, onClick, shouldLoad, onImageLoad, innerHeight, innerWidth } = this.props
+    // const { imgHeight, imgHeightCalculated } = this.state
 
-    if (!imgHeightCalculated) {
-      return null
-    }
+    // if (!imgHeightCalculated) {
+    //   return null
+    // }
 
     const type = fileType(piece.media)
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
     
+    const imgHeight = innerHeight - 60
+
+    const sizeStyles = {
+      height: imgHeight
+    }
+
     return <StyledDiv onClick={onClick}>
 
       { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
-            <StyledImg src={transformCloudinaryUrlForHeight(piece.media, imgHeight)} onLoad={onImageLoad} />
+            <StyledImg 
+              style={sizeStyles}
+              src={transformCloudinaryUrlForHeight(piece.media, imgHeight)} 
+              onLoad={onImageLoad} 
+            />
           }
           { type === 'VIDEO' && 
             <StyledVideo
+              style={sizeStyles}
               src={transformCloudinaryUrlForHeight(piece.media, imgHeight)}
               poster={transformCloudinaryUrlForHeight(piece.poster, imgHeight)}
               muted

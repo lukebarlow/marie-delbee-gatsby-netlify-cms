@@ -95,39 +95,12 @@ export default class Caption extends React.Component {
   }
 
   calculateTopAndHeight () {
-    const { piece } = this.props
+    const { piece, innerHeight } = this.props
     const { expanded } = this.state
-
     const isMobile = document.body.offsetWidth < 759
     const isLandscape = document.body.offsetWidth > document.body.offsetHeight
-    // const browser = Bowser.getParser(window.navigator.userAgent)
-
-    let top
+    let top = !piece ? '100vh' : (expanded ? '50%' : innerHeight - 40 + 'px')
     let height = isMobile && isLandscape ? 'calc(50% + 50px)' : '50%'
-
-    if (isMobile) {
-      // if (isLandscape) {
-      //   const t = !piece ? h : ( expanded ? h - elementHeight + 50 : h - 50)
-      //   top = t + 'px' 
-
-      //   // return !piece ? '100vh' : (expanded ? `calc(100vh - ${elementHeight + 50}px)` : 'calc(100vh - 100px)')
-      // } else {
-        //if (browser.getBrowserName() === 'Safari') {
-
-        if (isLandscape) {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 95px)')
-        } else {
-          top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 125px)')
-        }
-
-        //} else {
-        //  top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 35px)')
-        //}
-      //}
-    } else {
-      top = !piece ? '100vh' : (expanded ? '50%' : 'calc(100vh - 40px)')
-    }
-
     return { top, height }
   }
 
@@ -153,14 +126,15 @@ export default class Caption extends React.Component {
     const { piece, index, count, onMove } = this.props
     const { expanded } = this.state
     
-    console.log('rendering the caption')
-
     return <CaptionContainer 
         ref={this.handleRef} 
         onWheel={this.stopPropagation} 
         onTouchMove={this.stopPropagation}
       >
-      <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
+      { 
+        piece.description &&
+        <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
+      }
       { index > 0 && 
         <Nav>
           <NavLink onClick={() => onMove(-1)}>&lt;</NavLink>
@@ -171,7 +145,7 @@ export default class Caption extends React.Component {
       <Title onClick={this.toggleExpanded}>{piece && piece.title}</Title>
       { 
         expanded && 
-        <Markdown source={piece ? piece.description.replace(/\\/g, '  ') : ''} />
+        <Markdown source={piece && piece.description ? piece.description.replace(/\\/g, '  ') : ''} />
       }
       
     </CaptionContainer>

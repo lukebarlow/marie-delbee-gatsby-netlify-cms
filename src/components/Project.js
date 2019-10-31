@@ -60,7 +60,15 @@ max-height: calc(100vmax);
 object-fit: cover;
 `
 
-export default ({ project, isCurrent = false, pieceIndex, onPieceClick, onImageLoad }) => (
+export default ({ 
+  project, 
+  isCurrent = false, 
+  pieceIndex, 
+  onPieceClick, 
+  onImageLoad,
+  innerHeight,
+  innerWidth
+}) => (
   <StyledProjectPaginator>
     <ProjectLandingScreen backgroundImage={project.image} onClick={onPieceClick}>
       <ProjectVideoWrapper>
@@ -92,6 +100,8 @@ export default ({ project, isCurrent = false, pieceIndex, onPieceClick, onImageL
           shouldLoad={isCurrent && (i - pieceIndex < 3)} 
           onClick={onPieceClick}
           onImageLoad={onImageLoad}
+          innerHeight={innerHeight}
+          innerWidth={innerWidth}
         />)
       }
       <EndPadding />

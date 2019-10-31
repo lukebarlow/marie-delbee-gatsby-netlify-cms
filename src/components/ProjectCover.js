@@ -10,14 +10,14 @@ import fileType from '../common/fileType.js'
 
 export default class ProjectCover extends React.Component {
   render () {
-    const { innerWidth, innerHeight, isPortrait, project, onClick } = this.props
+    const { innerWidth, innerHeight, isPortrait, project, onClick, onTouchStart } = this.props
     const width = innerWidth
     const height = isPortrait ? null : innerHeight
 
     const coverStyle = { width: width, height, marginBottom: '-8px', objectFit: 'cover' }
     const estimatedPieceHeight = width / 1.4
 
-    return <div style={{position: 'relative', cursor: 'pointer' }} onClick={onClick}>
+    return <div style={{position: 'relative', cursor: 'pointer' }} onClick={onClick} onTouchStart={onTouchStart}>
       { 
       fileType(project.cover) === 'IMAGE' ?
         <img src={project.cover} style={coverStyle}  alt={project.title}/>
