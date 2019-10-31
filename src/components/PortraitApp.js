@@ -10,10 +10,6 @@ import createTransition from '../common/createTransition'
 import ProjectCover from './ProjectCover'
 import PortraitProjectPieces from './PortraitProjectPieces'
 import PortraitCaption from './PortraitCaption'
-// import NavigationLinks from './NavigationLinks'
-
-// const scrollTriggerThreshold = 51
-const swipeTriggerThreshold = 51
 
 // given an ordered list of numbers, give the 
 function positionInList(value, list) {
@@ -193,7 +189,7 @@ export default class PortraitApp extends React.Component {
             isMobile={isMobile}
             isPortrait={isPortrait}
             onClick={() => this.handleCoverClick(i)}
-            onTouchStart={() => onCoverTouch(i)}
+            onCoverTouch={() => onCoverTouch(i)}
         />)}
       </div>
       <div style={{ 
@@ -203,11 +199,7 @@ export default class PortraitApp extends React.Component {
         top: 0 
       }}>
         <PortraitProjectPieces 
-          onPieceClick={() => {
-            // this.moveHorizontal(1, true)
-            // this.props.onMove
-            onMove(0, 1, true)
-          }}
+          onPieceClick={() => { onMove(0, 1, true) }}
           project={projects[projectIndex]} 
           innerHeight={innerHeight} 
           innerWidth={innerWidth} 

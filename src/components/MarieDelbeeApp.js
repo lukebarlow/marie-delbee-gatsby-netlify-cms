@@ -7,7 +7,8 @@ import PortraitApp from './PortraitApp'
 import LandscapeApp from './LandscapeApp'
 
 const SWIPE_TRIGGER_THRESHOLD = 51
-const SWIPE_TIME_RECOVERY = 500
+const SCROLL_TRIGGER_THRESHOLD = 51
+const SCROLL_TIME_RECOVERY = 500
 
 export default class MarieDelbeeApp extends React.Component {
   constructor () {
@@ -17,6 +18,7 @@ export default class MarieDelbeeApp extends React.Component {
     this.moveHandler = this.moveHandler.bind(this)
     this.touchstartHandler = this.touchstartHandler.bind(this)
     this.touchmoveHandler = this.touchmoveHandler.bind(this)
+    this.wheelHandler = this.wheelHandler.bind(this)
     this.coverTouchStartHandler = this.coverTouchStartHandler.bind(this)
     this.infoToggleHandler = this.infoToggleHandler.bind(this)
 
@@ -32,7 +34,7 @@ export default class MarieDelbeeApp extends React.Component {
 
     this.touchStartX = null
     this.touchStartY = null
-    this.lastSwipeMove = null
+    this.lastScrollTriggered = null
     this.touchStartProjectIndex = null
   }
 
@@ -42,6 +44,7 @@ export default class MarieDelbeeApp extends React.Component {
     window.addEventListener('resize', this.resizeHandler)
     window.addEventListener('touchstart', this.touchstartHandler, { passive: false })
     window.addEventListener('touchmove', this.touchmoveHandler, { passive: false })
+    window.addEventListener('wheel', this.wheelHandler, { passive: false })
 
     // this.navHistory = new History('n', {
     //   stringify: ({ projectIndex, pieceIndex }) => [projectIndex, pieceIndex].toString(),
@@ -64,6 +67,7 @@ export default class MarieDelbeeApp extends React.Component {
     window.removeEventListener('keydown', this.keydownHandler)
     window.removeEventListener('touchstart', this.touchstartHandler)
     window.removeEventListener('touchmove', this.touchmoveHandler)
+    window.removeEventListener('wheel', this.wheelHandler)
   }
   
   setSizes () {
@@ -105,6 +109,44 @@ export default class MarieDelbeeApp extends React.Component {
         default :
           // do nothing
         break
+      }
+    }
+  }
+
+  wheelHandler (e) {
+    const { isPortrait, showInfo, pieceIndex } = this.state
+    const absX = Math.abs(e.deltaX)
+    const absY = Math.abs(e.deltaY)
+    // in certain cases we just want browser default scrolling behavior
+    if (showInfo || (isPortrait && pieceIndex === 0 && absY > absX)) {
+      return
+    }
+
+    e.preventDefault()
+    // if (this.isScrolling) {
+    //   return
+    // }
+
+    if (this.lastScrollTriggered === null || new Date() - this.lastScrollTriggered > SCROLL_TIME_RECOVERY) {
+      if (absY > absX && absY > SCROLL_TRIGGER_THRESHOLD) {
+        this.lastScrollTriggered = new Date()
+        e.deltaY > 0 ? this.moveVertical(1) : this.moveVertical(-1)
+      }
+  
+      if (absX > absY && absX > SCROLL_TRIGGER_THRESHOLD) {
+        this.lastScrollTriggered = new Date()
+
+        if (this.touchStartProjectIndex !== null && this.state.pieceIndex === 0 && this.state.isPortrait && e.deltaX > 0) {
+          this.setState({
+            projectIndex: this.touchStartProjectIndex,
+            pieceIndex: 1
+          })
+          this.touchStartProjectIndex = null
+        } else {
+          e.deltaX > 0 ? this.moveHorizontal(1) : this.moveHorizontal(-1)
+        }
+
+        
       }
     }
   }
@@ -193,10 +235,6 @@ export default class MarieDelbeeApp extends React.Component {
   }
 
   touchmoveHandler (e) {
-    // if (this.transitions.length > 0) {
-    //   return
-    // }
-
     const dx = e.touches[0].clientX - this.touchStartX
     const dy = e.touches[0].clientY - this.touchStartY
 
@@ -204,17 +242,16 @@ export default class MarieDelbeeApp extends React.Component {
     const ady = Math.abs(dy)
 
     // no vertical swiping in the portrait mode
-
-    if (this.lastSwipeMove === null || new Date() - this.lastSwipeMove > SWIPE_TIME_RECOVERY) {
+    if (this.lastScrollTriggered === null || new Date() - this.lastScrollTriggered > SCROLL_TIME_RECOVERY) {
       if (ady > adx && ady > SWIPE_TRIGGER_THRESHOLD) {
-        this.lastSwipeMove = new Date()
+        this.lastScrollTriggered = new Date()
         if (!this.state.isPortrait) {
           dy > 0 ? this.moveHandler(-1, 0) : this.moveHandler(1, 0)
         }
       }
   
       if (this.pieceIndex !== 0 && adx > ady && adx > SWIPE_TRIGGER_THRESHOLD) {
-        this.lastSwipeMove = new Date()
+        this.lastScrollTriggered = new Date()
         // special case for when you swipe from
                 
         if (this.touchStartProjectIndex !== null && this.state.pieceIndex === 0 && this.state.isPortrait && dx < 0) {

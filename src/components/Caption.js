@@ -132,7 +132,7 @@ export default class Caption extends React.Component {
         onTouchMove={this.stopPropagation}
       >
       { 
-        piece.description &&
+        (piece && piece.description) &&
         <Toggle onClick={this.toggleExpanded}>{expanded ? '-' : '+'}</Toggle>
       }
       { index > 0 && 
