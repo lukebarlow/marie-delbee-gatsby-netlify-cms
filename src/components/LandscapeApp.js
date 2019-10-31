@@ -64,9 +64,6 @@ export default class LandscapeApp extends React.Component {
     this.scrollTo(this.props, true)
   }
 
-  // componentWillUnmount () {
-  // }
-
   componentDidUpdate (prevProps, prevState) {
     const { projectIndex, pieceIndex } = this.props
     if (prevProps.projectIndex !== projectIndex || prevProps.pieceIndex !== pieceIndex) {
@@ -78,6 +75,13 @@ export default class LandscapeApp extends React.Component {
     if (!this.projectsContainer) {
       return
     }
+
+    // if (pieceIndex === 0 && projectIndex !== 0) {
+    //   // this.verticalScroll(1, false, false)
+    //   return
+    // }
+
+
     if (projectIndex !== this.lastScrolledToProjectIndex) {
       // first set the destination piece to be in the correct position
       const projectElement = this.projectsContainer.children[projectIndex]
@@ -101,7 +105,7 @@ export default class LandscapeApp extends React.Component {
       const projectsContainer = this.projectsContainer
 
       for (var i=0;i < projectsContainer.children.length; i++) {
-        if (i !== this.props.projectIndex && (!retainPieceIndex || i !== projectIndex)) {
+        if (i !== this.lastScrolledToProjectIndex && (!retainPieceIndex || i !== projectIndex)) {
           projectsContainer.children[i].scrollLeft = 0
         }
       }
