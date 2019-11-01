@@ -4,7 +4,7 @@ import PortraitPiece from './PortraitPiece.js'
 
 export default class PortraitProjectPieces extends React.Component {
   render () {
-    const { project, onPieceClick, innerHeight, innerWidth } = this.props
+    const { project, onPieceClick, innerHeight, innerWidth, isPortrait } = this.props
 
     return <div style={{ display: 'flex', flexDirection: 'row' }}>
       {
@@ -15,6 +15,7 @@ export default class PortraitProjectPieces extends React.Component {
           onClick={onPieceClick}
           innerHeight={innerHeight}
           innerWidth={innerWidth}
+          isPortrait={isPortrait}
         />)
       }
     </div>

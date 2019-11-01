@@ -1,7 +1,7 @@
 import React from 'react'
 // import styled from 'styled-components'
 
-import AudioPlayer2 from './AudioPlayer2.js'
+import AudioPlayerPortrait from './AudioPlayerPortrait.js'
 import fileType from '../common/fileType.js'
 import { transformCloudinaryUrlForWidth } from '../common/transformCloudinaryUrl.js'
 
@@ -45,15 +45,17 @@ export default class Piece extends React.Component {
   // }
 
   render () {
-    const { piece, onClick, shouldLoad, onImageLoad, innerHeight, innerWidth } = this.props
-    // const { imgHeight, imgHeightCalculated } = this.state
-
-    // if (!imgHeightCalculated) {
-    //   return null
-    // }
+    const { 
+      piece, 
+      onClick, 
+      shouldLoad, 
+      onImageLoad, 
+      innerHeight, 
+      innerWidth,
+      isPortrait
+    } = this.props
 
     const imgHeight = innerWidth / 4
-
     const type = fileType(piece.media)
     this.shouldLoadContent = this.shouldLoadContent || shouldLoad
     
@@ -61,14 +63,24 @@ export default class Piece extends React.Component {
     const mediaUrl = transformCloudinaryUrlForWidth(piece.media, mediaWidth)
     const posterUrl = transformCloudinaryUrlForWidth(piece.poster, mediaWidth)
 
-    const mediaStyle = { margin: '5px', width: mediaWidth, height: innerHeight - 160, objectFit: 'contain' }
+    const mediaStyle = { 
+      margin: '5px', 
+      width: mediaWidth, 
+      height: innerHeight - 160, 
+      objectFit: 'contain' 
+    }
 
     return <div onClick={onClick}>
 
       { this.shouldLoadContent ?
         <>
           { type === 'IMAGE' &&
-            <img src={mediaUrl} onLoad={onImageLoad} style={mediaStyle} alt={piece.title} />
+            <img 
+              src={mediaUrl} 
+              onLoad={onImageLoad} 
+              style={mediaStyle} 
+              alt={piece.title} 
+            />
           }
           { type === 'VIDEO' && 
             <video
@@ -82,7 +94,10 @@ export default class Piece extends React.Component {
             />
           }
           { type === 'AUDIO' && 
-            <AudioPlayer2
+            <AudioPlayerPortrait
+              isPortrait={isPortrait}
+              innerWidth={innerWidth}
+              innerHeight={innerHeight}
               height={imgHeight}
               audioSrc={piece.media}
               imgSrc={posterUrl}
@@ -91,6 +106,5 @@ export default class Piece extends React.Component {
         </> : <img src='img/grey-square.gif' onLoad={onImageLoad} alt={'loading...'} />
       }
     </div>
-  
   }
 }

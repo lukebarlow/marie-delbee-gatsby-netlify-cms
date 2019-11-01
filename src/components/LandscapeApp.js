@@ -36,9 +36,6 @@ const Info = styled.div`
   }
 `
 
-// const scrollTriggerThreshold = 51
-
-
 export default class LandscapeApp extends React.Component {
   constructor () {
     super()
@@ -222,8 +219,6 @@ export default class LandscapeApp extends React.Component {
     const { captionPieceIndex } = this.state
     const pieces = projects[projectIndex].pieces
     const piece = captionPieceIndex > 0 ? pieces[captionPieceIndex - 1] : null
-
-    console.log('LANDSCAPE RENDER', innerWidth, innerHeight, projectIndex, pieceIndex)
 
     return <>
       <div 

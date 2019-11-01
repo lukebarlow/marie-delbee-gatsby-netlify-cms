@@ -203,6 +203,7 @@ export default class PortraitApp extends React.Component {
           project={projects[projectIndex]} 
           innerHeight={innerHeight} 
           innerWidth={innerWidth} 
+          isPortrait={isPortrait}
         />
       </div>
       

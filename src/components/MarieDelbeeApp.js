@@ -27,7 +27,7 @@ export default class MarieDelbeeApp extends React.Component {
       innerHeight: 700,
       isMobile: false,
       isPortrait: false,
-      projectIndex: 8,
+      projectIndex: 1,
       pieceIndex: 1,
       showInfo: false
     }

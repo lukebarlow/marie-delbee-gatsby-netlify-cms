@@ -66,12 +66,10 @@ width: auto;
 cursor: pointer;
 
 @media ${portraitSelector} {
-  width: 100%;
   object-fit: contain;
 }
 
 @media ${landscapeSelector} {
-  width: auto;
   @media ${smallScreenSelector} {
   }
 }
