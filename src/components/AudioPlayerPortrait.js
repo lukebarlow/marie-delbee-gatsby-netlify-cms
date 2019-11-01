@@ -155,7 +155,6 @@ export default class AudioPlayer2 extends React.Component {
   render () {
     const { 
       imgSrc, 
-      isPortrait,
       innerHeight,
       innerWidth } = this.props
     const {
@@ -167,9 +166,6 @@ export default class AudioPlayer2 extends React.Component {
       timelineWidth,
       imageDimensionsCalculated,
       fractionPlayed,
-      effectiveTopMargin,
-      actualHeight,
-
     } = this.getDisplayMetrics()
 
     if (!imageDimensionsCalculated) {

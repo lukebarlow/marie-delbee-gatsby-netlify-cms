@@ -77,7 +77,7 @@ export default class Caption extends React.Component {
   }
 
   render () {
-    const { piece, index, count, onMove, left, innerHeight, innerWidth, isPortrait } = this.props
+    const { piece, index, count, onMove, left, innerHeight, innerWidth, isPortrait, isMobile } = this.props
     const { expanded } = this.state
     
     if (!piece) {
@@ -98,7 +98,7 @@ export default class Caption extends React.Component {
       <div 
         onWheel={this.stopPropagation} 
         onTouchMove={this.stopPropagation}
-        style={{ margin: '10px' }}
+        style={{ margin: '10px', paddingLeft: isMobile ? 0 : '140px' }}
       >
         { 
           piece.description &&

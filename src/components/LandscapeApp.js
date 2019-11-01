@@ -106,7 +106,6 @@ export default class LandscapeApp extends React.Component {
         const projectElement = projectsContainer.children[projectIndex]
         if (instant) {
           projectsContainer.scrollTop = projectElement.offsetTop
-          console.log('just set scrollTop to', projectsContainer.scrollTop)
           resolve()
         } else {
           this.isScrolling = true
@@ -251,6 +250,7 @@ export default class LandscapeApp extends React.Component {
           innerWidth={innerWidth}
           innerHeight={innerHeight}
           isPortrait={isPortrait}
+          isMobile={isMobile}
         />
       }
       

@@ -135,7 +135,7 @@ projects:
           The performance responds to the vibrations repelled off the walls and
           filling the space.
         media: >-
-          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1567712174/en%20silence/img_9156_m2dvqo.jpg
+          https://res.cloudinary.com/dcnxlnkpw/image/upload/v1562710548/entre-chien-et-loup/vlcsnap-2018-12-13-01h03m11s37_avitzt.png
         title: atlas8
       - description: >-
           entre chien et loup  
