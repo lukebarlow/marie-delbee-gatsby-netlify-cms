@@ -42,7 +42,7 @@ export default class ProjectCover extends React.Component {
         zIndex: 1, 
         position: 'absolute', 
         top: estimatedPieceHeight / 4,
-        fontSize: '40px',
+        fontSize: innerWidth > 500 ? '40px' : '30px',
         width,
         textAlign: 'center'
       }}>

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5b50cd1b7d5abb424b2b70e4004ff33fbdd297e8232854f620baaf030d52c43
-size 537
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="41px" viewBox="0 0 24 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path" fill="#FFFFFF" points="8 0, 24 21, 8 41, 0 41, 16 21, 0 0"></polygon>
+    </g>
+</svg>

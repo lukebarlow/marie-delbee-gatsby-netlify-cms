@@ -98,7 +98,7 @@ export default class Caption extends React.Component {
       <div 
         onWheel={this.stopPropagation} 
         onTouchMove={this.stopPropagation}
-        style={{ margin: '10px', paddingLeft: isMobile ? 0 : '140px' }}
+        style={{ margin: '10px', paddingLeft: isMobile || isPortrait ? 0 : '140px' }}
       >
         { 
           piece.description &&
